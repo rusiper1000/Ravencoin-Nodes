@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T12:39:01.146136+00:00",
+  "generated_at": "2026-08-21T16:31:52.198551+00:00",
   "total_nodes": 92,
   "countries": [
     {
@@ -14,8 +14,8 @@
     },
     {
       "name": "France",
-      "count": 13,
-      "pct": 14.13
+      "count": 14,
+      "pct": 15.22
     },
     {
       "name": "The Netherlands",
@@ -26,11 +26,6 @@
       "name": "Canada",
       "count": 5,
       "pct": 5.43
-    },
-    {
-      "name": "Russia",
-      "count": 4,
-      "pct": 4.35
     },
     {
       "name": "Finland",
@@ -48,12 +43,17 @@
       "pct": 3.26
     },
     {
-      "name": "United Kingdom",
+      "name": "Russia",
+      "count": 3,
+      "pct": 3.26
+    },
+    {
+      "name": "South Korea",
       "count": 2,
       "pct": 2.17
     },
     {
-      "name": "Australia",
+      "name": "United Kingdom",
       "count": 2,
       "pct": 2.17
     },
@@ -63,27 +63,22 @@
       "pct": 1.09
     },
     {
-      "name": "Austria",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
       "name": "Hong Kong",
       "count": 1,
       "pct": 1.09
     },
     {
-      "name": "New Zealand",
+      "name": "Austria",
       "count": 1,
       "pct": 1.09
     },
     {
-      "name": "South Korea",
+      "name": "Italy",
       "count": 1,
       "pct": 1.09
     },
     {
-      "name": "Argentina",
+      "name": "Vietnam",
       "count": 1,
       "pct": 1.09
     },
@@ -98,12 +93,17 @@
       "pct": 1.09
     },
     {
-      "name": "Vietnam",
+      "name": "New Zealand",
       "count": 1,
       "pct": 1.09
     },
     {
-      "name": "Italy",
+      "name": "Australia",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Argentina",
       "count": 1,
       "pct": 1.09
     }
@@ -135,6 +135,16 @@
       "pct": 2.17
     },
     {
+      "name": "Amazon.com, Inc.",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "Comcast Cable Communications, LLC",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
       "name": "Alibaba (US) Technology Co., Ltd.",
       "count": 2,
       "pct": 2.17
@@ -150,22 +160,7 @@
       "pct": 2.17
     },
     {
-      "name": "Amazon.com, Inc.",
-      "count": 2,
-      "pct": 2.17
-    },
-    {
-      "name": "Comcast Cable Communications, LLC",
-      "count": 2,
-      "pct": 2.17
-    },
-    {
       "name": "DIGITALOCEAN",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "Contabo Inc.",
       "count": 1,
       "pct": 1.09
     },
@@ -180,7 +175,12 @@
       "pct": 1.09
     },
     {
-      "name": "Versija SIA",
+      "name": "Contabo Inc.",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Charter Communications",
       "count": 1,
       "pct": 1.09
     }
@@ -188,8 +188,8 @@
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
-      "count": 40,
-      "pct": 43.48
+      "count": 42,
+      "pct": 45.65
     },
     {
       "name": "/Ravencoin:4.6.1/",
@@ -198,8 +198,8 @@
     },
     {
       "name": "/Ravencoin:4.7.0/",
-      "count": 11,
-      "pct": 11.96
+      "count": 9,
+      "pct": 9.78
     },
     {
       "name": "/Ravencoin:4.3.2.1/",
@@ -217,7 +217,7 @@
       "pct": 1.09
     },
     {
-      "name": "/Ravencoin:4.8.0(rvnx)/",
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
       "count": 1,
       "pct": 1.09
     },
@@ -227,12 +227,12 @@
       "pct": 1.09
     },
     {
-      "name": "/Ravencoin:4.2.0/",
+      "name": "/Ravencoin:4.8.0(rvnx)/",
       "count": 1,
       "pct": 1.09
     },
     {
-      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "name": "/Ravencoin:4.2.0/",
       "count": 1,
       "pct": 1.09
     }
