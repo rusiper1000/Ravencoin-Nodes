@@ -22,6 +22,9 @@
   h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:0.5px;margin:0;}
   .sub{font-size:13px;color:var(--text-mute);margin-top:4px;}
   .sub a{color:var(--text-mute);}
+  .credit{font-size:11.5px;color:var(--text-dim);margin-top:3px;}
+  .credit a{color:var(--gold);text-decoration:none;}
+  .credit a:hover{text-decoration:underline;}
   .hero{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
   .hero-label{font-size:12px;letter-spacing:1.5px;color:var(--text-mute);text-transform:uppercase;margin-bottom:6px;}
   .hero-num{font-family:'IBM Plex Mono',monospace;font-size:46px;font-weight:500;color:var(--gold);line-height:1;}
@@ -46,6 +49,13 @@
   .simple-row .count{text-align:right;font-family:'IBM Plex Mono',monospace;color:var(--text-mute);font-size:11px;}
   .state{color:var(--text-dim);font-size:13px;padding:20px 0;text-align:center;}
   .state.err{color:var(--coral);}
+  .more-btn{
+    display:block;width:100%;margin-top:10px;padding:9px;
+    background:var(--panel-2);border:1px solid var(--border);border-radius:8px;
+    color:var(--text-mute);font-family:'IBM Plex Sans KR',sans-serif;font-size:12.5px;
+    cursor:pointer;transition:border-color .15s,color .15s;
+  }
+  .more-btn:hover{border-color:var(--gold-dim,#7A6226);color:var(--gold);}
   .skeleton{background:linear-gradient(90deg,var(--panel-2) 25%,#23272f 37%,var(--panel-2) 63%);background-size:400% 100%;animation:sk 1.4s ease infinite;border-radius:6px;height:12px;margin:8px 0;}
   @keyframes sk{0%{background-position:100% 50%;}100%{background-position:0 50%;}}
   footer{margin-top:8px;font-size:11.5px;color:var(--text-dim);text-align:center;line-height:1.7;}
@@ -69,7 +79,8 @@
       </svg>
       <div>
         <h1>RAVEN NETWORK NODES</h1>
-        <div class="sub">국가별 실시간 레이븐코인 노드 분포 · 자체 크롤러로 직접 측정 · <a href="https://github.com/" target="_blank" rel="noopener">소스코드</a></div>
+        <div class="sub">국가별 실시간 레이븐코인 노드 분포 · 자체 크롤러로 직접 측정</div>
+        <div class="credit">by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">rusiper1000</a>)</div>
       </div>
     </div>
   </div>
@@ -86,7 +97,7 @@
   </div>
 
   <div class="panel">
-    <h2><span class="dot"></span>국가별 노드 TOP 15</h2>
+    <h2><span class="dot"></span>국가별 노드 분포</h2>
     <div id="countryList"><div class="skeleton" style="width:100%"></div><div class="skeleton" style="width:90%"></div></div>
   </div>
 
@@ -102,6 +113,7 @@
   </div>
 
   <footer>
+    Made by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">@rusiper1000</a>)<br>
     이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.<br>
     데이터는 GitHub Actions가 몇 시간마다 자동으로 새로 수집합니다.
   </footer>
@@ -124,11 +136,24 @@ function flagFor(name){
   return hit ? hit[1] : '🏳️';
 }
 
+let allCountries = [];
+let countriesExpanded = false;
+
 function renderCountries(list){
   const el = document.getElementById('countryList');
-  if(!list || !list.length){ el.innerHTML = '<div class="state err">데이터가 아직 없습니다.</div>'; return; }
-  const max = Math.max(...list.map(x=>x.count), 1);
-  el.innerHTML = list.map((c,i)=>`
+  allCountries = list || [];
+  if(!allCountries.length){ el.innerHTML = '<div class="state err">데이터가 아직 없습니다.</div>'; return; }
+  countriesExpanded = false;
+  drawCountries();
+}
+
+function drawCountries(){
+  const el = document.getElementById('countryList');
+  const VISIBLE = 15;
+  const shown = countriesExpanded ? allCountries : allCountries.slice(0, VISIBLE);
+  const max = Math.max(...allCountries.map(x=>x.count), 1);
+
+  const rowsHtml = shown.map((c,i)=>`
     <div class="row">
       <div class="rank">${String(i+1).padStart(2,'0')}</div>
       <div class="flag">${flagFor(c.name)}</div>
@@ -138,7 +163,24 @@ function renderCountries(list){
       <div class="pct">${c.pct.toFixed(1)}%</div>
     </div>
   `).join('');
-  requestAnimationFrame(()=> el.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%'));
+
+  const remaining = allCountries.length - VISIBLE;
+  const toggleHtml = remaining > 0
+    ? `<button id="toggleCountriesBtn" class="more-btn">${countriesExpanded ? '접기 ▲' : `더보기 (전체 ${allCountries.length}개국 · +${remaining}) ▼`}</button>`
+    : '';
+
+  el.innerHTML = rowsHtml + toggleHtml;
+  requestAnimationFrame(() => {
+    el.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');
+  });
+
+  const btn = document.getElementById('toggleCountriesBtn');
+  if(btn){
+    btn.addEventListener('click', () => {
+      countriesExpanded = !countriesExpanded;
+      drawCountries();
+    });
+  }
 }
 
 function renderSimple(containerId, list, color){
