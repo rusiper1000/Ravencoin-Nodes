@@ -1,7 +1,110 @@
 {
-  "generated_at": null,
-  "total_nodes": 0,
-  "countries": [],
-  "isps": [],
-  "versions": []
+  "generated_at": "2026-08-21T10:05:50.289538+00:00",
+  "total_nodes": 16,
+  "countries": [
+    {
+      "name": "United States",
+      "count": 7,
+      "pct": 43.75
+    },
+    {
+      "name": "Germany",
+      "count": 4,
+      "pct": 25.0
+    },
+    {
+      "name": "France",
+      "count": 2,
+      "pct": 12.5
+    },
+    {
+      "name": "Canada",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "The Netherlands",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "Bulgaria",
+      "count": 1,
+      "pct": 6.25
+    }
+  ],
+  "isps": [
+    {
+      "name": "DigitalOcean, LLC",
+      "count": 4,
+      "pct": 25.0
+    },
+    {
+      "name": "Hetzner Online GmbH",
+      "count": 3,
+      "pct": 18.75
+    },
+    {
+      "name": "netcup GmbH",
+      "count": 2,
+      "pct": 12.5
+    },
+    {
+      "name": "Amazon.com",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "OVH SAS",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "DIGITALOCEAN",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "Contabo Inc.",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "Contabo GmbH",
+      "count": 1,
+      "pct": 6.25
+    },
+    {
+      "name": "BTC-NET Ltd",
+      "count": 1,
+      "pct": 6.25
+    }
+  ],
+  "versions": [
+    {
+      "name": "/Ravencoin:4.8.0/",
+      "count": 6,
+      "pct": 37.5
+    },
+    {
+      "name": "/Ravencoin:4.3.2.1/",
+      "count": 6,
+      "pct": 37.5
+    },
+    {
+      "name": "/Ravencoin:4.6.1/",
+      "count": 3,
+      "pct": 18.75
+    },
+    {
+      "name": "/Ravencoin:4.7.0/",
+      "count": 1,
+      "pct": 6.25
+    }
+  ]
 }
