@@ -1,7 +1,210 @@
 {
-  "generated_at": null,
-  "total_nodes": 0,
-  "countries": [],
-  "isps": [],
-  "versions": []
+  "generated_at": "2026-08-21T07:06:01.853777+00:00",
+  "total_nodes": 92,
+  "countries": [
+    {
+      "name": "United States",
+      "count": 25,
+      "pct": 27.17
+    },
+    {
+      "name": "Germany",
+      "count": 15,
+      "pct": 16.3
+    },
+    {
+      "name": "France",
+      "count": 13,
+      "pct": 14.13
+    },
+    {
+      "name": "The Netherlands",
+      "count": 6,
+      "pct": 6.52
+    },
+    {
+      "name": "Canada",
+      "count": 5,
+      "pct": 5.43
+    },
+    {
+      "name": "Russia",
+      "count": 4,
+      "pct": 4.35
+    },
+    {
+      "name": "Finland",
+      "count": 4,
+      "pct": 4.35
+    },
+    {
+      "name": "Poland",
+      "count": 4,
+      "pct": 4.35
+    },
+    {
+      "name": "Singapore",
+      "count": 3,
+      "pct": 3.26
+    },
+    {
+      "name": "United Kingdom",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "Australia",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "Bulgaria",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "New Zealand",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Thailand",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Lithuania",
+      "count": 1,
+      "pct": 1.09
+    }
+  ],
+  "isps": [
+    {
+      "name": "OVH SAS",
+      "count": 18,
+      "pct": 19.57
+    },
+    {
+      "name": "Hetzner Online GmbH",
+      "count": 14,
+      "pct": 15.22
+    },
+    {
+      "name": "DigitalOcean, LLC",
+      "count": 9,
+      "pct": 9.78
+    },
+    {
+      "name": "Contabo GmbH",
+      "count": 4,
+      "pct": 4.35
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "count": 3,
+      "pct": 3.26
+    },
+    {
+      "name": "netcup GmbH",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "TechTies Inc.",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "Comcast Cable Communications, LLC",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "Alibaba (US) Technology Co., Ltd.",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "BTC-NET Ltd",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Contabo Inc.",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "DIGITALOCEAN",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Amazon.com",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Wholesail networks LLC",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "INTEX ltd.",
+      "count": 1,
+      "pct": 1.09
+    }
+  ],
+  "versions": [
+    {
+      "name": "/Ravencoin:4.8.0/",
+      "count": 39,
+      "pct": 42.39
+    },
+    {
+      "name": "/Ravencoin:4.6.1/",
+      "count": 28,
+      "pct": 30.43
+    },
+    {
+      "name": "/Ravencoin:4.7.0/",
+      "count": 11,
+      "pct": 11.96
+    },
+    {
+      "name": "/Ravencoin:4.3.2.1/",
+      "count": 7,
+      "pct": 7.61
+    },
+    {
+      "name": "/Ravencoin:4.6.1.1/",
+      "count": 2,
+      "pct": 2.17
+    },
+    {
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "/Ravencoin:4.3.1(ravencore)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "/Ravencoin:4.8.0(rvnx)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "/Ravencoin:4.2.0/",
+      "count": 1,
+      "pct": 1.09
+    }
+  ]
 }
