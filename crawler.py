@@ -23,10 +23,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 # ── 설정 ────────────────────────────────────────────────────────────
-MAX_ROUNDS = 6
+MAX_ROUNDS = 8
 MAX_WORKERS = 60
-CONNECT_TIMEOUT = 15
-ADDR_WAIT = 5
+CONNECT_TIMEOUT = 20
+ADDR_WAIT = 6
 NODE_CAP = 8000
 STAGGER_MAX = 0.3
 OUTPUT_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "latest.json")
@@ -294,11 +294,12 @@ def geolocate(ips):
     return results
 
 
-def top_list(counter: Counter, n=15):
+def top_list(counter: Counter, n=None):
     total = sum(counter.values())
+    items = counter.most_common(n) if n else counter.most_common()
     return [
         {"name": name, "count": cnt, "pct": round(cnt / total * 100, 2) if total else 0}
-        for name, cnt in counter.most_common(n)
+        for name, cnt in items
     ]
 
 
@@ -321,7 +322,7 @@ def main():
     result = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_nodes": len(reachable),
-        "countries": top_list(country_counter, 15),
+        "countries": top_list(country_counter, None),   # 전체 국가 (1개짜리도 포함)
         "isps": top_list(isp_counter, 15),
         "versions": top_list(version_counter, 15),
     }
