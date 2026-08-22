@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-22T00:51:05.921710+00:00",
+  "generated_at": "2026-08-22T04:37:54.064234+00:00",
   "total_nodes": 92,
   "countries": [
     {
       "name": "United States",
-      "count": 25,
-      "pct": 27.17
+      "count": 24,
+      "pct": 26.09
     },
     {
       "name": "Germany",
@@ -19,8 +19,8 @@
     },
     {
       "name": "The Netherlands",
-      "count": 5,
-      "pct": 5.43
+      "count": 6,
+      "pct": 6.52
     },
     {
       "name": "Canada",
@@ -28,7 +28,7 @@
       "pct": 5.43
     },
     {
-      "name": "Poland",
+      "name": "Russia",
       "count": 4,
       "pct": 4.35
     },
@@ -38,7 +38,7 @@
       "pct": 4.35
     },
     {
-      "name": "Russia",
+      "name": "Poland",
       "count": 4,
       "pct": 4.35
     },
@@ -63,32 +63,7 @@
       "pct": 1.09
     },
     {
-      "name": "Vietnam",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "Argentina",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "New Zealand",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "Hong Kong",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
       "name": "Austria",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "Lithuania",
       "count": 1,
       "pct": 1.09
     },
@@ -98,7 +73,32 @@
       "pct": 1.09
     },
     {
+      "name": "Lithuania",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
       "name": "Thailand",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Vietnam",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Hong Kong",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "New Zealand",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "Argentina",
       "count": 1,
       "pct": 1.09
     },
@@ -121,8 +121,8 @@
     },
     {
       "name": "DigitalOcean, LLC",
-      "count": 8,
-      "pct": 8.7
+      "count": 9,
+      "pct": 9.78
     },
     {
       "name": "Contabo GmbH",
@@ -135,17 +135,12 @@
       "pct": 2.17
     },
     {
-      "name": "TechTies Inc.",
-      "count": 2,
-      "pct": 2.17
-    },
-    {
       "name": "Amazon.com, Inc.",
       "count": 2,
       "pct": 2.17
     },
     {
-      "name": "Alibaba (US) Technology Co., Ltd.",
+      "name": "Vodafone",
       "count": 2,
       "pct": 2.17
     },
@@ -155,14 +150,24 @@
       "pct": 2.17
     },
     {
-      "name": "AT&T Enterprises, LLC",
+      "name": "Alibaba (US) Technology Co., Ltd.",
       "count": 2,
       "pct": 2.17
     },
     {
-      "name": "Vodafone",
+      "name": "TechTies Inc.",
       "count": 2,
       "pct": 2.17
+    },
+    {
+      "name": "BTC-NET Ltd",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "DIGITALOCEAN",
+      "count": 1,
+      "pct": 1.09
     },
     {
       "name": "Amazon.com",
@@ -175,12 +180,7 @@
       "pct": 1.09
     },
     {
-      "name": "DIGITALOCEAN",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "BTC-NET Ltd",
+      "name": "IONOS SE",
       "count": 1,
       "pct": 1.09
     }
@@ -188,13 +188,13 @@
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
-      "count": 41,
-      "pct": 44.57
+      "count": 42,
+      "pct": 45.65
     },
     {
       "name": "/Ravencoin:4.6.1/",
-      "count": 28,
-      "pct": 30.43
+      "count": 27,
+      "pct": 29.35
     },
     {
       "name": "/Ravencoin:4.7.0/",
@@ -212,16 +212,6 @@
       "pct": 2.17
     },
     {
-      "name": "/Ravencoin:4.8.0(rvnx)/",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "/Ravencoin:4.2.0/",
-      "count": 1,
-      "pct": 1.09
-    },
-    {
       "name": "/Ravencoin:4.6.1(ravencoin.network)/",
       "count": 1,
       "pct": 1.09
@@ -232,7 +222,17 @@
       "pct": 1.09
     },
     {
+      "name": "/Ravencoin:4.8.0(rvnx)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
       "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "count": 1,
+      "pct": 1.09
+    },
+    {
+      "name": "/Ravencoin:4.2.0/",
       "count": 1,
       "pct": 1.09
     }
