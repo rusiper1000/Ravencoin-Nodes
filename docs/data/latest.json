@@ -1,105 +1,240 @@
 {
-  "generated_at": "2026-08-22T08:17:22.423676+00:00",
-  "total_nodes": 15,
+  "generated_at": "2026-08-22T09:14:48.151147+00:00",
+  "total_nodes": 91,
   "countries": [
     {
       "name": "United States",
-      "count": 6,
-      "pct": 40.0
+      "count": 24,
+      "pct": 26.37
     },
     {
       "name": "Germany",
-      "count": 4,
-      "pct": 26.67
+      "count": 15,
+      "pct": 16.48
     },
     {
       "name": "France",
-      "count": 2,
-      "pct": 13.33
+      "count": 12,
+      "pct": 13.19
+    },
+    {
+      "name": "The Netherlands",
+      "count": 6,
+      "pct": 6.59
     },
     {
       "name": "Canada",
-      "count": 1,
-      "pct": 6.67
+      "count": 5,
+      "pct": 5.49
+    },
+    {
+      "name": "Poland",
+      "count": 4,
+      "pct": 4.4
+    },
+    {
+      "name": "Finland",
+      "count": 4,
+      "pct": 4.4
+    },
+    {
+      "name": "Russia",
+      "count": 3,
+      "pct": 3.3
+    },
+    {
+      "name": "Singapore",
+      "count": 3,
+      "pct": 3.3
+    },
+    {
+      "name": "South Korea",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "United Kingdom",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "Australia",
+      "count": 2,
+      "pct": 2.2
     },
     {
       "name": "Bulgaria",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     },
     {
-      "name": "The Netherlands",
+      "name": "Hong Kong",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
+    },
+    {
+      "name": "Lithuania",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "Vietnam",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "New Zealand",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "Argentina",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "Italy",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "Austria",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "Thailand",
+      "count": 1,
+      "pct": 1.1
     }
   ],
   "isps": [
     {
-      "name": "DigitalOcean, LLC",
-      "count": 4,
-      "pct": 26.67
+      "name": "OVH SAS",
+      "count": 17,
+      "pct": 18.68
     },
     {
       "name": "Hetzner Online GmbH",
-      "count": 3,
-      "pct": 20.0
+      "count": 14,
+      "pct": 15.38
+    },
+    {
+      "name": "DigitalOcean, LLC",
+      "count": 9,
+      "pct": 9.89
+    },
+    {
+      "name": "Contabo GmbH",
+      "count": 4,
+      "pct": 4.4
     },
     {
       "name": "netcup GmbH",
       "count": 2,
-      "pct": 13.33
+      "pct": 2.2
     },
     {
-      "name": "DIGITALOCEAN",
-      "count": 1,
-      "pct": 6.67
+      "name": "Alibaba (US) Technology Co., Ltd.",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "TechTies Inc.",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "Vodafone",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "Comcast Cable Communications, LLC",
+      "count": 2,
+      "pct": 2.2
     },
     {
       "name": "Amazon.com",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     },
     {
       "name": "BTC-NET Ltd",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     },
     {
       "name": "Contabo Inc.",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     },
     {
-      "name": "OVH SAS",
+      "name": "DIGITALOCEAN",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     },
     {
-      "name": "Contabo GmbH",
+      "name": "SkyNet LLC",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
     }
   ],
   "versions": [
     {
-      "name": "/Ravencoin:4.3.2.1/",
-      "count": 6,
-      "pct": 40.0
-    },
-    {
       "name": "/Ravencoin:4.8.0/",
-      "count": 5,
-      "pct": 33.33
+      "count": 41,
+      "pct": 45.05
     },
     {
       "name": "/Ravencoin:4.6.1/",
-      "count": 3,
-      "pct": 20.0
+      "count": 27,
+      "pct": 29.67
     },
     {
       "name": "/Ravencoin:4.7.0/",
+      "count": 9,
+      "pct": 9.89
+    },
+    {
+      "name": "/Ravencoin:4.3.2.1/",
+      "count": 7,
+      "pct": 7.69
+    },
+    {
+      "name": "/Ravencoin:4.6.1.1/",
+      "count": 2,
+      "pct": 2.2
+    },
+    {
+      "name": "/Ravencoin:4.3.1(ravencore)/",
       "count": 1,
-      "pct": 6.67
+      "pct": 1.1
+    },
+    {
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "/Ravencoin:4.2.0/",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "/Ravencoin:4.8.0(rvnx)/",
+      "count": 1,
+      "pct": 1.1
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "count": 1,
+      "pct": 1.1
     }
   ],
   "nodes": [
@@ -111,11 +246,67 @@
       "version": "/Ravencoin:4.3.2.1/"
     },
     {
+      "ip": "107.172.135.48",
+      "port": 8767,
+      "country": "United States",
+      "isp": "HostPapa",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "108.65.114.139",
+      "port": 8767,
+      "country": "United States",
+      "isp": "AT&T Enterprises, LLC",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "110.78.164.25",
+      "port": 8767,
+      "country": "Thailand",
+      "isp": "CAT-BB",
+      "version": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/"
+    },
+    {
+      "ip": "121.183.226.156",
+      "port": 8767,
+      "country": "South Korea",
+      "isp": "Korea Telecom",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "129.213.76.88",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Oracle Corporation",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "135.181.141.137",
+      "port": 8767,
+      "country": "Finland",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
       "ip": "139.59.130.42",
       "port": 8767,
       "country": "Germany",
       "isp": "DIGITALOCEAN",
       "version": "/Ravencoin:4.3.2.1/"
+    },
+    {
+      "ip": "141.95.34.186",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "141.95.45.92",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.6.1/"
     },
     {
       "ip": "142.93.153.10",
@@ -130,6 +321,62 @@
       "country": "United States",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/"
+    },
+    {
+      "ip": "144.76.94.38",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "145.239.11.165",
+      "port": 8767,
+      "country": "France",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "146.59.253.219",
+      "port": 8767,
+      "country": "France",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "147.135.97.16",
+      "port": 8767,
+      "country": "United States",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "147.182.252.121",
+      "port": 8767,
+      "country": "United States",
+      "isp": "DigitalOcean, LLC",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "149.28.102.74",
+      "port": 8767,
+      "country": "United States",
+      "isp": "The Constant Company",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "149.50.101.189",
+      "port": 8767,
+      "country": "Poland",
+      "isp": "Cogent Communications",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "152.42.142.221",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "DigitalOcean, LLC",
+      "version": "/Ravencoin:4.8.0/"
     },
     {
       "ip": "152.53.127.98",
@@ -153,7 +400,42 @@
       "version": "/Ravencoin:4.8.0/"
     },
     {
+      "ip": "160.250.64.171",
+      "port": 8767,
+      "country": "Vietnam",
+      "isp": "WEB 360 TECHNOLOGY JOINT STOCK COMPANY",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "161.97.93.60",
+      "port": 8767,
+      "country": "France",
+      "isp": "Contabo GmbH",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "162.19.139.183",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
       "ip": "162.55.88.217",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "162.55.99.217",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "162.55.99.235",
       "port": 8767,
       "country": "Germany",
       "isp": "Hetzner Online GmbH",
@@ -167,11 +449,165 @@
       "version": "/Ravencoin:4.3.2.1/"
     },
     {
+      "ip": "167.179.158.61",
+      "port": 8767,
+      "country": "Australia",
+      "isp": "Aussie Broadband",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "167.71.7.23",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "DigitalOcean, LLC",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "176.65.132.92",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "TechTies Inc.",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "18.220.134.236",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Amazon.com, Inc.",
+      "version": "/Ravencoin:4.3.1(ravencore)/"
+    },
+    {
+      "ip": "185.16.39.236",
+      "port": 8767,
+      "country": "Poland",
+      "isp": "MEVSPACE sp. z o.o.",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "188.166.151.35",
+      "port": 8767,
+      "country": "United Kingdom",
+      "isp": "DigitalOcean, LLC",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "188.243.98.30",
+      "port": 8767,
+      "country": "Russia",
+      "isp": "SkyNet LLC",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "190.2.145.93",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "WorldStream B.V.",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "195.201.143.156",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "2.42.60.186",
+      "port": 8767,
+      "country": "Italy",
+      "isp": "Vodafone",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "200.50.168.94",
+      "port": 8767,
+      "country": "Argentina",
+      "isp": "Juan Alfredo Knoll",
+      "version": "/Ravencoin:4.6.1.1/"
+    },
+    {
+      "ip": "202.56.44.90",
+      "port": 8767,
+      "country": "New Zealand",
+      "isp": "NOW New Zealand Ltd",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "208.72.58.214",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Swishmail",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "213.21.195.116",
+      "port": 8767,
+      "country": "Austria",
+      "isp": "Versija SIA",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
       "ip": "213.91.128.133",
       "port": 8767,
       "country": "Bulgaria",
       "isp": "BTC-NET Ltd",
       "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "218.239.4.96",
+      "port": 8767,
+      "country": "South Korea",
+      "isp": "SK Broadband Co Ltd",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "31.220.80.250",
+      "port": 8767,
+      "country": "France",
+      "isp": "Contabo GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "37.128.245.86",
+      "port": 8767,
+      "country": "Russia",
+      "isp": "INTEX ltd.",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "37.209.124.120",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Vodafone",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "37.27.48.94",
+      "port": 8767,
+      "country": "Finland",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "38.143.56.146",
+      "port": 8767,
+      "country": "Canada",
+      "isp": "Rica Web Services",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "46.249.191.157",
+      "port": 8767,
+      "country": "Lithuania",
+      "isp": "Telekomunikaciju vartai, UAB",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "47.241.254.65",
+      "port": 8767,
+      "country": "Singapore",
+      "isp": "Alibaba Cloud LLC",
+      "version": "/Ravencoin:4.7.0/"
     },
     {
       "ip": "5.161.192.113",
@@ -188,10 +624,241 @@
       "version": "/Ravencoin:4.8.0/"
     },
     {
+      "ip": "5.78.48.0",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
       "ip": "5.78.64.99",
       "port": 8767,
       "country": "United States",
       "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "50.47.182.226",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Wholesail networks LLC",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "50.65.97.60",
+      "port": 8767,
+      "country": "Canada",
+      "isp": "Shaw Communications",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.178.209.252",
+      "port": 8767,
+      "country": "France",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.210.219.138",
+      "port": 8767,
+      "country": "France",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.222.152.238",
+      "port": 8767,
+      "country": "Canada",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "51.254.47.118",
+      "port": 8767,
+      "country": "France",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.75.52.32",
+      "port": 8767,
+      "country": "Poland",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.77.53.158",
+      "port": 8767,
+      "country": "Poland",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.79.161.39",
+      "port": 8767,
+      "country": "Singapore",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "51.89.99.172",
+      "port": 8767,
+      "country": "United Kingdom",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "54.177.12.37",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Amazon.com, Inc.",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "54.39.156.234",
+      "port": 8767,
+      "country": "Canada",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "57.129.76.144",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "58.6.27.143",
+      "port": 8767,
+      "country": "Australia",
+      "isp": "iiNet Limited",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "64.182.71.88",
+      "port": 8767,
+      "country": "United States",
+      "isp": "CoreSpace, Inc.",
+      "version": "/Ravencoin:4.3.2.1/"
+    },
+    {
+      "ip": "64.23.136.181",
+      "port": 8767,
+      "country": "United States",
+      "isp": "DigitalOcean, LLC",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "64.31.61.150",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Limestone Networks, Inc.",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "65.108.15.35",
+      "port": 8767,
+      "country": "Finland",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.6.1(ravencoin.network)/"
+    },
+    {
+      "ip": "65.108.72.71",
+      "port": 8767,
+      "country": "Finland",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "68.186.102.50",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Charter Communications",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "76.149.112.250",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Comcast Cable Communications, LLC",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "76.24.228.41",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Comcast Cable Communications, LLC",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "8.214.93.58",
+      "port": 8767,
+      "country": "Singapore",
+      "isp": "Alibaba (US) Technology Co., Ltd.",
+      "version": "/Ravencoin:4.2.0/"
+    },
+    {
+      "ip": "8.218.40.182",
+      "port": 8767,
+      "country": "Hong Kong",
+      "isp": "Alibaba (US) Technology Co., Ltd.",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "84.46.246.2",
+      "port": 8767,
+      "country": "France",
+      "isp": "Contabo GmbH",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "85.11.167.242",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "TechTies Inc.",
+      "version": "/Ravencoin:4.6.1.1/"
+    },
+    {
+      "ip": "85.239.243.232",
+      "port": 8767,
+      "country": "United States",
+      "isp": "Casablanca INT fraction",
+      "version": "/Ravencoin:4.8.0/"
+    },
+    {
+      "ip": "87.106.242.154",
+      "port": 8767,
+      "country": "France",
+      "isp": "IONOS SE",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "88.99.70.159",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.8.0(rvnx)/"
+    },
+    {
+      "ip": "91.99.230.86",
+      "port": 8767,
+      "country": "Germany",
+      "isp": "Hetzner Online GmbH",
+      "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "92.154.36.27",
+      "port": 8767,
+      "country": "France",
+      "isp": "Orange",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
+      "ip": "93.123.135.12",
+      "port": 8767,
+      "country": "Russia",
+      "isp": "Information and Communication Technologies LLC",
       "version": "/Ravencoin:4.6.1/"
     },
     {
