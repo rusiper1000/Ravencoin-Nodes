@@ -1,240 +1,245 @@
 {
-  "generated_at": "2026-08-23T08:33:25.997451+00:00",
-  "total_nodes": 97,
+  "generated_at": "2026-08-23T12:32:15.685356+00:00",
+  "total_nodes": 95,
   "countries": [
     {
       "name": "United States",
       "count": 26,
-      "pct": 26.8
+      "pct": 27.37
     },
     {
       "name": "Germany",
-      "count": 17,
-      "pct": 17.53
+      "count": 16,
+      "pct": 16.84
     },
     {
       "name": "France",
-      "count": 13,
-      "pct": 13.4
+      "count": 12,
+      "pct": 12.63
     },
     {
       "name": "The Netherlands",
-      "count": 6,
-      "pct": 6.19
+      "count": 7,
+      "pct": 7.37
     },
     {
       "name": "Canada",
       "count": 5,
-      "pct": 5.15
-    },
-    {
-      "name": "Poland",
-      "count": 4,
-      "pct": 4.12
+      "pct": 5.26
     },
     {
       "name": "Finland",
       "count": 4,
-      "pct": 4.12
+      "pct": 4.21
     },
     {
-      "name": "South Korea",
-      "count": 3,
-      "pct": 3.09
+      "name": "Poland",
+      "count": 4,
+      "pct": 4.21
     },
     {
       "name": "Singapore",
       "count": 3,
-      "pct": 3.09
+      "pct": 3.16
+    },
+    {
+      "name": "South Korea",
+      "count": 3,
+      "pct": 3.16
     },
     {
       "name": "Russia",
       "count": 3,
-      "pct": 3.09
+      "pct": 3.16
     },
     {
       "name": "United Kingdom",
       "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "Australia",
-      "count": 2,
-      "pct": 2.06
+      "pct": 2.11
     },
     {
       "name": "Bulgaria",
       "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Lithuania",
-      "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Thailand",
-      "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "New Zealand",
-      "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Austria",
-      "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     },
     {
       "name": "Vietnam",
       "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Hong Kong",
-      "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Argentina",
-      "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     },
     {
       "name": "Italy",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
+    },
+    {
+      "name": "Australia",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Argentina",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Lithuania",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Hong Kong",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Austria",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "New Zealand",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Thailand",
+      "count": 1,
+      "pct": 1.05
     }
   ],
   "isps": [
     {
       "name": "OVH SAS",
-      "count": 18,
-      "pct": 18.56
+      "count": 17,
+      "pct": 17.89
     },
     {
       "name": "Hetzner Online GmbH",
       "count": 14,
-      "pct": 14.43
+      "pct": 14.74
     },
     {
       "name": "DigitalOcean, LLC",
       "count": 10,
-      "pct": 10.31
+      "pct": 10.53
     },
     {
       "name": "Contabo GmbH",
-      "count": 5,
-      "pct": 5.15
+      "count": 4,
+      "pct": 4.21
     },
     {
       "name": "netcup GmbH",
       "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "TechTies Inc.",
-      "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "Charter Communications",
-      "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "Alibaba (US) Technology Co., Ltd.",
-      "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "Vodafone",
-      "count": 2,
-      "pct": 2.06
+      "pct": 2.11
     },
     {
       "name": "Amazon.com, Inc.",
       "count": 2,
-      "pct": 2.06
+      "pct": 2.11
+    },
+    {
+      "name": "Vodafone",
+      "count": 2,
+      "pct": 2.11
+    },
+    {
+      "name": "TechTies Inc.",
+      "count": 2,
+      "pct": 2.11
     },
     {
       "name": "Comcast Cable Communications, LLC",
       "count": 2,
-      "pct": 2.06
+      "pct": 2.11
+    },
+    {
+      "name": "AT&T Enterprises, LLC",
+      "count": 2,
+      "pct": 2.11
+    },
+    {
+      "name": "Alibaba (US) Technology Co., Ltd.",
+      "count": 2,
+      "pct": 2.11
     },
     {
       "name": "Contabo Inc.",
       "count": 1,
-      "pct": 1.03
-    },
-    {
-      "name": "Amazon.com",
-      "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     },
     {
       "name": "DIGITALOCEAN",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
+    },
+    {
+      "name": "Amazon.com",
+      "count": 1,
+      "pct": 1.05
     },
     {
       "name": "BTC-NET Ltd",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     }
   ],
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
-      "count": 45,
-      "pct": 46.39
+      "count": 41,
+      "pct": 43.16
     },
     {
       "name": "/Ravencoin:4.6.1/",
-      "count": 28,
-      "pct": 28.87
+      "count": 29,
+      "pct": 30.53
     },
     {
       "name": "/Ravencoin:4.7.0/",
       "count": 10,
-      "pct": 10.31
+      "pct": 10.53
     },
     {
       "name": "/Ravencoin:4.3.2.1/",
       "count": 7,
-      "pct": 7.22
+      "pct": 7.37
     },
     {
       "name": "/Ravencoin:4.6.1.1/",
       "count": 2,
-      "pct": 2.06
-    },
-    {
-      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
-      "count": 1,
-      "pct": 1.03
+      "pct": 2.11
     },
     {
       "name": "/Ravencoin:4.8.0(rvnx)/",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     },
     {
-      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
+    },
+    {
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "count": 1,
+      "pct": 1.05
     },
     {
       "name": "/Ravencoin:4.2.0/",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
     },
     {
       "name": "/Ravencoin:4.3.1(ravencore)/",
       "count": 1,
-      "pct": 1.03
+      "pct": 1.05
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "count": 1,
+      "pct": 1.05
     }
   ],
   "nodes": [
@@ -244,13 +249,6 @@
       "country": "The Netherlands",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/"
-    },
-    {
-      "ip": "107.145.231.43",
-      "port": 8767,
-      "country": "United States",
-      "isp": "Charter Communications",
-      "version": "/Ravencoin:4.8.0/"
     },
     {
       "ip": "107.172.135.48",
@@ -533,18 +531,11 @@
       "version": "/Ravencoin:4.8.0/"
     },
     {
-      "ip": "198.7.112.251",
-      "port": 8767,
-      "country": "Germany",
-      "isp": "Contabo GmbH",
-      "version": "/Ravencoin:4.6.1/"
-    },
-    {
       "ip": "2.42.60.186",
       "port": 8767,
       "country": "Italy",
       "isp": "Vodafone",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/"
     },
     {
       "ip": "200.50.168.94",
@@ -757,13 +748,6 @@
       "version": "/Ravencoin:4.8.0/"
     },
     {
-      "ip": "58.6.27.143",
-      "port": 8767,
-      "country": "Australia",
-      "isp": "iiNet Limited",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
       "ip": "64.182.71.88",
       "port": 8767,
       "country": "United States",
@@ -820,13 +804,6 @@
       "version": "/Ravencoin:4.6.1/"
     },
     {
-      "ip": "79.137.67.110",
-      "port": 8767,
-      "country": "France",
-      "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
       "ip": "8.214.93.58",
       "port": 8767,
       "country": "Singapore",
@@ -876,6 +853,13 @@
       "version": "/Ravencoin:4.7.0/"
     },
     {
+      "ip": "87.208.86.141",
+      "port": 8767,
+      "country": "The Netherlands",
+      "isp": "Odido WBA Services",
+      "version": "/Ravencoin:4.6.1/"
+    },
+    {
       "ip": "88.99.70.159",
       "port": 8767,
       "country": "Germany",
@@ -916,6 +900,13 @@
       "country": "United States",
       "isp": "Amazon.com",
       "version": "/Ravencoin:4.7.0/"
+    },
+    {
+      "ip": "99.56.151.125",
+      "port": 8767,
+      "country": "United States",
+      "isp": "AT&T Enterprises, LLC",
+      "version": "/Ravencoin:4.6.1/"
     }
   ]
 }
