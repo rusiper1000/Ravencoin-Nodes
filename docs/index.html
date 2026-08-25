@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.5.0/css/flag-icons.min.css">
 <style>
   :root{
     --bg:#0D0F12; --panel:#15181D; --panel-2:#1B1F26; --border:#262B33;
@@ -35,7 +36,9 @@
   .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
   .row{display:grid;grid-template-columns:26px 30px 130px 1fr 80px 56px;align-items:center;gap:10px;padding:7px 0;font-size:13px;}
   .row .rank{color:var(--text-dim);font-family:'IBM Plex Mono',monospace;font-size:12px;}
-  .row .flag{font-size:16px;text-align:center;}
+  .row .flag,.simple-row .flag,.node-row .flag{display:flex;align-items:center;justify-content:center;}
+  .fi{width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,0.08);background-color:var(--panel-2);flex-shrink:0;}
+  .flag-blank{width:20px;height:15px;border-radius:2px;background:var(--panel-2);border:1px dashed var(--border);flex-shrink:0;}
   .row .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .bar-track{background:var(--panel-2);border-radius:4px;height:10px;overflow:hidden;}
   .bar-fill{height:100%;border-radius:4px;width:0%;transition:width 1s cubic-bezier(.2,.8,.2,1);}
@@ -68,7 +71,6 @@
     padding:8px 0;font-size:12.5px;border-bottom:1px solid var(--border);
   }
   .node-row:last-child{border-bottom:none;}
-  .node-row .flag{font-size:15px;text-align:center;}
   .node-row .ip{font-family:'IBM Plex Mono',monospace;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .node-row .isp,.node-row .version{color:var(--text-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .node-row .status{color:var(--gold);text-align:right;white-space:nowrap;}
@@ -111,7 +113,7 @@
     <div>
       <div class="hero-label">전 세계 도달 가능 노드 수</div>
       <div class="hero-num" id="totalNum">···</div>
-      <div class="hero-note">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 몇 시간마다 자동으로 새로 측정됩니다.</div>
+      <div class="hero-note">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 한국시간 매일 01·05·09·13·17·21시(4시간마다)에 자동으로 새로 측정됩니다.</div>
     </div>
     <div class="hero-meta" id="heroMeta">
       <div>마지막 측정: <span id="lastUpdate">불러오는 중…</span></div>
@@ -144,25 +146,14 @@
   <footer>
     Made by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">@rusiper1000</a>)<br>
     이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.<br>
-    데이터는 GitHub Actions가 몇 시간마다 자동으로 새로 수집합니다.
+    데이터는 GitHub Actions가 한국시간 매일 01·05·09·13·17·21시(4시간마다) 자동으로 새로 수집합니다.
   </footer>
 </div>
 
 <script>
-const FLAGS = [
-  ['United States','🇺🇸'],['Germany','🇩🇪'],['France','🇫🇷'],['Canada','🇨🇦'],['Iran','🇮🇷'],
-  ['Switzerland','🇨🇭'],['Bulgaria','🇧🇬'],['Netherlands','🇳🇱'],['Singapore','🇸🇬'],['Israel','🇮🇱'],
-  ['United Kingdom','🇬🇧'],['Russia','🇷🇺'],['China','🇨🇳'],['Japan','🇯🇵'],['Korea','🇰🇷'],
-  ['Australia','🇦🇺'],['Brazil','🇧🇷'],['India','🇮🇳'],['Italy','🇮🇹'],['Spain','🇪🇸'],['Poland','🇵🇱'],
-  ['Ukraine','🇺🇦'],['Sweden','🇸🇪'],['Norway','🇳🇴'],['Finland','🇫🇮'],['Denmark','🇩🇰'],['Belgium','🇧🇪'],
-  ['Austria','🇦🇹'],['Czech','🇨🇿'],['Romania','🇷🇴'],['Hungary','🇭🇺'],['Turkey','🇹🇷'],['Greece','🇬🇷'],
-  ['Portugal','🇵🇹'],['Ireland','🇮🇪'],['Mexico','🇲🇽'],['Lithuania','🇱🇹'],['Latvia','🇱🇻'],['Estonia','🇪🇪'],
-  ['Iceland','🇮🇸'],['Luxembourg','🇱🇺'],['Georgia','🇬🇪'],['Kazakhstan','🇰🇿'],['Hong Kong','🇭🇰']
-];
-function flagFor(name){
-  if(!name) return '🏳️';
-  const hit = FLAGS.find(([k]) => name.toLowerCase().includes(k.toLowerCase()));
-  return hit ? hit[1] : '🏳️';
+function flagHtml(code){
+  if(!code) return '<span class="flag-blank"></span>';
+  return `<span class="fi fi-${code.toLowerCase()}"></span>`;
 }
 
 let allCountries = [];
@@ -185,7 +176,7 @@ function drawCountries(){
   const rowsHtml = shown.map((c,i)=>`
     <div class="row">
       <div class="rank">${String(i+1).padStart(2,'0')}</div>
-      <div class="flag">${flagFor(c.name)}</div>
+      <div class="flag">${flagHtml(c.code)}</div>
       <div class="name" title="${c.name}">${c.name}</div>
       <div class="bar-track"><div class="bar-fill" style="background:var(--gold)" data-w="${(c.count/max*100).toFixed(1)}"></div></div>
       <div class="count">${c.count.toLocaleString()}개</div>
@@ -256,7 +247,7 @@ function renderSearchResult(query){
 
   el.innerHTML = matches.map(n => `
     <div class="node-row hit">
-      <div class="flag">${flagFor(n.country)}</div>
+      <div class="flag">${flagHtml(n.country_code)}</div>
       <div class="ip">${n.ip}:${n.port}</div>
       <div class="isp" title="${n.isp || ''}">${n.isp || '-'}</div>
       <div class="version">${n.version || '알 수 없음'}</div>
