@@ -273,7 +273,7 @@ def geolocate(ips):
     for i in range(0, len(ip_list), 100):
         chunk = ip_list[i:i + 100]
         body = json.dumps(
-            [{"query": ip, "fields": "status,country,isp,query"} for ip in chunk]
+            [{"query": ip, "fields": "status,country,countryCode,isp,query"} for ip in chunk]
         ).encode("utf-8")
         req = urllib.request.Request(
             "http://ip-api.com/batch", data=body,
@@ -285,22 +285,29 @@ def geolocate(ips):
             for entry in data:
                 q = entry.get("query")
                 if entry.get("status") == "success":
-                    results[q] = {"country": entry.get("country", "알 수 없음"), "isp": entry.get("isp", "알 수 없음")}
+                    results[q] = {
+                        "country": entry.get("country", "알 수 없음"),
+                        "countryCode": entry.get("countryCode", ""),
+                        "isp": entry.get("isp", "알 수 없음"),
+                    }
                 else:
-                    results[q] = {"country": "알 수 없음", "isp": "알 수 없음"}
+                    results[q] = {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"}
         except Exception as e:
             print(f"  ! GeoIP 조회 일부 실패: {e}")
         time.sleep(1.5)
     return results
 
 
-def top_list(counter: Counter, n=None):
+def top_list(counter: Counter, n=None, code_map=None):
     total = sum(counter.values())
     items = counter.most_common(n) if n else counter.most_common()
-    return [
-        {"name": name, "count": cnt, "pct": round(cnt / total * 100, 2) if total else 0}
-        for name, cnt in items
-    ]
+    result = []
+    for name, cnt in items:
+        entry = {"name": name, "count": cnt, "pct": round(cnt / total * 100, 2) if total else 0}
+        if code_map is not None:
+            entry["code"] = code_map.get(name, "").lower()
+        result.append(entry)
+    return result
 
 
 def main():
@@ -313,19 +320,23 @@ def main():
     country_counter = Counter()
     isp_counter = Counter()
     version_counter = Counter()
+    country_code_map = {}   # 국가명 -> ISO 코드 (국기 표시용)
     for ip, subver in reachable.items():
-        info = geo.get(ip, {"country": "알 수 없음", "isp": "알 수 없음"})
+        info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"})
         country_counter[info["country"]] += 1
         isp_counter[info["isp"]] += 1
         version_counter[subver] += 1
+        if info["country"] not in country_code_map:
+            country_code_map[info["country"]] = info.get("countryCode", "")
 
     node_list = []
     for ip, subver in sorted(reachable.items()):
-        info = geo.get(ip, {"country": "알 수 없음", "isp": "알 수 없음"})
+        info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"})
         node_list.append({
             "ip": ip,
             "port": PORT,
             "country": info["country"],
+            "country_code": info.get("countryCode", "").lower(),
             "isp": info["isp"],
             "version": subver,
         })
@@ -333,7 +344,7 @@ def main():
     result = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_nodes": len(reachable),
-        "countries": top_list(country_counter, None),   # 전체 국가 (1개짜리도 포함)
+        "countries": top_list(country_counter, None, code_map=country_code_map),   # 전체 국가 (1개짜리도 포함)
         "isps": top_list(isp_counter, 15),
         "versions": top_list(version_counter, 15),
         "nodes": node_list,   # 개별 노드 검색용 (IP로 내 노드가 잡혔는지 확인 가능)
