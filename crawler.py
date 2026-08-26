@@ -31,7 +31,9 @@ NODE_CAP = 8000
 STAGGER_MAX = 0.3
 OUTPUT_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "latest.json")
 HISTORY_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "history.json")
+NODE_STATS_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "node_stats.json")
 MAX_HISTORY = 400   # 약 4시간마다 1개씩 쌓이므로 400개 ≈ 2개월치
+NODE_STATS_RETENTION_DAYS = 60   # 이만큼 오래 안 잡힌 노드는 통계에서 정리
 
 MAGIC = bytes.fromhex("5241564e")   # Ravencoin mainnet magic ("RAVN")
 PORT = 8767
@@ -300,6 +302,84 @@ def geolocate(ips):
     return results
 
 
+def load_node_stats():
+    if os.path.exists(NODE_STATS_JSON):
+        try:
+            with open(NODE_STATS_JSON, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"run_count": 0, "nodes": {}}
+
+
+def update_node_stats(reachable_ips, now_iso):
+    stats = load_node_stats()
+    stats["run_count"] = stats.get("run_count", 0) + 1
+    run_count = stats["run_count"]
+    nodes = stats.setdefault("nodes", {})
+
+    for ip in reachable_ips:
+        entry = nodes.get(ip)
+        if entry is None:
+            nodes[ip] = {
+                "first_seen": now_iso,
+                "first_seen_run": run_count,
+                "last_seen": now_iso,
+                "seen_count": 1,
+            }
+        else:
+            entry["last_seen"] = now_iso
+            entry["seen_count"] = entry.get("seen_count", 0) + 1
+
+    # 오랫동안 안 잡힌 노드는 통계 파일에서 정리 (파일 크기 제한)
+    now_dt = datetime.now(timezone.utc)
+    cutoff = now_dt.timestamp() - NODE_STATS_RETENTION_DAYS * 86400
+    for ip in list(nodes.keys()):
+        try:
+            last_seen_dt = datetime.fromisoformat(nodes[ip]["last_seen"])
+            if last_seen_dt.timestamp() < cutoff:
+                del nodes[ip]
+        except Exception:
+            pass
+
+    with open(NODE_STATS_JSON, "w", encoding="utf-8") as f:
+        json.dump(stats, f, ensure_ascii=False, indent=2)
+
+    return stats
+
+
+def compute_node_meta(ip, stats, now_dt):
+    """개별 노드의 '처음 발견' 라벨과 신뢰도(%)를 계산."""
+    entry = stats.get("nodes", {}).get(ip)
+    if not entry:
+        return {"age_label": "신규 발견", "reachability_pct": 100.0, "seen_count": 1, "checks": 1}
+
+    run_count = stats.get("run_count", 1)
+    first_seen_run = entry.get("first_seen_run", run_count)
+    checks = max(run_count - first_seen_run + 1, 1)
+    seen_count = entry.get("seen_count", 1)
+    reachability_pct = round(seen_count / checks * 100, 1)
+
+    try:
+        first_seen_dt = datetime.fromisoformat(entry["first_seen"])
+        delta = now_dt - first_seen_dt
+        if delta.days >= 1:
+            age_label = f"{delta.days}일 전 처음 발견"
+        elif delta.seconds >= 3600:
+            age_label = f"{delta.seconds // 3600}시간 전 처음 발견"
+        else:
+            age_label = "신규 발견"
+    except Exception:
+        age_label = "신규 발견"
+
+    return {
+        "age_label": age_label,
+        "reachability_pct": reachability_pct,
+        "seen_count": seen_count,
+        "checks": checks,
+    }
+
+
 def top_list(counter: Counter, n=None, code_map=None):
     total = sum(counter.values())
     items = counter.most_common(n) if n else counter.most_common()
@@ -346,9 +426,14 @@ def main():
         if info["country"] not in country_code_map:
             country_code_map[info["country"]] = info.get("countryCode", "")
 
+    generated_at = datetime.now(timezone.utc).isoformat()
+    node_stats = update_node_stats(reachable.keys(), generated_at)
+    now_dt = datetime.now(timezone.utc)
+
     node_list = []
     for ip, subver in sorted(reachable.items()):
         info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"})
+        meta = compute_node_meta(ip, node_stats, now_dt)
         node_list.append({
             "ip": ip,
             "port": PORT,
@@ -356,10 +441,13 @@ def main():
             "country_code": info.get("countryCode", "").lower(),
             "isp": info["isp"],
             "version": subver,
+            "age_label": meta["age_label"],
+            "reachability_pct": meta["reachability_pct"],
+            "checks": meta["checks"],
         })
 
     result = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": generated_at,
         "total_nodes": len(reachable),
         "countries": top_list(country_counter, None, code_map=country_code_map),   # 전체 국가 (1개짜리도 포함)
         "isps": top_list(isp_counter, 15),
