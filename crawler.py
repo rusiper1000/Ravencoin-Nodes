@@ -30,6 +30,8 @@ ADDR_WAIT = 6
 NODE_CAP = 8000
 STAGGER_MAX = 0.3
 OUTPUT_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "latest.json")
+HISTORY_JSON = os.path.join(os.path.dirname(__file__), "docs", "data", "history.json")
+MAX_HISTORY = 400   # 약 4시간마다 1개씩 쌓이므로 400개 ≈ 2개월치
 
 MAGIC = bytes.fromhex("5241564e")   # Ravencoin mainnet magic ("RAVN")
 PORT = 8767
@@ -310,6 +312,21 @@ def top_list(counter: Counter, n=None, code_map=None):
     return result
 
 
+def update_history(total_nodes: int, generated_at: str):
+    history = []
+    if os.path.exists(HISTORY_JSON):
+        try:
+            with open(HISTORY_JSON, "r", encoding="utf-8") as f:
+                history = json.load(f)
+        except Exception:
+            history = []
+    history.append({"t": generated_at, "total": total_nodes})
+    if len(history) > MAX_HISTORY:
+        history = history[-MAX_HISTORY:]
+    with open(HISTORY_JSON, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+
+
 def main():
     print("Ravencoin 네트워크 크롤링 시작...")
     reachable = crawl()  # ip -> subver
@@ -353,6 +370,8 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
+
+    update_history(result["total_nodes"], result["generated_at"])
 
     print(f"결과를 {OUTPUT_JSON} 에 저장했습니다.")
     print(json.dumps(result, ensure_ascii=False, indent=2))
