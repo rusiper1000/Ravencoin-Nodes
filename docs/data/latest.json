@@ -1,266 +1,267 @@
 {
-  "generated_at": "2026-08-26T06:41:59.684650+00:00",
-  "total_nodes": 96,
+  "generated_at": "2026-08-26T13:45:45.944412+00:00",
+  "total_nodes": 95,
   "countries": [
     {
       "name": "United States",
-      "count": 25,
-      "pct": 26.04,
+      "count": 24,
+      "pct": 25.26,
       "code": "us"
     },
     {
       "name": "Germany",
-      "count": 15,
-      "pct": 15.62,
+      "count": 16,
+      "pct": 16.84,
       "code": "de"
     },
     {
       "name": "France",
       "count": 13,
-      "pct": 13.54,
+      "pct": 13.68,
       "code": "fr"
     },
     {
       "name": "The Netherlands",
       "count": 6,
-      "pct": 6.25,
+      "pct": 6.32,
       "code": "nl"
     },
     {
       "name": "Russia",
-      "count": 6,
-      "pct": 6.25,
+      "count": 5,
+      "pct": 5.26,
       "code": "ru"
     },
     {
       "name": "Canada",
       "count": 4,
-      "pct": 4.17,
+      "pct": 4.21,
       "code": "ca"
     },
     {
       "name": "Poland",
       "count": 4,
-      "pct": 4.17,
+      "pct": 4.21,
       "code": "pl"
     },
     {
       "name": "Finland",
       "count": 4,
-      "pct": 4.17,
+      "pct": 4.21,
       "code": "fi"
     },
     {
       "name": "South Korea",
       "count": 3,
-      "pct": 3.12,
+      "pct": 3.16,
       "code": "kr"
     },
     {
       "name": "Singapore",
       "count": 3,
-      "pct": 3.12,
+      "pct": 3.16,
       "code": "sg"
     },
     {
       "name": "United Kingdom",
       "count": 2,
-      "pct": 2.08,
+      "pct": 2.11,
       "code": "gb"
-    },
-    {
-      "name": "Australia",
-      "count": 2,
-      "pct": 2.08,
-      "code": "au"
     },
     {
       "name": "Bulgaria",
       "count": 1,
-      "pct": 1.04,
+      "pct": 1.05,
       "code": "bg"
-    },
-    {
-      "name": "Thailand",
-      "count": 1,
-      "pct": 1.04,
-      "code": "th"
-    },
-    {
-      "name": "Austria",
-      "count": 1,
-      "pct": 1.04,
-      "code": "at"
-    },
-    {
-      "name": "Italy",
-      "count": 1,
-      "pct": 1.04,
-      "code": "it"
-    },
-    {
-      "name": "Argentina",
-      "count": 1,
-      "pct": 1.04,
-      "code": "ar"
     },
     {
       "name": "Lithuania",
       "count": 1,
-      "pct": 1.04,
+      "pct": 1.05,
       "code": "lt"
-    },
-    {
-      "name": "Hong Kong",
-      "count": 1,
-      "pct": 1.04,
-      "code": "hk"
     },
     {
       "name": "Vietnam",
       "count": 1,
-      "pct": 1.04,
+      "pct": 1.05,
       "code": "vn"
+    },
+    {
+      "name": "Australia",
+      "count": 1,
+      "pct": 1.05,
+      "code": "au"
+    },
+    {
+      "name": "Thailand",
+      "count": 1,
+      "pct": 1.05,
+      "code": "th"
     },
     {
       "name": "New Zealand",
       "count": 1,
-      "pct": 1.04,
+      "pct": 1.05,
       "code": "nz"
+    },
+    {
+      "name": "Austria",
+      "count": 1,
+      "pct": 1.05,
+      "code": "at"
+    },
+    {
+      "name": "Hong Kong",
+      "count": 1,
+      "pct": 1.05,
+      "code": "hk"
+    },
+    {
+      "name": "Italy",
+      "count": 1,
+      "pct": 1.05,
+      "code": "it"
+    },
+    {
+      "name": "Turkey",
+      "count": 1,
+      "pct": 1.05,
+      "code": "tr"
+    },
+    {
+      "name": "Argentina",
+      "count": 1,
+      "pct": 1.05,
+      "code": "ar"
     }
   ],
   "isps": [
     {
       "name": "OVH SAS",
       "count": 18,
-      "pct": 18.75
+      "pct": 18.95
     },
     {
       "name": "Hetzner Online GmbH",
       "count": 14,
-      "pct": 14.58
+      "pct": 14.74
     },
     {
       "name": "DigitalOcean, LLC",
-      "count": 10,
-      "pct": 10.42
+      "count": 9,
+      "pct": 9.47
     },
     {
       "name": "Contabo GmbH",
-      "count": 4,
-      "pct": 4.17
+      "count": 5,
+      "pct": 5.26
     },
     {
       "name": "Comcast Cable Communications, LLC",
       "count": 3,
-      "pct": 3.12
+      "pct": 3.16
     },
     {
       "name": "netcup GmbH",
       "count": 2,
-      "pct": 2.08
-    },
-    {
-      "name": "AT&T Enterprises, LLC",
-      "count": 2,
-      "pct": 2.08
+      "pct": 2.11
     },
     {
       "name": "TechTies Inc.",
       "count": 2,
-      "pct": 2.08
+      "pct": 2.11
+    },
+    {
+      "name": "AT&T Enterprises, LLC",
+      "count": 2,
+      "pct": 2.11
     },
     {
       "name": "Alibaba (US) Technology Co., Ltd.",
       "count": 2,
-      "pct": 2.08
-    },
-    {
-      "name": "Amazon.com, Inc.",
-      "count": 2,
-      "pct": 2.08
-    },
-    {
-      "name": "Amazon.com",
-      "count": 1,
-      "pct": 1.04
-    },
-    {
-      "name": "BTC-NET Ltd",
-      "count": 1,
-      "pct": 1.04
-    },
-    {
-      "name": "DIGITALOCEAN",
-      "count": 1,
-      "pct": 1.04
+      "pct": 2.11
     },
     {
       "name": "Contabo Inc.",
       "count": 1,
-      "pct": 1.04
+      "pct": 1.05
     },
     {
-      "name": "Swishmail",
+      "name": "BTC-NET Ltd",
       "count": 1,
-      "pct": 1.04
+      "pct": 1.05
+    },
+    {
+      "name": "Amazon.com",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "DIGITALOCEAN",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "Cogent Communications",
+      "count": 1,
+      "pct": 1.05
+    },
+    {
+      "name": "WorldStream B.V.",
+      "count": 1,
+      "pct": 1.05
     }
   ],
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
-      "count": 48,
-      "pct": 50.0
+      "count": 47,
+      "pct": 49.47
     },
     {
       "name": "/Ravencoin:4.6.1/",
-      "count": 26,
-      "pct": 27.08
+      "count": 27,
+      "pct": 28.42
     },
     {
       "name": "/Ravencoin:4.7.0/",
       "count": 8,
-      "pct": 8.33
+      "pct": 8.42
     },
     {
       "name": "/Ravencoin:4.3.2.1/",
       "count": 6,
-      "pct": 6.25
+      "pct": 6.32
     },
     {
       "name": "/Ravencoin:4.6.1.1/",
       "count": 2,
-      "pct": 2.08
-    },
-    {
-      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
-      "count": 1,
-      "pct": 1.04
-    },
-    {
-      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
-      "count": 1,
-      "pct": 1.04
-    },
-    {
-      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
-      "count": 1,
-      "pct": 1.04
+      "pct": 2.11
     },
     {
       "name": "/Ravencoin:4.8.0(rvnx)/",
       "count": 1,
-      "pct": 1.04
+      "pct": 1.05
     },
     {
-      "name": "/Ravencoin:4.3.1(ravencore)/",
+      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
       "count": 1,
-      "pct": 1.04
+      "pct": 1.05
+    },
+    {
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "count": 1,
+      "pct": 1.05
     },
     {
       "name": "/Ravencoin:4.2.0/",
       "count": 1,
-      "pct": 1.04
+      "pct": 1.05
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "count": 1,
+      "pct": 1.05
     }
   ],
   "nodes": [
@@ -270,7 +271,21 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
+    },
+    {
+      "ip": "107.145.231.43",
+      "port": 8767,
+      "country": "United States",
+      "country_code": "us",
+      "isp": "Charter Communications",
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "107.172.135.48",
@@ -278,7 +293,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "HostPapa",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "108.65.114.139",
@@ -286,7 +304,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "AT&T Enterprises, LLC",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "110.78.164.25",
@@ -294,7 +315,10 @@
       "country": "Thailand",
       "country_code": "th",
       "isp": "CAT-BB",
-      "version": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/"
+      "version": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "121.183.226.156",
@@ -302,7 +326,10 @@
       "country": "South Korea",
       "country_code": "kr",
       "isp": "Korea Telecom",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "122.36.126.132",
@@ -310,7 +337,10 @@
       "country": "South Korea",
       "country_code": "kr",
       "isp": "LG POWERCOMM",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "129.213.76.88",
@@ -318,7 +348,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Oracle Corporation",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "135.181.141.137",
@@ -326,7 +359,10 @@
       "country": "Finland",
       "country_code": "fi",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "139.59.130.42",
@@ -334,7 +370,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "DIGITALOCEAN",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "141.95.34.186",
@@ -342,7 +381,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "141.95.45.92",
@@ -350,7 +392,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "142.93.153.10",
@@ -358,7 +403,10 @@
       "country": "Canada",
       "country_code": "ca",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "143.198.227.50",
@@ -366,7 +414,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "144.76.94.38",
@@ -374,7 +425,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "145.239.11.165",
@@ -382,15 +436,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
-      "ip": "146.158.44.148",
-      "port": 8767,
-      "country": "Russia",
-      "country_code": "ru",
-      "isp": "Intercity Ltd.",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "146.59.253.219",
@@ -398,7 +447,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "147.135.97.16",
@@ -406,7 +458,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "147.182.252.121",
@@ -414,7 +469,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "149.28.102.74",
@@ -422,7 +480,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "The Constant Company",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "149.50.101.189",
@@ -430,7 +491,10 @@
       "country": "Poland",
       "country_code": "pl",
       "isp": "Cogent Communications",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "152.42.142.221",
@@ -438,7 +502,10 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "152.53.127.98",
@@ -446,7 +513,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "netcup GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "154.38.163.235",
@@ -454,7 +524,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Contabo Inc.",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "159.195.65.196",
@@ -462,15 +535,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "netcup GmbH",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
-      "ip": "159.65.169.64",
-      "port": 8767,
-      "country": "United States",
-      "country_code": "us",
-      "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "160.250.64.171",
@@ -478,7 +546,10 @@
       "country": "Vietnam",
       "country_code": "vn",
       "isp": "WEB 360 TECHNOLOGY JOINT STOCK COMPANY",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "161.97.93.60",
@@ -486,7 +557,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "Contabo GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "162.19.139.183",
@@ -494,7 +568,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "162.55.88.217",
@@ -502,7 +579,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "162.55.99.217",
@@ -510,7 +590,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "162.55.99.235",
@@ -518,7 +601,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "165.232.147.4",
@@ -526,7 +612,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "167.179.158.61",
@@ -534,7 +623,10 @@
       "country": "Australia",
       "country_code": "au",
       "isp": "Aussie Broadband",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "167.71.7.23",
@@ -542,7 +634,10 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "176.65.132.92",
@@ -550,7 +645,10 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "TechTies Inc.",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "178.57.64.170",
@@ -558,15 +656,10 @@
       "country": "Russia",
       "country_code": "ru",
       "isp": "VDS-Telecom LLC.",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
-      "ip": "18.220.134.236",
-      "port": 8767,
-      "country": "United States",
-      "country_code": "us",
-      "isp": "Amazon.com, Inc.",
-      "version": "/Ravencoin:4.3.1(ravencore)/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "185.16.39.236",
@@ -574,7 +667,21 @@
       "country": "Poland",
       "country_code": "pl",
       "isp": "MEVSPACE sp. z o.o.",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
+    },
+    {
+      "ip": "185.250.241.209",
+      "port": 8767,
+      "country": "Turkey",
+      "country_code": "tr",
+      "isp": "TeknoDC Bilisim Teknolojileri A.S.",
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "188.166.151.35",
@@ -582,7 +689,10 @@
       "country": "United Kingdom",
       "country_code": "gb",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "188.243.98.30",
@@ -590,7 +700,10 @@
       "country": "Russia",
       "country_code": "ru",
       "isp": "SkyNet LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "190.2.145.93",
@@ -598,7 +711,10 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "WorldStream B.V.",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "195.201.143.156",
@@ -606,7 +722,21 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
+    },
+    {
+      "ip": "198.7.112.251",
+      "port": 8767,
+      "country": "Germany",
+      "country_code": "de",
+      "isp": "Contabo GmbH",
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "2.44.247.87",
@@ -614,7 +744,10 @@
       "country": "Italy",
       "country_code": "it",
       "isp": "VODAFONE",
-      "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/"
+      "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "200.50.168.94",
@@ -622,7 +755,10 @@
       "country": "Argentina",
       "country_code": "ar",
       "isp": "Juan Alfredo Knoll",
-      "version": "/Ravencoin:4.6.1.1/"
+      "version": "/Ravencoin:4.6.1.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "202.56.44.90",
@@ -630,7 +766,10 @@
       "country": "New Zealand",
       "country_code": "nz",
       "isp": "NOW New Zealand Ltd",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "208.72.58.214",
@@ -638,7 +777,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Swishmail",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "213.21.195.116",
@@ -646,7 +788,10 @@
       "country": "Austria",
       "country_code": "at",
       "isp": "Versija SIA",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "213.91.128.133",
@@ -654,7 +799,10 @@
       "country": "Bulgaria",
       "country_code": "bg",
       "isp": "BTC-NET Ltd",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "218.239.4.96",
@@ -662,7 +810,10 @@
       "country": "South Korea",
       "country_code": "kr",
       "isp": "SK Broadband Co Ltd",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "31.220.80.250",
@@ -670,7 +821,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "Contabo GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "37.128.245.86",
@@ -678,7 +832,10 @@
       "country": "Russia",
       "country_code": "ru",
       "isp": "INTEX ltd.",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "37.209.124.120",
@@ -686,7 +843,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Vodafone",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "37.27.48.94",
@@ -694,7 +854,10 @@
       "country": "Finland",
       "country_code": "fi",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "38.143.56.146",
@@ -702,7 +865,10 @@
       "country": "Canada",
       "country_code": "ca",
       "isp": "Rica Web Services",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "46.249.191.157",
@@ -710,7 +876,10 @@
       "country": "Lithuania",
       "country_code": "lt",
       "isp": "Telekomunikaciju vartai, UAB",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "47.241.254.65",
@@ -718,7 +887,10 @@
       "country": "Singapore",
       "country_code": "sg",
       "isp": "Alibaba Cloud LLC",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "5.161.192.113",
@@ -726,7 +898,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "5.196.79.95",
@@ -734,7 +909,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "5.78.48.0",
@@ -742,7 +920,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "5.78.64.99",
@@ -750,7 +931,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "50.47.182.226",
@@ -758,7 +942,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Wholesail networks LLC",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.178.209.252",
@@ -766,7 +953,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.210.219.138",
@@ -774,7 +964,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.222.152.238",
@@ -782,7 +975,10 @@
       "country": "Canada",
       "country_code": "ca",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.254.47.118",
@@ -790,7 +986,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.75.52.32",
@@ -798,7 +997,10 @@
       "country": "Poland",
       "country_code": "pl",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.77.53.158",
@@ -806,7 +1008,10 @@
       "country": "Poland",
       "country_code": "pl",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.79.161.39",
@@ -814,7 +1019,10 @@
       "country": "Singapore",
       "country_code": "sg",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "51.89.99.172",
@@ -822,7 +1030,10 @@
       "country": "United Kingdom",
       "country_code": "gb",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "54.177.12.37",
@@ -830,7 +1041,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Amazon.com, Inc.",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "54.39.156.234",
@@ -838,7 +1052,10 @@
       "country": "Canada",
       "country_code": "ca",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "57.129.76.144",
@@ -846,15 +1063,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
-    },
-    {
-      "ip": "58.6.27.143",
-      "port": 8767,
-      "country": "Australia",
-      "country_code": "au",
-      "isp": "iiNet Limited",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "64.23.136.181",
@@ -862,7 +1074,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "64.31.61.150",
@@ -870,7 +1085,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Limestone Networks, Inc.",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "65.108.15.35",
@@ -878,7 +1096,10 @@
       "country": "Finland",
       "country_code": "fi",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.6.1(ravencoin.network)/"
+      "version": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "65.108.72.71",
@@ -886,7 +1107,10 @@
       "country": "Finland",
       "country_code": "fi",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "76.149.112.250",
@@ -894,7 +1118,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Comcast Cable Communications, LLC",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "76.24.228.41",
@@ -902,7 +1129,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Comcast Cable Communications, LLC",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "79.137.67.110",
@@ -910,7 +1140,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "OVH SAS",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "8.214.93.58",
@@ -918,7 +1151,10 @@
       "country": "Singapore",
       "country_code": "sg",
       "isp": "Alibaba (US) Technology Co., Ltd.",
-      "version": "/Ravencoin:4.2.0/"
+      "version": "/Ravencoin:4.2.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "8.218.40.182",
@@ -926,7 +1162,10 @@
       "country": "Hong Kong",
       "country_code": "hk",
       "isp": "Alibaba (US) Technology Co., Ltd.",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "84.46.246.2",
@@ -934,7 +1173,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "Contabo GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "85.11.167.242",
@@ -942,7 +1184,10 @@
       "country": "The Netherlands",
       "country_code": "nl",
       "isp": "TechTies Inc.",
-      "version": "/Ravencoin:4.6.1.1/"
+      "version": "/Ravencoin:4.6.1.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "85.239.243.232",
@@ -950,7 +1195,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Casablanca INT fraction",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "87.106.242.154",
@@ -958,7 +1206,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "IONOS SE",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "88.99.70.159",
@@ -966,7 +1217,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0(rvnx)/"
+      "version": "/Ravencoin:4.8.0(rvnx)/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "91.99.230.86",
@@ -974,7 +1228,10 @@
       "country": "Germany",
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "92.154.36.27",
@@ -982,7 +1239,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "Orange",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "93.123.135.12",
@@ -990,7 +1250,10 @@
       "country": "Russia",
       "country_code": "ru",
       "isp": "Information and Communication Technologies LLC",
-      "version": "/Ravencoin:4.6.1/"
+      "version": "/Ravencoin:4.6.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "95.111.241.136",
@@ -998,7 +1261,10 @@
       "country": "France",
       "country_code": "fr",
       "isp": "Contabo GmbH",
-      "version": "/Ravencoin:4.3.2.1/"
+      "version": "/Ravencoin:4.3.2.1/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "95.31.2.231",
@@ -1006,7 +1272,10 @@
       "country": "Russia",
       "country_code": "ru",
       "isp": "CORBINA-BROADBAND",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "96.67.83.140",
@@ -1014,7 +1283,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Comcast Cable Communications, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "98.94.236.125",
@@ -1022,7 +1294,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "Amazon.com",
-      "version": "/Ravencoin:4.7.0/"
+      "version": "/Ravencoin:4.7.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "99.137.86.101",
@@ -1030,7 +1305,10 @@
       "country": "United States",
       "country_code": "us",
       "isp": "AT&T Enterprises, LLC",
-      "version": "/Ravencoin:4.8.0/"
+      "version": "/Ravencoin:4.8.0/",
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     }
   ]
 }
