@@ -2,24 +2,20 @@ name: Crawl Ravencoin Network
 
 on:
   schedule:
+    # UTC 기준 4시간마다 = 한국시간 01,05,09,13,17,21시
     - cron: "0 */4 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch: {}   # Actions 탭에서 수동으로도 실행 가능
 
 permissions:
   contents: write
 
 jobs:
   crawl:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted   # 마르코님의 상시 가동 PC에서 실행 (가정용 IP라 노드들이 더 잘 받아줌)
     timeout-minutes: 20
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
-
-      - name: Python 설정
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
 
       - name: 크롤러 실행
         run: python crawler.py
@@ -28,6 +24,6 @@ jobs:
         run: |
           git config user.name "raven-node-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add docs/data/latest.json
+          git add docs/data/*.json
           git diff --quiet --cached || git commit -m "chore: update node data $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
