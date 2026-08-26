@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.5.0/css/flag-icons.min.css">
 <style>
   :root{
     --bg:#0D0F12; --panel:#15181D; --panel-2:#1B1F26; --border:#262B33;
@@ -35,7 +36,9 @@
   .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
   .row{display:grid;grid-template-columns:26px 30px 130px 1fr 80px 56px;align-items:center;gap:10px;padding:7px 0;font-size:13px;}
   .row .rank{color:var(--text-dim);font-family:'IBM Plex Mono',monospace;font-size:12px;}
-  .row .flag{font-size:16px;text-align:center;}
+  .row .flag,.simple-row .flag{display:flex;align-items:center;justify-content:center;}
+  .fi{width:20px;height:15px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,0.08);background-color:var(--panel-2);flex-shrink:0;}
+  .flag-blank{width:20px;height:15px;border-radius:2px;background:var(--panel-2);border:1px dashed var(--border);flex-shrink:0;}
   .row .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .bar-track{background:var(--panel-2);border-radius:4px;height:10px;overflow:hidden;}
   .bar-fill{height:100%;border-radius:4px;width:0%;transition:width 1s cubic-bezier(.2,.8,.2,1);}
@@ -63,20 +66,32 @@
     outline:none;margin-bottom:14px;
   }
   .search-box:focus{border-color:var(--gold);}
-  .node-row{
-    display:grid;grid-template-columns:22px 165px 1fr 1fr 100px;align-items:center;gap:14px;
-    padding:8px 0;font-size:12.5px;border-bottom:1px solid var(--border);
+  .node-card{
+    padding:10px 6px;border-bottom:1px solid var(--border);
   }
-  .node-row:last-child{border-bottom:none;}
-  .node-row .flag{font-size:15px;text-align:center;}
-  .node-row .ip{font-family:'IBM Plex Mono',monospace;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .node-row .isp,.node-row .version{color:var(--text-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .node-row .status{color:var(--gold);text-align:right;white-space:nowrap;}
-  .node-row.hit{background:rgba(227,179,65,0.08);border-radius:6px;padding-left:6px;}
+  .node-card:last-child{border-bottom:none;}
+  .node-card.hit{background:rgba(227,179,65,0.08);border-radius:6px;padding-left:10px;}
+  .node-card-top{display:flex;align-items:center;gap:10px;font-size:13px;}
+  .node-card-top .ip{font-family:'IBM Plex Mono',monospace;color:var(--text);}
+  .node-card-top .status{color:var(--gold);margin-left:auto;font-size:12px;white-space:nowrap;}
+  .node-card-meta{
+    margin-top:5px;padding-left:30px;font-size:11.5px;color:var(--text-mute);
+    display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;
+  }
+  .node-card-meta .sep{color:var(--text-dim);}
+  .reliability{font-family:'IBM Plex Mono',monospace;}
+  .reliability.high{color:#7CC576;}
+  .reliability.mid{color:var(--gold);}
+  .reliability.low{color:var(--coral);}
   .search-hint{font-size:11.5px;color:var(--text-dim);margin-top:10px;}
+  .trend-summary{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap;}
+  .trend-current{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--text);font-weight:500;}
+  .trend-diff{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  .trend-range{font-size:11.5px;color:var(--text-dim);margin-left:auto;}
+  .trend-svg{width:100%;height:140px;display:block;}
+  .trend-axis{display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-top:6px;}
   @media (max-width:640px){
-    .node-row{grid-template-columns:18px 100px 1fr 60px;}
-    .node-row .isp{display:none;}
+    .node-card-meta{padding-left:0;}
   }
   .skeleton{background:linear-gradient(90deg,var(--panel-2) 25%,#23272f 37%,var(--panel-2) 63%);background-size:400% 100%;animation:sk 1.4s ease infinite;border-radius:6px;height:12px;margin:8px 0;}
   @keyframes sk{0%{background-position:100% 50%;}100%{background-position:0 50%;}}
@@ -111,11 +126,16 @@
     <div>
       <div class="hero-label">전 세계 도달 가능 노드 수</div>
       <div class="hero-num" id="totalNum">···</div>
-      <div class="hero-note">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 몇 시간마다 자동으로 새로 측정됩니다.</div>
+      <div class="hero-note">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 한국시간 매일 01·05·09·13·17·21시(4시간마다)에 자동으로 새로 측정됩니다.</div>
     </div>
     <div class="hero-meta" id="heroMeta">
       <div>마지막 측정: <span id="lastUpdate">불러오는 중…</span></div>
     </div>
+  </div>
+
+  <div class="panel">
+    <h2><span class="dot"></span>네트워크 추이</h2>
+    <div id="trendChart"><div class="skeleton" style="width:100%"></div></div>
   </div>
 
   <div class="panel">
@@ -144,25 +164,14 @@
   <footer>
     Made by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">@rusiper1000</a>)<br>
     이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.<br>
-    데이터는 GitHub Actions가 몇 시간마다 자동으로 새로 수집합니다.
+    데이터는 GitHub Actions가 한국시간 매일 01·05·09·13·17·21시(4시간마다) 자동으로 새로 수집합니다.
   </footer>
 </div>
 
 <script>
-const FLAGS = [
-  ['United States','🇺🇸'],['Germany','🇩🇪'],['France','🇫🇷'],['Canada','🇨🇦'],['Iran','🇮🇷'],
-  ['Switzerland','🇨🇭'],['Bulgaria','🇧🇬'],['Netherlands','🇳🇱'],['Singapore','🇸🇬'],['Israel','🇮🇱'],
-  ['United Kingdom','🇬🇧'],['Russia','🇷🇺'],['China','🇨🇳'],['Japan','🇯🇵'],['Korea','🇰🇷'],
-  ['Australia','🇦🇺'],['Brazil','🇧🇷'],['India','🇮🇳'],['Italy','🇮🇹'],['Spain','🇪🇸'],['Poland','🇵🇱'],
-  ['Ukraine','🇺🇦'],['Sweden','🇸🇪'],['Norway','🇳🇴'],['Finland','🇫🇮'],['Denmark','🇩🇰'],['Belgium','🇧🇪'],
-  ['Austria','🇦🇹'],['Czech','🇨🇿'],['Romania','🇷🇴'],['Hungary','🇭🇺'],['Turkey','🇹🇷'],['Greece','🇬🇷'],
-  ['Portugal','🇵🇹'],['Ireland','🇮🇪'],['Mexico','🇲🇽'],['Lithuania','🇱🇹'],['Latvia','🇱🇻'],['Estonia','🇪🇪'],
-  ['Iceland','🇮🇸'],['Luxembourg','🇱🇺'],['Georgia','🇬🇪'],['Kazakhstan','🇰🇿'],['Hong Kong','🇭🇰']
-];
-function flagFor(name){
-  if(!name) return '🏳️';
-  const hit = FLAGS.find(([k]) => name.toLowerCase().includes(k.toLowerCase()));
-  return hit ? hit[1] : '🏳️';
+function flagHtml(code){
+  if(!code) return '<span class="flag-blank"></span>';
+  return `<span class="fi fi-${code.toLowerCase()}"></span>`;
 }
 
 let allCountries = [];
@@ -185,7 +194,7 @@ function drawCountries(){
   const rowsHtml = shown.map((c,i)=>`
     <div class="row">
       <div class="rank">${String(i+1).padStart(2,'0')}</div>
-      <div class="flag">${flagFor(c.name)}</div>
+      <div class="flag">${flagHtml(c.code)}</div>
       <div class="name" title="${c.name}">${c.name}</div>
       <div class="bar-track"><div class="bar-fill" style="background:var(--gold)" data-w="${(c.count/max*100).toFixed(1)}"></div></div>
       <div class="count">${c.count.toLocaleString()}개</div>
@@ -234,6 +243,65 @@ function fmtTime(iso){
   }catch(e){ return iso; }
 }
 
+function fmtShortDate(iso){
+  try{
+    const d = new Date(iso);
+    return d.toLocaleString('ko-KR', {month:'numeric', day:'numeric', hour:'2-digit', hour12:false}) + '시';
+  }catch(e){ return iso; }
+}
+
+function renderTrendChart(history){
+  const el = document.getElementById('trendChart');
+  if(!history || history.length < 2){
+    el.innerHTML = '<div class="state">아직 추이를 보여줄 만큼 데이터가 쌓이지 않았습니다. (측정이 몇 번 더 쌓이면 여기에 그래프가 나타나요)</div>';
+    return;
+  }
+
+  const width = 860, height = 160, padTop = 14, padBottom = 24, padX = 8;
+  const values = history.map(h => h.total);
+  const max = Math.max(...values), min = Math.min(...values);
+  const range = (max - min) || 1;
+  const innerW = width - padX * 2;
+  const stepX = history.length > 1 ? innerW / (history.length - 1) : 0;
+
+  const points = values.map((v, i) => {
+    const x = padX + i * stepX;
+    const y = padTop + (height - padTop - padBottom) * (1 - (v - min) / range);
+    return [x, y];
+  });
+
+  const pathD = points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  const baseline = height - padBottom;
+  const areaD = pathD +
+    ` L ${points[points.length - 1][0].toFixed(1)} ${baseline} L ${points[0][0].toFixed(1)} ${baseline} Z`;
+
+  const last = values[values.length - 1];
+  const prev = values[values.length - 2];
+  const diff = last - prev;
+  const diffColor = diff > 0 ? '#E3B341' : diff < 0 ? '#E2645A' : '#868C98';
+  const diffSign = diff > 0 ? '▲' : diff < 0 ? '▼' : '—';
+
+  el.innerHTML = `
+    <div class="trend-summary">
+      <span class="trend-current">${last.toLocaleString()}개</span>
+      <span class="trend-diff" style="color:${diffColor}">${diffSign} ${Math.abs(diff)} (직전 측정 대비)</span>
+      <span class="trend-range">최근 ${history.length}회 측정 · 최소 ${min} · 최대 ${max}</span>
+    </div>
+    <svg viewBox="0 0 ${width} ${height}" class="trend-svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trendGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E3B341" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#E3B341" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="${areaD}" fill="url(#trendGrad)" stroke="none"/>
+      <path d="${pathD}" fill="none" stroke="#E3B341" stroke-width="2"/>
+      <circle cx="${points[points.length - 1][0].toFixed(1)}" cy="${points[points.length - 1][1].toFixed(1)}" r="4" fill="#E3B341"/>
+    </svg>
+    <div class="trend-axis"><span>${fmtShortDate(history[0].t)}</span><span>${fmtShortDate(history[history.length - 1].t)}</span></div>
+  `;
+}
+
 let allNodes = [];
 
 function renderSearchResult(query){
@@ -254,15 +322,27 @@ function renderSearchResult(query){
     return;
   }
 
-  el.innerHTML = matches.map(n => `
-    <div class="node-row hit">
-      <div class="flag">${flagFor(n.country)}</div>
-      <div class="ip">${n.ip}:${n.port}</div>
-      <div class="isp" title="${n.isp || ''}">${n.isp || '-'}</div>
-      <div class="version">${n.version || '알 수 없음'}</div>
-      <div class="status">✓ 도달 가능</div>
-    </div>
-  `).join('') + `<div class="search-hint">${matches.length}개 일치</div>`;
+  el.innerHTML = matches.map(n => {
+    const pct = n.reachability_pct;
+    const relClass = pct == null ? '' : pct >= 90 ? 'high' : pct >= 60 ? 'mid' : 'low';
+    const relText = pct == null ? '' : `신뢰도 ${pct}% (최근 ${n.checks}회 중 ${Math.round(pct * n.checks / 100)}회)`;
+    return `
+    <div class="node-card hit">
+      <div class="node-card-top">
+        ${flagHtml(n.country_code)}
+        <span class="ip">${n.ip}:${n.port}</span>
+        <span class="status">✓ 도달 가능</span>
+      </div>
+      <div class="node-card-meta">
+        <span>${n.isp || '-'}</span>
+        <span class="sep">·</span>
+        <span>${n.version || '알 수 없음'}</span>
+        <span class="sep">·</span>
+        <span>${n.age_label || ''}</span>
+        ${relText ? `<span class="sep">·</span><span class="reliability ${relClass}">${relText}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('') + `<div class="search-hint">${matches.length}개 일치</div>`;
 }
 
 document.getElementById('ipSearch').addEventListener('input', (e) => {
@@ -291,6 +371,15 @@ async function load(){
       document.getElementById(id).innerHTML = '<div class="state err">데이터를 아직 불러올 수 없습니다. (첫 크롤링이 아직 안 돌았을 수 있어요)</div>';
     });
     document.getElementById('searchResult').innerHTML = '<div class="search-hint">데이터를 불러오지 못해 검색을 쓸 수 없습니다.</div>';
+  }
+
+  try{
+    const histRes = await fetch('data/history.json?t=' + Date.now(), {cache:'no-store'});
+    if(!histRes.ok) throw new Error('HTTP ' + histRes.status);
+    const history = await histRes.json();
+    renderTrendChart(history);
+  }catch(e){
+    document.getElementById('trendChart').innerHTML = '<div class="state err">추이 데이터를 불러오지 못했습니다.</div>';
   }
 }
 
