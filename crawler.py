@@ -277,7 +277,7 @@ def geolocate(ips):
     for i in range(0, len(ip_list), 100):
         chunk = ip_list[i:i + 100]
         body = json.dumps(
-            [{"query": ip, "fields": "status,country,countryCode,isp,query"} for ip in chunk]
+            [{"query": ip, "fields": "status,country,countryCode,lat,lon,isp,query"} for ip in chunk]
         ).encode("utf-8")
         req = urllib.request.Request(
             "http://ip-api.com/batch", data=body,
@@ -293,9 +293,11 @@ def geolocate(ips):
                         "country": entry.get("country", "알 수 없음"),
                         "countryCode": entry.get("countryCode", ""),
                         "isp": entry.get("isp", "알 수 없음"),
+                        "lat": entry.get("lat"),
+                        "lon": entry.get("lon"),
                     }
                 else:
-                    results[q] = {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"}
+                    results[q] = {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음", "lat": None, "lon": None}
         except Exception as e:
             print(f"  ! GeoIP 조회 일부 실패: {e}")
         time.sleep(1.5)
@@ -432,7 +434,7 @@ def main():
 
     node_list = []
     for ip, subver in sorted(reachable.items()):
-        info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"})
+        info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음", "lat": None, "lon": None})
         meta = compute_node_meta(ip, node_stats, now_dt)
         node_list.append({
             "ip": ip,
@@ -441,6 +443,8 @@ def main():
             "country_code": info.get("countryCode", "").lower(),
             "isp": info["isp"],
             "version": subver,
+            "lat": info.get("lat"),
+            "lon": info.get("lon"),
             "age_label": meta["age_label"],
             "reachability_pct": meta["reachability_pct"],
             "checks": meta["checks"],
