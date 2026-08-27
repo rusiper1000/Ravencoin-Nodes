@@ -46,6 +46,14 @@
   .hero-num{font-family:'IBM Plex Mono',monospace;font-size:46px;font-weight:500;color:var(--gold);line-height:1;}
   .hero-note{font-size:12px;color:var(--text-dim);margin-top:8px;max-width:340px;line-height:1.5;}
   .hero-meta{text-align:right;font-size:12px;color:var(--text-mute);font-family:'IBM Plex Mono',monospace;}
+  .stale-banner{
+    display:flex;align-items:center;gap:10px;
+    background:rgba(226,100,90,0.1);border:1px solid rgba(226,100,90,0.4);
+    color:var(--coral);padding:12px 16px;border-radius:10px;
+    font-size:13px;margin-bottom:20px;line-height:1.5;
+  }
+  .stale-icon{font-size:16px;flex-shrink:0;}
+  #lastUpdate.stale{color:var(--coral);}
   .panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:20px;}
   .panel h2{font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:0.8px;text-transform:uppercase;color:var(--text-mute);margin:0 0 18px 0;display:flex;align-items:center;gap:8px;}
   .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
@@ -150,6 +158,11 @@
         <div class="credit">by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">rusiper1000</a>)</div>
       </div>
     </div>
+  </div>
+
+  <div id="staleBanner" class="stale-banner" style="display:none;">
+    <span class="stale-icon">⚠</span>
+    <span id="staleText"></span>
   </div>
 
   <div class="hero">
@@ -292,6 +305,32 @@ function renderSimple(containerId, list, color){
     </div>
   `).join('');
   requestAnimationFrame(()=> el.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%'));
+}
+
+const STALE_THRESHOLD_HOURS = 9;   // 4시간 주기 기준, 1회 정도 놓친 것까지는 허용하고 그 이상이면 경고
+
+function checkStaleness(generatedAt){
+  const banner = document.getElementById('staleBanner');
+  const staleText = document.getElementById('staleText');
+  const lastUpdateEl = document.getElementById('lastUpdate');
+
+  if(!generatedAt){
+    banner.style.display = 'none';
+    return;
+  }
+
+  const generatedDate = new Date(generatedAt);
+  const hoursSince = (Date.now() - generatedDate.getTime()) / 3600000;
+
+  if(hoursSince > STALE_THRESHOLD_HOURS){
+    const displayHours = Math.floor(hoursSince);
+    staleText.textContent = `마지막 측정이 ${displayHours}시간 전으로, 예정 주기(4시간)보다 많이 지났습니다. 크롤러(자체 러너 PC)가 꺼져있거나 네트워크에 문제가 있을 수 있어요 — 지금 보이는 수치는 최신이 아닐 수 있습니다.`;
+    banner.style.display = 'flex';
+    lastUpdateEl.classList.add('stale');
+  } else {
+    banner.style.display = 'none';
+    lastUpdateEl.classList.remove('stale');
+  }
 }
 
 function fmtTime(iso){
@@ -532,6 +571,7 @@ async function load(){
 
     document.getElementById('totalNum').textContent = (data.total_nodes ?? 0).toLocaleString();
     document.getElementById('lastUpdate').textContent = data.generated_at ? fmtTime(data.generated_at) : '정보 없음';
+    checkStaleness(data.generated_at);
 
     renderCountries(data.countries);
     renderSimple('ispList', data.isps, 'var(--blue)');
