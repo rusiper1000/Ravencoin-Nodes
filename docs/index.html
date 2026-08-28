@@ -107,6 +107,22 @@
   .reliability.mid{color:var(--gold);}
   .reliability.low{color:var(--coral);}
   .search-hint{font-size:11.5px;color:var(--text-dim);margin-top:10px;}
+  .api-row{display:flex;flex-direction:column;gap:10px;margin:14px 0 18px;}
+  .api-endpoint{
+    background:var(--panel-2);border:1px solid var(--border);border-radius:8px;
+    padding:10px 14px;font-size:12.5px;
+  }
+  .api-endpoint code{
+    font-family:'IBM Plex Mono',monospace;color:var(--gold);font-size:12.5px;
+    background:none;padding:0;
+  }
+  .api-endpoint .api-desc{display:block;color:var(--text-mute);margin-top:5px;line-height:1.5;}
+  .csv-btn{
+    background:var(--panel-2);border:1px solid var(--border);color:var(--text);
+    font-family:'IBM Plex Sans KR',sans-serif;font-size:13px;padding:10px 16px;
+    border-radius:8px;cursor:pointer;transition:border-color .15s,color .15s;
+  }
+  .csv-btn:hover{border-color:var(--gold);color:var(--gold);}
   .trend-summary{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap;}
   .trend-current{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--text);font-weight:500;}
   .trend-diff{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
@@ -228,6 +244,27 @@
     <div class="search-note">내 노드의 IP를 입력하면, 이번 측정에서 도달 가능한 노드로 잡혔는지 확인할 수 있습니다.</div>
     <input id="ipSearch" class="search-box" type="text" placeholder="예: 154.38.163.235 (IP 일부만 입력해도 검색됨)" autocomplete="off">
     <div id="searchResult"></div>
+  </div>
+
+  <div class="panel">
+    <h2><span class="dot" style="background:var(--blue)"></span>데이터 & API</h2>
+    <div class="search-note">
+      이 사이트가 쓰는 원시 데이터는 전부 공개돼 있습니다. 직접 분석하거나 다른 프로젝트에 쓰셔도 됩니다 — 별도 인증이나 API 키가 필요 없습니다.
+    </div>
+
+    <div class="api-row">
+      <div class="api-endpoint">
+        <code>data/latest.json</code>
+        <span class="api-desc">이번 측정의 전체 결과 (총 노드 수, 국가/ISP/버전 집계, 개별 노드 목록 — IP·국가·ISP·버전·위경도·신뢰도 포함)</span>
+      </div>
+      <div class="api-endpoint">
+        <code>data/history.json</code>
+        <span class="api-desc">측정 시각별 총 노드 수 추이 기록 (최근 약 2개월치, <code>[{"t": "...", "total": 91}, ...]</code> 형태)</span>
+      </div>
+    </div>
+
+    <button id="downloadCsvBtn" class="csv-btn">⬇ 현재 노드 목록 CSV로 다운로드</button>
+    <div id="csvHint" class="search-hint"></div>
   </div>
 
   <footer>
@@ -516,6 +553,39 @@ function spawnSignal(){
 }
 
 let allNodes = [];
+
+function nodesToCsv(nodes){
+  const headers = ['ip','port','country','country_code','isp','version','lat','lon','age_label','reachability_pct','checks'];
+  const escape = (v) => {
+    if(v === null || v === undefined) return '';
+    const s = String(v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  const rows = nodes.map(n => headers.map(h => escape(n[h])).join(','));
+  return headers.join(',') + '\n' + rows.join('\n');
+}
+
+function downloadCsv(){
+  const hint = document.getElementById('csvHint');
+  if(!allNodes.length){
+    hint.textContent = '아직 다운로드할 데이터가 없습니다. 첫 측정이 끝난 뒤 다시 시도해주세요.';
+    return;
+  }
+  const csv = nodesToCsv(allNodes);
+  const blob = new Blob(['\uFEFF' + csv], {type: 'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const stamp = new Date().toISOString().slice(0,16).replace(/[:T]/g,'-');
+  a.href = url;
+  a.download = `ravencoin-nodes-${stamp}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  hint.textContent = `${allNodes.length}개 노드 데이터를 CSV로 저장했습니다.`;
+}
+
+document.getElementById('downloadCsvBtn').addEventListener('click', downloadCsv);
 
 function renderSearchResult(query){
   const el = document.getElementById('searchResult');
