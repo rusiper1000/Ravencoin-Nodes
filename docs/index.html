@@ -33,6 +33,14 @@
   body{margin:0;background:var(--bg);color:var(--text);font-family:'IBM Plex Sans KR',-apple-system,sans-serif;padding:32px 20px 60px;}
   .wrap{max-width:920px;margin:0 auto;}
   .top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:28px;}
+  .lang-toggle{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+  .lang-sep{color:var(--border);font-size:12px;}
+  .lang-btn{
+    background:none;border:none;color:var(--text-mute);font-family:'IBM Plex Sans KR',sans-serif;
+    font-size:12.5px;cursor:pointer;padding:4px 2px;
+  }
+  .lang-btn.active{color:var(--gold);font-weight:700;}
+  .lang-btn:hover{color:var(--text);}
   .brand{display:flex;align-items:center;gap:12px;}
   .feather{width:auto;height:40px;flex-shrink:0;object-fit:contain;}
   h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:0.5px;margin:0;}
@@ -182,9 +190,14 @@
       <img class="feather" src="assets/raven-logo.png" alt="Ravencoin">
       <div>
         <h1>RAVEN NETWORK NODES</h1>
-        <div class="sub">국가별 실시간 레이븐코인 노드 분포 · 자체 크롤러로 직접 측정</div>
+        <div class="sub" data-i18n="subtitle">국가별 실시간 레이븐코인 노드 분포 · 자체 크롤러로 직접 측정</div>
         <div class="credit">by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">rusiper1000</a>)</div>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button id="langKo" class="lang-btn active">한글</button>
+      <span class="lang-sep">|</span>
+      <button id="langEn" class="lang-btn">EN</button>
     </div>
   </div>
 
@@ -195,32 +208,32 @@
 
   <div class="hero">
     <div>
-      <div class="hero-label">전 세계 도달 가능 노드 수</div>
+      <div class="hero-label" data-i18n="heroLabel">전 세계 도달 가능 노드 수</div>
       <div class="hero-num" id="totalNum">···</div>
-      <div class="hero-note">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 하루 5~6회, 약 4시간 간격으로 자동으로 새로 측정됩니다 (GitHub 상황에 따라 실제 시각은 다소 늦어질 수 있어요).</div>
+      <div class="hero-note" data-i18n="heroNote">getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 하루 5~6회, 약 4시간 간격으로 자동으로 새로 측정됩니다 (GitHub 상황에 따라 실제 시각은 다소 늦어질 수 있어요).</div>
     </div>
     <div class="hero-meta" id="heroMeta">
-      <div>마지막 측정: <span id="lastUpdate">불러오는 중…</span></div>
+      <div><span data-i18n="lastUpdateLabel">마지막 측정:</span> <span id="lastUpdate">불러오는 중…</span></div>
     </div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot" style="background:#7CC576"></span>네트워크 건강도 <span class="health-sub">(자체 측정 기준 — 외부 API 미사용)</span></h2>
+    <h2><span class="dot" style="background:#7CC576"></span><span data-i18n="healthTitle">네트워크 건강도</span> <span class="health-sub" data-i18n="healthSub">(자체 측정 기준 — 외부 API 미사용)</span></h2>
     <div id="healthPanel"><div class="skeleton" style="width:100%"></div></div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot"></span>네트워크 추이</h2>
+    <h2><span class="dot"></span><span data-i18n="trendTitle">네트워크 추이</span></h2>
     <div id="trendChart"><div class="skeleton" style="width:100%"></div></div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot"></span>국가별 노드 분포</h2>
+    <h2><span class="dot"></span><span data-i18n="countryTitle">국가별 노드 분포</span></h2>
     <div id="countryList"><div class="skeleton" style="width:100%"></div><div class="skeleton" style="width:90%"></div></div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot"></span>세계지도로 보기</h2>
+    <h2><span class="dot"></span><span data-i18n="mapTitle">세계지도로 보기</span></h2>
     <div class="map-wrap">
       <svg id="worldSvg" viewBox="30.767 241.591 784.077 458.627" class="world-svg" preserveAspectRatio="xMidYMid meet">
 <defs>
@@ -244,7 +257,7 @@
         <g id="nodeMarkers"></g>
       </svg>
     </div>
-    <div class="map-caption">World map: Al MacDonald (Wikimedia Commons), edited by Fritz Lekschas — CC BY-SA 3.0 · 점 하나 = 도달 가능한 노드 1개</div>
+    <div class="map-caption" data-i18n="mapCaption">World map: Al MacDonald (Wikimedia Commons), edited by Fritz Lekschas — CC BY-SA 3.0 · 점 하나 = 도달 가능한 노드 1개</div>
   </div>
 
   <div class="grid2">
@@ -253,48 +266,191 @@
       <div id="ispList"><div class="skeleton" style="width:100%"></div></div>
     </div>
     <div class="panel">
-      <h2><span class="dot" style="background:var(--coral)"></span>클라이언트 버전 분포</h2>
+      <h2><span class="dot" style="background:var(--coral)"></span><span data-i18n="versionTitle">클라이언트 버전 분포</span></h2>
       <div id="versionList"><div class="skeleton" style="width:100%"></div></div>
     </div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot" style="background:var(--gold)"></span>내 노드 확인하기</h2>
-    <div class="search-note">내 노드의 IP를 입력하면, 이번 측정에서 도달 가능한 노드로 잡혔는지 확인할 수 있습니다.</div>
-    <input id="ipSearch" class="search-box" type="text" placeholder="예: 154.38.163.235 (IP 일부만 입력해도 검색됨)" autocomplete="off">
+    <h2><span class="dot" style="background:var(--gold)"></span><span data-i18n="myNodeTitle">내 노드 확인하기</span></h2>
+    <div class="search-note" data-i18n="myNodeDesc">내 노드의 IP를 입력하면, 이번 측정에서 도달 가능한 노드로 잡혔는지 확인할 수 있습니다.</div>
+    <input id="ipSearch" class="search-box" type="text" data-i18n-placeholder="myNodePlaceholder" placeholder="예: 154.38.163.235 (IP 일부만 입력해도 검색됨)" autocomplete="off">
     <div id="searchResult"></div>
   </div>
 
   <div class="panel">
-    <h2><span class="dot" style="background:var(--blue)"></span>데이터 & API</h2>
-    <div class="search-note">
+    <h2><span class="dot" style="background:var(--blue)"></span><span data-i18n="apiTitle">데이터 & API</span></h2>
+    <div class="search-note" data-i18n="apiDesc">
       이 사이트가 쓰는 원시 데이터는 전부 공개돼 있습니다. 직접 분석하거나 다른 프로젝트에 쓰셔도 됩니다 — 별도 인증이나 API 키가 필요 없습니다.
     </div>
 
     <div class="api-row">
       <div class="api-endpoint">
         <code>data/latest.json</code>
-        <span class="api-desc">이번 측정의 전체 결과 (총 노드 수, 국가/ISP/버전 집계, 개별 노드 목록 — IP·국가·ISP·버전·위경도·신뢰도 포함)</span>
+        <span class="api-desc" data-i18n="apiLatestDesc">이번 측정의 전체 결과 (총 노드 수, 국가/ISP/버전 집계, 개별 노드 목록 — IP·국가·ISP·버전·위경도·신뢰도 포함)</span>
       </div>
       <div class="api-endpoint">
         <code>data/history.json</code>
-        <span class="api-desc">측정 시각별 총 노드 수 추이 기록 (최근 약 2개월치, <code>[{"t": "...", "total": 91}, ...]</code> 형태)</span>
+        <span class="api-desc" data-i18n-html="apiHistoryDesc">측정 시각별 총 노드 수 추이 기록 (최근 약 2개월치, <code>[{"t": "...", "total": 91}, ...]</code> 형태)</span>
       </div>
     </div>
 
-    <button id="downloadCsvBtn" class="csv-btn">⬇ 현재 노드 목록 CSV로 다운로드</button>
+    <button id="downloadCsvBtn" class="csv-btn" data-i18n="csvBtn">⬇ 현재 노드 목록 CSV로 다운로드</button>
     <div id="csvHint" class="search-hint"></div>
   </div>
 
   <footer>
     Made by 타락천사 (<a href="https://github.com/rusiper1000" target="_blank" rel="noopener">@rusiper1000</a>)<br>
-    이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.<br>
-    데이터는 GitHub Actions가 하루 5~6회, 약 4시간 간격으로 자동 수집합니다 (정확한 시각은 GitHub 상황에 따라 변동될 수 있어요).<br>
+    <span data-i18n="footerLine2">이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.</span><br>
+    <span data-i18n="footerLine3">데이터는 GitHub Actions가 하루 5~6회, 약 4시간 간격으로 자동 수집합니다 (정확한 시각은 GitHub 상황에 따라 변동될 수 있어요).</span><br>
     Raven bird logo: <a href="https://github.com/underdarkskies/Ravencoin-Marketing" target="_blank" rel="noopener">Ravencoin-Marketing (community assets)</a>
   </footer>
 </div>
 
 <script>
+const I18N = {
+  ko: {
+    subtitle: '국가별 실시간 레이븐코인 노드 분포 · 자체 크롤러로 직접 측정',
+    heroLabel: '전 세계 도달 가능 노드 수',
+    heroNote: 'getaddr 방식으로 P2P 네트워크를 직접 크롤링해 발견한, 인바운드 연결을 허용하는 노드 수입니다. 하루 5~6회, 약 4시간 간격으로 자동으로 새로 측정됩니다 (GitHub 상황에 따라 실제 시각은 다소 늦어질 수 있어요).',
+    lastUpdateLabel: '마지막 측정:',
+    healthTitle: '네트워크 건강도',
+    healthSub: '(자체 측정 기준 — 외부 API 미사용)',
+    trendTitle: '네트워크 추이',
+    countryTitle: '국가별 노드 분포',
+    mapTitle: '세계지도로 보기',
+    mapCaption: 'World map: Al MacDonald (Wikimedia Commons), edited by Fritz Lekschas — CC BY-SA 3.0 · 점 하나 = 도달 가능한 노드 1개',
+    versionTitle: '클라이언트 버전 분포',
+    myNodeTitle: '내 노드 확인하기',
+    myNodeDesc: '내 노드의 IP를 입력하면, 이번 측정에서 도달 가능한 노드로 잡혔는지 확인할 수 있습니다.',
+    myNodePlaceholder: '예: 154.38.163.235 (IP 일부만 입력해도 검색됨)',
+    apiTitle: '데이터 & API',
+    apiDesc: '이 사이트가 쓰는 원시 데이터는 전부 공개돼 있습니다. 직접 분석하거나 다른 프로젝트에 쓰셔도 됩니다 — 별도 인증이나 API 키가 필요 없습니다.',
+    apiLatestDesc: '이번 측정의 전체 결과 (총 노드 수, 국가/ISP/버전 집계, 개별 노드 목록 — IP·국가·ISP·버전·위경도·신뢰도 포함)',
+    apiHistoryDesc: '측정 시각별 총 노드 수 추이 기록 (최근 약 2개월치, <code>[{"t": "...", "total": 91}, ...]</code> 형태)',
+    csvBtn: '⬇ 현재 노드 목록 CSV로 다운로드',
+    footerLine2: '이 페이지는 ravennodes.com을 거치지 않고, 레이븐코인 P2P 네트워크에 직접 접속해 측정한 데이터를 보여줍니다.',
+    footerLine3: '데이터는 GitHub Actions가 하루 5~6회, 약 4시간 간격으로 자동 수집합니다 (정확한 시각은 GitHub 상황에 따라 변동될 수 있어요).',
+    unit: '개',
+    ofTotal: '전체의',
+    synced: '동기화 완료',
+    outdated: '지연 · 구버전',
+    unknownHeight: '높이 확인 불가',
+    refHeight: (h) => `기준 높이(중앙값): <b>${h.toLocaleString()}</b> · 이 값 ±5블록 이내면 "동기화 완료"로 분류`,
+    trendCurrent: (n) => `${n.toLocaleString()}개`,
+    trendDiff: (sign, diff) => `${sign} ${diff} (직전 측정 대비)`,
+    trendRange: (n, min, max) => `최근 ${n}회 측정 · 최소 ${min} · 최대 ${max}`,
+    trendEmpty: '아직 추이를 보여줄 만큼 데이터가 쌓이지 않았습니다. (측정이 몇 번 더 쌓이면 여기에 그래프가 나타나요)',
+    noData: '데이터가 아직 없습니다.',
+    moreBtn: (total, remaining) => `더보기 (전체 ${total}개국 · +${remaining}) ▼`,
+    lessBtn: '접기 ▲',
+    staleMsg: (h) => `마지막 측정이 ${h}시간 전으로, 예정 주기(4시간)보다 많이 지났습니다. 크롤러(자체 러너 PC)가 꺼져있거나 네트워크에 문제가 있을 수 있어요 — 지금 보이는 수치는 최신이 아닐 수 있습니다.`,
+    csvHintEmpty: '아직 다운로드할 데이터가 없습니다. 첫 측정이 끝난 뒤 다시 시도해주세요.',
+    csvHintDone: (n) => `${n}개 노드 데이터를 CSV로 저장했습니다.`,
+    healthEmpty: '아직 높이 정보가 충분하지 않아 계산할 수 없습니다.',
+    loadError: '데이터를 아직 불러올 수 없습니다. (첫 크롤링이 아직 안 돌았을 수 있어요)',
+    noInfo: '정보 없음',
+    errorLabel: '오류',
+    loadFailedPrefix: '불러오기 실패: ',
+    searchLoadFailed: '데이터를 불러오지 못해 검색을 쓸 수 없습니다.',
+    trendLoadFailed: '추이 데이터를 불러오지 못했습니다.',
+  },
+  en: {
+    subtitle: 'Live Ravencoin node distribution by country · measured by our own crawler',
+    heroLabel: 'Total reachable nodes worldwide',
+    heroNote: 'Nodes discovered by crawling the P2P network directly with getaddr, that accept inbound connections. Re-measured automatically 5–6 times a day, about every 4 hours (actual timing may vary depending on GitHub).',
+    lastUpdateLabel: 'Last measured:',
+    healthTitle: 'Network Health',
+    healthSub: '(self-measured — no external API)',
+    trendTitle: 'Node Count Trend',
+    countryTitle: 'Nodes by Country',
+    mapTitle: 'World Map',
+    mapCaption: 'World map: Al MacDonald (Wikimedia Commons), edited by Fritz Lekschas — CC BY-SA 3.0 · Each dot = 1 reachable node',
+    versionTitle: 'Client Version Distribution',
+    myNodeTitle: 'Check My Node',
+    myNodeDesc: 'Enter your node\'s IP to check whether it was reachable in this measurement.',
+    myNodePlaceholder: 'e.g. 154.38.163.235 (partial IP works too)',
+    apiTitle: 'Data & API',
+    apiDesc: 'All raw data behind this site is public. Feel free to analyze it or use it in your own projects — no auth or API key required.',
+    apiLatestDesc: 'Full results of this measurement (total nodes, country/ISP/version breakdowns, per-node list — IP, country, ISP, version, coordinates, reliability)',
+    apiHistoryDesc: 'Total node count over time (last ~2 months), as <code>[{"t": "...", "total": 91}, ...]</code>',
+    csvBtn: '⬇ Download current node list as CSV',
+    footerLine2: 'This page shows data measured by connecting directly to the Ravencoin P2P network — not via ravennodes.com.',
+    footerLine3: 'Data is collected automatically by GitHub Actions 5–6 times a day, about every 4 hours (exact timing may vary depending on GitHub).',
+    unit: '',
+    ofTotal: 'of total:',
+    synced: 'Synced',
+    outdated: 'Outdated',
+    unknownHeight: 'Height unknown',
+    refHeight: (h) => `Reference height (median): <b>${h.toLocaleString()}</b> · within ±5 blocks counts as "Synced"`,
+    trendCurrent: (n) => `${n.toLocaleString()}`,
+    trendDiff: (sign, diff) => `${sign} ${diff} (vs previous)`,
+    trendRange: (n, min, max) => `Last ${n} measurements · min ${min} · max ${max}`,
+    trendEmpty: 'Not enough data yet to show a trend. (Check back after a few more measurements)',
+    noData: 'No data yet.',
+    moreBtn: (total, remaining) => `Show more (${total} countries total · +${remaining}) ▼`,
+    lessBtn: 'Show less ▲',
+    staleMsg: (h) => `The last measurement was ${h} hours ago, well past the expected ~4-hour cycle. The crawler (self-hosted runner PC) may be off or having network issues — the numbers shown may not be current.`,
+    csvHintEmpty: 'No data to download yet. Please try again after the first measurement completes.',
+    csvHintDone: (n) => `Saved ${n} node records as CSV.`,
+    healthEmpty: 'Not enough height data yet to compute this.',
+    loadError: 'Data isn\'t available yet. (The first crawl may not have run yet)',
+    noInfo: 'No data',
+    errorLabel: 'Error',
+    loadFailedPrefix: 'Failed to load: ',
+    searchLoadFailed: 'Search is unavailable because the data failed to load.',
+    trendLoadFailed: 'Failed to load trend data.',
+  }
+};
+
+let currentLang = localStorage.getItem('ravenLang') || 'ko';
+let lastData = null;
+let lastHistory = null;
+
+function t(key, ...args){
+  const entry = I18N[currentLang][key];
+  return typeof entry === 'function' ? entry(...args) : entry;
+}
+
+function applyStaticTranslations(){
+  document.documentElement.lang = currentLang === 'en' ? 'en' : 'ko';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.getAttribute('data-i18n'));
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.getAttribute('data-i18n-html'));
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+  });
+}
+
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem('ravenLang', lang);
+  document.getElementById('langKo').classList.toggle('active', lang === 'ko');
+  document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  applyStaticTranslations();
+  // 이미 받아온 데이터가 있으면 새 언어로 다시 그리기 (재요청 없이)
+  if(lastData){
+    document.getElementById('lastUpdate').textContent = lastData.generated_at ? fmtTime(lastData.generated_at) : t('noInfo');
+    renderHealth(lastData.network_health);
+    renderCountries(lastData.countries);
+    renderSimple('ispList', lastData.isps, 'var(--blue)');
+    renderSimple('versionList', lastData.versions, 'var(--coral)');
+    checkStaleness(lastData.generated_at);
+  }
+  if(lastHistory){
+    renderTrendChart(lastHistory);
+  }
+}
+
+document.getElementById('langKo').addEventListener('click', () => setLanguage('ko'));
+document.getElementById('langEn').addEventListener('click', () => setLanguage('en'));
+document.getElementById('langKo').classList.toggle('active', currentLang === 'ko');
+document.getElementById('langEn').classList.toggle('active', currentLang === 'en');
+applyStaticTranslations();
+
 function flagHtml(code){
   if(!code) return '<span class="flag-blank"></span>';
   return `<span class="fi fi-${code.toLowerCase()}"></span>`;
@@ -306,7 +462,7 @@ let countriesExpanded = false;
 function renderCountries(list){
   const el = document.getElementById('countryList');
   allCountries = list || [];
-  if(!allCountries.length){ el.innerHTML = '<div class="state err">데이터가 아직 없습니다.</div>'; return; }
+  if(!allCountries.length){ el.innerHTML = `<div class="state err">${t('noData')}</div>`; return; }
   countriesExpanded = false;
   drawCountries();
 }
@@ -323,14 +479,14 @@ function drawCountries(){
       <div class="flag">${flagHtml(c.code)}</div>
       <div class="name" title="${c.name}">${c.name}</div>
       <div class="bar-track"><div class="bar-fill" style="background:var(--gold)" data-w="${(c.count/max*100).toFixed(1)}"></div></div>
-      <div class="count">${c.count.toLocaleString()}개</div>
+      <div class="count">${c.count.toLocaleString()}${t('unit')}</div>
       <div class="pct">${c.pct.toFixed(1)}%</div>
     </div>
   `).join('');
 
   const remaining = allCountries.length - VISIBLE;
   const toggleHtml = remaining > 0
-    ? `<button id="toggleCountriesBtn" class="more-btn">${countriesExpanded ? '접기 ▲' : `더보기 (전체 ${allCountries.length}개국 · +${remaining}) ▼`}</button>`
+    ? `<button id="toggleCountriesBtn" class="more-btn">${countriesExpanded ? t('lessBtn') : t('moreBtn', allCountries.length, remaining)}</button>`
     : '';
 
   el.innerHTML = rowsHtml + toggleHtml;
@@ -379,7 +535,7 @@ function checkStaleness(generatedAt){
 
   if(hoursSince > STALE_THRESHOLD_HOURS){
     const displayHours = Math.floor(hoursSince);
-    staleText.textContent = `마지막 측정이 ${displayHours}시간 전으로, 예정 주기(4시간)보다 많이 지났습니다. 크롤러(자체 러너 PC)가 꺼져있거나 네트워크에 문제가 있을 수 있어요 — 지금 보이는 수치는 최신이 아닐 수 있습니다.`;
+    staleText.textContent = t('staleMsg', displayHours);
     banner.style.display = 'flex';
     lastUpdateEl.classList.add('stale');
   } else {
@@ -391,13 +547,16 @@ function checkStaleness(generatedAt){
 function fmtTime(iso){
   try{
     const d = new Date(iso);
-    return d.toLocaleString('ko-KR', {hour12:false});
+    return d.toLocaleString(currentLang === 'en' ? 'en-US' : 'ko-KR', {hour12: currentLang === 'en'});
   }catch(e){ return iso; }
 }
 
 function fmtShortDate(iso){
   try{
     const d = new Date(iso);
+    if(currentLang === 'en'){
+      return d.toLocaleString('en-US', {month:'numeric', day:'numeric', hour:'2-digit', hour12:true});
+    }
     return d.toLocaleString('ko-KR', {month:'numeric', day:'numeric', hour:'2-digit', hour12:false}) + '시';
   }catch(e){ return iso; }
 }
@@ -405,7 +564,7 @@ function fmtShortDate(iso){
 function renderHealth(health, totalNodes){
   const el = document.getElementById('healthPanel');
   if(!health || health.reference_height == null){
-    el.innerHTML = '<div class="state">아직 높이 정보가 충분하지 않아 계산할 수 없습니다.</div>';
+    el.innerHTML = `<div class="state">${t('healthEmpty')}</div>`;
     return;
   }
   const { synced, outdated, unknown, reference_height } = health;
@@ -415,29 +574,30 @@ function renderHealth(health, totalNodes){
   el.innerHTML = `
     <div class="health-grid">
       <div class="health-card synced">
-        <div class="h-label">동기화 완료 (Synced)</div>
+        <div class="h-label">${t('synced')} (Synced)</div>
         <div class="h-num">${synced.toLocaleString()}</div>
-        <div class="h-pct">전체의 ${pct(synced)}%</div>
+        <div class="h-pct">${t('ofTotal')} ${pct(synced)}%</div>
       </div>
       <div class="health-card outdated">
-        <div class="h-label">지연 · 구버전 (Outdated)</div>
+        <div class="h-label">${t('outdated')} (Outdated)</div>
         <div class="h-num">${outdated.toLocaleString()}</div>
-        <div class="h-pct">전체의 ${pct(outdated)}%</div>
+        <div class="h-pct">${t('ofTotal')} ${pct(outdated)}%</div>
       </div>
       <div class="health-card unknown">
-        <div class="h-label">높이 확인 불가</div>
+        <div class="h-label">${t('unknownHeight')}</div>
         <div class="h-num">${unknown.toLocaleString()}</div>
-        <div class="h-pct">전체의 ${pct(unknown)}%</div>
+        <div class="h-pct">${t('ofTotal')} ${pct(unknown)}%</div>
       </div>
     </div>
-    <div class="health-ref">기준 높이(중앙값): <b>${reference_height.toLocaleString()}</b> · 이 값 ±5블록 이내면 "동기화 완료"로 분류</div>
+    <div class="health-ref">${t('refHeight', reference_height)}</div>
   `;
 }
 
 function renderTrendChart(history){
+  lastHistory = history;
   const el = document.getElementById('trendChart');
   if(!history || history.length < 2){
-    el.innerHTML = '<div class="state">아직 추이를 보여줄 만큼 데이터가 쌓이지 않았습니다. (측정이 몇 번 더 쌓이면 여기에 그래프가 나타나요)</div>';
+    el.innerHTML = `<div class="state">${t('trendEmpty')}</div>`;
     return;
   }
 
@@ -467,9 +627,9 @@ function renderTrendChart(history){
 
   el.innerHTML = `
     <div class="trend-summary">
-      <span class="trend-current">${last.toLocaleString()}개</span>
-      <span class="trend-diff" style="color:${diffColor}">${diffSign} ${Math.abs(diff)} (직전 측정 대비)</span>
-      <span class="trend-range">최근 ${history.length}회 측정 · 최소 ${min} · 최대 ${max}</span>
+      <span class="trend-current">${t('trendCurrent', last)}</span>
+      <span class="trend-diff" style="color:${diffColor}">${t('trendDiff', diffSign, Math.abs(diff))}</span>
+      <span class="trend-range">${t('trendRange', history.length, min, max)}</span>
     </div>
     <svg viewBox="0 0 ${width} ${height}" class="trend-svg" preserveAspectRatio="none">
       <defs>
@@ -619,7 +779,7 @@ function nodesToCsv(nodes){
 function downloadCsv(){
   const hint = document.getElementById('csvHint');
   if(!allNodes.length){
-    hint.textContent = '아직 다운로드할 데이터가 없습니다. 첫 측정이 끝난 뒤 다시 시도해주세요.';
+    hint.textContent = t('csvHintEmpty');
     return;
   }
   const csv = nodesToCsv(allNodes);
@@ -633,7 +793,7 @@ function downloadCsv(){
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
-  hint.textContent = `${allNodes.length}개 노드 데이터를 CSV로 저장했습니다.`;
+  hint.textContent = t('csvHintDone', allNodes.length);
 }
 
 document.getElementById('downloadCsvBtn').addEventListener('click', downloadCsv);
@@ -697,9 +857,10 @@ async function load(){
     const res = await fetch('data/latest.json?t=' + Date.now(), {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
+    lastData = data;
 
     document.getElementById('totalNum').textContent = (data.total_nodes ?? 0).toLocaleString();
-    document.getElementById('lastUpdate').textContent = data.generated_at ? fmtTime(data.generated_at) : '정보 없음';
+    document.getElementById('lastUpdate').textContent = data.generated_at ? fmtTime(data.generated_at) : t('noInfo');
     checkStaleness(data.generated_at);
     renderHealth(data.network_health, data.total_nodes);
 
@@ -711,12 +872,12 @@ async function load(){
     renderSearchResult(document.getElementById('ipSearch').value);
     renderMap(data.nodes, data.countries);
   }catch(e){
-    document.getElementById('totalNum').textContent = '오류';
-    document.getElementById('lastUpdate').textContent = '불러오기 실패: ' + e.message;
+    document.getElementById('totalNum').textContent = t('errorLabel');
+    document.getElementById('lastUpdate').textContent = t('loadFailedPrefix') + e.message;
     ['countryList','ispList','versionList','healthPanel'].forEach(id=>{
-      document.getElementById(id).innerHTML = '<div class="state err">데이터를 아직 불러올 수 없습니다. (첫 크롤링이 아직 안 돌았을 수 있어요)</div>';
+      document.getElementById(id).innerHTML = `<div class="state err">${t('loadError')}</div>`;
     });
-    document.getElementById('searchResult').innerHTML = '<div class="search-hint">데이터를 불러오지 못해 검색을 쓸 수 없습니다.</div>';
+    document.getElementById('searchResult').innerHTML = `<div class="search-hint">${t('searchLoadFailed')}</div>`;
   }
 
   try{
@@ -725,7 +886,7 @@ async function load(){
     const history = await histRes.json();
     renderTrendChart(history);
   }catch(e){
-    document.getElementById('trendChart').innerHTML = '<div class="state err">추이 데이터를 불러오지 못했습니다.</div>';
+    document.getElementById('trendChart').innerHTML = `<div class="state err">${t('trendLoadFailed')}</div>`;
   }
 }
 
