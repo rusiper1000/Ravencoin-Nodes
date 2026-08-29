@@ -164,12 +164,13 @@ def handshake(ip: str, port: int, timeout: float):
     sock.sendall(make_message("version", version_payload(ip, port)))
     got_version = got_verack = False
     subver = None
+    height = None
     deadline = time.time() + timeout
     while time.time() < deadline and not (got_version and got_verack):
         cmd, payload = read_message(sock)
         if cmd == "version":
             got_version = True
-            subver, _ = parse_version_payload(payload)
+            subver, height = parse_version_payload(payload)
             sock.sendall(make_message("verack", b""))
         elif cmd == "verack":
             got_verack = True
@@ -178,7 +179,7 @@ def handshake(ip: str, port: int, timeout: float):
     if not (got_version and got_verack):
         sock.close()
         raise ConnectionError("핸드셰이크 미완료")
-    return sock, subver
+    return sock, subver, height
 
 
 def request_addrs(sock: socket.socket, wait_seconds: float):
@@ -206,9 +207,9 @@ def request_addrs(sock: socket.socket, wait_seconds: float):
 def crawl_peer(ip: str, port: int):
     time.sleep(random.uniform(0, STAGGER_MAX))
     try:
-        sock, subver = handshake(ip, port, CONNECT_TIMEOUT)
+        sock, subver, height = handshake(ip, port, CONNECT_TIMEOUT)
     except Exception:
-        return False, [], None
+        return False, [], None, None
     try:
         addrs = request_addrs(sock, ADDR_WAIT)
     except Exception:
@@ -218,7 +219,7 @@ def crawl_peer(ip: str, port: int):
             sock.close()
         except Exception:
             pass
-    return True, addrs, subver
+    return True, addrs, subver, height
 
 
 def resolve_seeds():
@@ -237,7 +238,7 @@ def resolve_seeds():
 def crawl():
     frontier = resolve_seeds()
     visited = set()
-    reachable = {}   # ip -> subver
+    reachable = {}   # ip -> {"subver":..., "height":...}
 
     for round_num in range(1, MAX_ROUNDS + 1):
         frontier = {a for a in frontier if a not in visited}
@@ -254,11 +255,11 @@ def crawl():
                 ip, port = futures[fut]
                 visited.add((ip, port))
                 try:
-                    ok, addrs, subver = fut.result()
+                    ok, addrs, subver, height = fut.result()
                 except Exception:
-                    ok, addrs, subver = False, [], None
+                    ok, addrs, subver, height = False, [], None, None
                 if ok:
-                    reachable[ip] = subver or "알 수 없음"
+                    reachable[ip] = {"subver": subver or "알 수 없음", "height": height}
                     for a in addrs:
                         if a not in visited:
                             new_addrs.add(a)
@@ -409,22 +410,51 @@ def update_history(total_nodes: int, generated_at: str):
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
+SYNC_TOLERANCE_BLOCKS = 5   # 중앙값 대비 이 블록 수 이내면 "동기화 완료"로 간주
+
+
+def compute_network_health(reachable):
+    """자체 크롤링 결과만으로 (외부 API 의존 없이) 중앙값 기준 동기화 상태를 계산."""
+    heights = [v["height"] for v in reachable.values() if isinstance(v.get("height"), int) and v["height"] > 0]
+    if not heights:
+        return {"reference_height": None, "synced": 0, "outdated": 0, "unknown": len(reachable)}
+
+    sorted_h = sorted(heights)
+    n = len(sorted_h)
+    median = sorted_h[n // 2] if n % 2 == 1 else (sorted_h[n // 2 - 1] + sorted_h[n // 2]) // 2
+
+    synced = outdated = 0
+    for v in reachable.values():
+        h = v.get("height")
+        if not isinstance(h, int) or h <= 0:
+            continue
+        if abs(h - median) <= SYNC_TOLERANCE_BLOCKS:
+            synced += 1
+        else:
+            outdated += 1
+    unknown = len(reachable) - synced - outdated
+
+    return {"reference_height": median, "synced": synced, "outdated": outdated, "unknown": unknown}
+
+
 def main():
     print("Ravencoin 네트워크 크롤링 시작...")
-    reachable = crawl()  # ip -> subver
+    reachable = crawl()  # ip -> {"subver":..., "height":...}
     print(f"총 도달 가능 노드: {len(reachable)}개")
 
     geo = geolocate(reachable.keys()) if reachable else {}
+    health = compute_network_health(reachable)
+    print(f"네트워크 상태: 기준 높이={health['reference_height']} 동기화={health['synced']} 지연={health['outdated']} 알수없음={health['unknown']}")
 
     country_counter = Counter()
     isp_counter = Counter()
     version_counter = Counter()
     country_code_map = {}   # 국가명 -> ISO 코드 (국기 표시용)
-    for ip, subver in reachable.items():
+    for ip, node_info in reachable.items():
         info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음"})
         country_counter[info["country"]] += 1
         isp_counter[info["isp"]] += 1
-        version_counter[subver] += 1
+        version_counter[node_info["subver"]] += 1
         if info["country"] not in country_code_map:
             country_code_map[info["country"]] = info.get("countryCode", "")
 
@@ -432,17 +462,24 @@ def main():
     node_stats = update_node_stats(reachable.keys(), generated_at)
     now_dt = datetime.now(timezone.utc)
 
+    ref_height = health["reference_height"]
     node_list = []
-    for ip, subver in sorted(reachable.items()):
+    for ip, node_info in sorted(reachable.items()):
         info = geo.get(ip, {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음", "lat": None, "lon": None})
         meta = compute_node_meta(ip, node_stats, now_dt)
+        height = node_info.get("height")
+        sync_status = "unknown"
+        if isinstance(height, int) and height > 0 and ref_height is not None:
+            sync_status = "synced" if abs(height - ref_height) <= SYNC_TOLERANCE_BLOCKS else "outdated"
         node_list.append({
             "ip": ip,
             "port": PORT,
             "country": info["country"],
             "country_code": info.get("countryCode", "").lower(),
             "isp": info["isp"],
-            "version": subver,
+            "version": node_info["subver"],
+            "height": height,
+            "sync_status": sync_status,
             "lat": info.get("lat"),
             "lon": info.get("lon"),
             "age_label": meta["age_label"],
@@ -452,7 +489,8 @@ def main():
 
     result = {
         "generated_at": generated_at,
-        "total_nodes": len(reachable),
+        "total_nodes": len(reachable),   # 전체 도달 가능 노드 수 (기존 지표, 변경 없음)
+        "network_health": health,        # 부가 지표: 동기화 상태 (신규)
         "countries": top_list(country_counter, None, code_map=country_code_map),   # 전체 국가 (1개짜리도 포함)
         "isps": top_list(isp_counter, 15),
         "versions": top_list(version_counter, 15),
