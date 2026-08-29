@@ -1,263 +1,268 @@
 {
-  "generated_at": "2026-08-28T23:52:31.092478+00:00",
-  "total_nodes": 92,
+  "generated_at": "2026-08-29T00:28:10.006009+00:00",
+  "total_nodes": 94,
   "countries": [
     {
       "name": "United States",
-      "count": 20,
-      "pct": 21.74,
+      "count": 21,
+      "pct": 22.34,
       "code": "us"
+    },
+    {
+      "name": "Germany",
+      "count": 15,
+      "pct": 15.96,
+      "code": "de"
     },
     {
       "name": "France",
       "count": 15,
-      "pct": 16.3,
+      "pct": 15.96,
       "code": "fr"
     },
     {
-      "name": "Germany",
-      "count": 14,
-      "pct": 15.22,
-      "code": "de"
-    },
-    {
       "name": "The Netherlands",
-      "count": 6,
-      "pct": 6.52,
+      "count": 5,
+      "pct": 5.32,
       "code": "nl"
     },
     {
       "name": "Canada",
       "count": 4,
-      "pct": 4.35,
+      "pct": 4.26,
       "code": "ca"
     },
     {
       "name": "Finland",
       "count": 4,
-      "pct": 4.35,
+      "pct": 4.26,
       "code": "fi"
     },
     {
       "name": "Poland",
       "count": 4,
-      "pct": 4.35,
+      "pct": 4.26,
       "code": "pl"
     },
     {
-      "name": "Russia",
-      "count": 3,
-      "pct": 3.26,
-      "code": "ru"
-    },
-    {
       "name": "Singapore",
-      "count": 3,
-      "pct": 3.26,
+      "count": 4,
+      "pct": 4.26,
       "code": "sg"
     },
     {
       "name": "South Korea",
       "count": 3,
-      "pct": 3.26,
+      "pct": 3.19,
       "code": "kr"
     },
     {
-      "name": "Hong Kong",
+      "name": "Russia",
       "count": 3,
-      "pct": 3.26,
-      "code": "hk"
+      "pct": 3.19,
+      "code": "ru"
     },
     {
       "name": "United Kingdom",
       "count": 2,
-      "pct": 2.17,
+      "pct": 2.13,
       "code": "gb"
+    },
+    {
+      "name": "Hong Kong",
+      "count": 2,
+      "pct": 2.13,
+      "code": "hk"
+    },
+    {
+      "name": "Australia",
+      "count": 2,
+      "pct": 2.13,
+      "code": "au"
     },
     {
       "name": "Bulgaria",
       "count": 1,
-      "pct": 1.09,
+      "pct": 1.06,
       "code": "bg"
     },
     {
       "name": "Lithuania",
       "count": 1,
-      "pct": 1.09,
+      "pct": 1.06,
       "code": "lt"
-    },
-    {
-      "name": "Turkey",
-      "count": 1,
-      "pct": 1.09,
-      "code": "tr"
-    },
-    {
-      "name": "Argentina",
-      "count": 1,
-      "pct": 1.09,
-      "code": "ar"
-    },
-    {
-      "name": "New Zealand",
-      "count": 1,
-      "pct": 1.09,
-      "code": "nz"
     },
     {
       "name": "Austria",
       "count": 1,
-      "pct": 1.09,
+      "pct": 1.06,
       "code": "at"
     },
     {
-      "name": "Belgium",
+      "name": "Argentina",
       "count": 1,
-      "pct": 1.09,
-      "code": "be"
+      "pct": 1.06,
+      "code": "ar"
     },
     {
       "name": "Vietnam",
       "count": 1,
-      "pct": 1.09,
+      "pct": 1.06,
       "code": "vn"
-    },
-    {
-      "name": "Italy",
-      "count": 1,
-      "pct": 1.09,
-      "code": "it"
-    },
-    {
-      "name": "Australia",
-      "count": 1,
-      "pct": 1.09,
-      "code": "au"
     },
     {
       "name": "Thailand",
       "count": 1,
-      "pct": 1.09,
+      "pct": 1.06,
       "code": "th"
+    },
+    {
+      "name": "Belgium",
+      "count": 1,
+      "pct": 1.06,
+      "code": "be"
+    },
+    {
+      "name": "Italy",
+      "count": 1,
+      "pct": 1.06,
+      "code": "it"
+    },
+    {
+      "name": "New Zealand",
+      "count": 1,
+      "pct": 1.06,
+      "code": "nz"
+    },
+    {
+      "name": "Turkey",
+      "count": 1,
+      "pct": 1.06,
+      "code": "tr"
     }
   ],
   "isps": [
     {
       "name": "OVH SAS",
-      "count": 17,
-      "pct": 18.48
+      "count": 18,
+      "pct": 19.15
     },
     {
       "name": "Hetzner Online GmbH",
       "count": 14,
-      "pct": 15.22
+      "pct": 14.89
     },
     {
       "name": "DigitalOcean, LLC",
-      "count": 9,
-      "pct": 9.78
+      "count": 8,
+      "pct": 8.51
     },
     {
       "name": "Contabo GmbH",
       "count": 5,
-      "pct": 5.43
+      "pct": 5.32
     },
     {
-      "name": "Alibaba (US) Technology Co., Ltd.",
+      "name": "Comcast Cable Communications, LLC",
       "count": 3,
-      "pct": 3.26
+      "pct": 3.19
     },
     {
       "name": "netcup GmbH",
       "count": 2,
-      "pct": 2.17
+      "pct": 2.13
     },
     {
-      "name": "TechTies Inc.",
+      "name": "Alibaba (US) Technology Co., Ltd.",
       "count": 2,
-      "pct": 2.17
+      "pct": 2.13
     },
     {
       "name": "Alibaba Cloud LLC",
       "count": 2,
-      "pct": 2.17
+      "pct": 2.13
     },
     {
-      "name": "Comcast Cable Communications, LLC",
+      "name": "TechTies Inc.",
       "count": 2,
-      "pct": 2.17
+      "pct": 2.13
     },
     {
       "name": "DIGITALOCEAN",
       "count": 1,
-      "pct": 1.09
-    },
-    {
-      "name": "Amazon.com",
-      "count": 1,
-      "pct": 1.09
+      "pct": 1.06
     },
     {
       "name": "BTC-NET Ltd",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
     },
     {
       "name": "Contabo Inc.",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
     },
     {
-      "name": "Casablanca INT fraction",
+      "name": "Amazon.com",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
     },
     {
-      "name": "Rica Web Services",
+      "name": "IONOS SE",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
+    },
+    {
+      "name": "Telekomunikaciju vartai, UAB",
+      "count": 1,
+      "pct": 1.06
     }
   ],
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
       "count": 52,
-      "pct": 56.52
+      "pct": 55.32
     },
     {
       "name": "/Ravencoin:4.6.1/",
-      "count": 23,
-      "pct": 25.0
+      "count": 24,
+      "pct": 25.53
     },
     {
       "name": "/Ravencoin:4.3.2.1/",
       "count": 6,
-      "pct": 6.52
+      "pct": 6.38
     },
     {
       "name": "/Ravencoin:4.7.0/",
       "count": 6,
-      "pct": 6.52
+      "pct": 6.38
     },
     {
       "name": "/Ravencoin:4.6.1.1/",
       "count": 2,
-      "pct": 2.17
-    },
-    {
-      "name": "/Ravencoin:4.8.0(rvnx)/",
-      "count": 1,
-      "pct": 1.09
+      "pct": 2.13
     },
     {
       "name": "/Ravencoin:4.6.1(ravencoin.network)/",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
+    },
+    {
+      "name": "/Ravencoin:4.8.0(rvnx)/",
+      "count": 1,
+      "pct": 1.06
     },
     {
       "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
       "count": 1,
-      "pct": 1.09
+      "pct": 1.06
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "count": 1,
+      "pct": 1.06
     }
   ],
   "nodes": [
@@ -272,7 +277,7 @@
       "lon": 4.9392,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "107.172.135.48",
@@ -284,8 +289,8 @@
       "lat": 42.8864,
       "lon": -78.8784,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "108.65.114.139",
@@ -298,7 +303,7 @@
       "lon": -97.6689,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "110.78.164.25",
@@ -311,7 +316,7 @@
       "lon": 100.0286,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "121.183.226.156",
@@ -324,7 +329,7 @@
       "lon": 127.3849,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "122.36.126.132",
@@ -337,7 +342,7 @@
       "lon": 126.8673,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "129.213.76.88",
@@ -350,7 +355,7 @@
       "lon": -77.539,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "135.181.141.137",
@@ -363,7 +368,7 @@
       "lon": 24.9347,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "139.59.130.42",
@@ -376,7 +381,7 @@
       "lon": 8.6837,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "141.95.34.186",
@@ -389,7 +394,7 @@
       "lon": 8.07958,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "141.95.45.92",
@@ -402,7 +407,7 @@
       "lon": 8.07958,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "142.93.153.10",
@@ -415,7 +420,7 @@
       "lon": -79.4057,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "143.198.227.50",
@@ -428,7 +433,7 @@
       "lon": -121.962,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "144.76.94.38",
@@ -441,7 +446,7 @@
       "lon": 12.3649,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "145.239.11.165",
@@ -454,7 +459,7 @@
       "lon": 3.20113,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "146.59.253.219",
@@ -466,8 +471,8 @@
       "lat": 50.9871,
       "lon": 2.12554,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "147.135.97.16",
@@ -480,7 +485,7 @@
       "lon": -77.3008,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "147.182.252.121",
@@ -493,7 +498,7 @@
       "lon": -121.962,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "149.28.102.74",
@@ -505,8 +510,8 @@
       "lat": 25.8119,
       "lon": -80.2318,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "149.50.101.189",
@@ -519,20 +524,7 @@
       "lon": 21.0093,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
-    },
-    {
-      "ip": "152.42.142.221",
-      "port": 8767,
-      "country": "The Netherlands",
-      "country_code": "nl",
-      "isp": "DigitalOcean, LLC",
-      "version": "/Ravencoin:4.8.0/",
-      "lat": 52.352,
-      "lon": 4.9392,
-      "age_label": "2일 전 처음 발견",
-      "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "152.53.127.98",
@@ -545,7 +537,7 @@
       "lon": 11.0783,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "154.38.163.235",
@@ -558,7 +550,7 @@
       "lon": -90.1985,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "159.195.65.196",
@@ -571,7 +563,7 @@
       "lon": 11.0783,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "160.250.64.171",
@@ -584,7 +576,7 @@
       "lon": 105.765,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "161.97.93.60",
@@ -597,7 +589,20 @@
       "lon": 8.1851,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
+    },
+    {
+      "ip": "162.19.139.183",
+      "port": 8767,
+      "country": "Germany",
+      "country_code": "de",
+      "isp": "OVH SAS",
+      "version": "/Ravencoin:4.8.0/",
+      "lat": 50.3847,
+      "lon": 8.0475,
+      "age_label": "2일 전 처음 발견",
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "162.55.88.217",
@@ -610,7 +615,7 @@
       "lon": 12.3649,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "162.55.99.217",
@@ -623,7 +628,7 @@
       "lon": 12.3649,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "162.55.99.235",
@@ -636,7 +641,7 @@
       "lon": 12.3649,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "165.232.147.4",
@@ -649,7 +654,7 @@
       "lon": -121.962,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "167.179.158.61",
@@ -662,7 +667,7 @@
       "lon": 151.0583,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "167.71.7.23",
@@ -675,7 +680,7 @@
       "lon": 4.9392,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "176.65.132.92",
@@ -688,7 +693,7 @@
       "lon": 4.8883,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "185.16.39.236",
@@ -701,7 +706,7 @@
       "lon": 21.0602,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "185.250.241.209",
@@ -713,8 +718,8 @@
       "lat": 40.1885,
       "lon": 29.061,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "188.166.151.35",
@@ -727,7 +732,7 @@
       "lon": -0.6215,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "188.243.98.30",
@@ -740,7 +745,7 @@
       "lon": 30.2618,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "190.2.145.93",
@@ -753,7 +758,7 @@
       "lon": 4.2057,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "194.163.166.46",
@@ -766,7 +771,20 @@
       "lon": 8.1851,
       "age_label": "1일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 6
+      "checks": 7
+    },
+    {
+      "ip": "194.233.68.213",
+      "port": 8767,
+      "country": "Singapore",
+      "country_code": "sg",
+      "isp": "Contabo Asia Private Limited",
+      "version": "/Ravencoin:4.8.0/",
+      "lat": 1.2821,
+      "lon": 103.851,
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "195.201.143.156",
@@ -779,7 +797,7 @@
       "lon": 11.0783,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "2.44.247.87",
@@ -787,12 +805,12 @@
       "country": "Italy",
       "country_code": "it",
       "isp": "VODAFONE",
-      "version": "/Ravencoin:4.8.0/",
+      "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
       "lat": 43.5707,
       "lon": 11.5331,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "200.50.168.94",
@@ -805,7 +823,7 @@
       "lon": -59.0035,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "202.56.44.90",
@@ -818,7 +836,7 @@
       "lon": 176.133,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "208.72.58.214",
@@ -831,7 +849,7 @@
       "lon": -74.0055,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "213.21.195.116",
@@ -844,7 +862,7 @@
       "lon": 16.3713,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "213.91.128.133",
@@ -857,7 +875,7 @@
       "lon": 24.712,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "218.239.4.96",
@@ -870,7 +888,7 @@
       "lon": 127.6626,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "31.220.80.250",
@@ -883,7 +901,7 @@
       "lon": 8.1851,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "37.128.245.86",
@@ -896,7 +914,7 @@
       "lon": 41.4313,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "37.209.124.120",
@@ -909,7 +927,7 @@
       "lon": 9.1827,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "37.27.48.94",
@@ -922,7 +940,7 @@
       "lon": 24.9347,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "38.143.56.146",
@@ -935,7 +953,7 @@
       "lon": -73.5887,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "46.249.191.157",
@@ -948,7 +966,7 @@
       "lon": 21.111,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "47.241.254.65",
@@ -961,7 +979,7 @@
       "lon": 103.82,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "47.244.213.182",
@@ -973,21 +991,8 @@
       "lat": 22.3193,
       "lon": 114.169,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 62.5,
-      "checks": 8
-    },
-    {
-      "ip": "47.56.87.3",
-      "port": 8767,
-      "country": "Hong Kong",
-      "country_code": "hk",
-      "isp": "Alibaba (US) Technology Co., Ltd.",
-      "version": "/Ravencoin:4.8.0/",
-      "lat": 22.3193,
-      "lon": 114.169,
-      "age_label": "1일 전 처음 발견",
       "reachability_pct": 66.7,
-      "checks": 3
+      "checks": 9
     },
     {
       "ip": "5.161.192.113",
@@ -1000,7 +1005,7 @@
       "lon": -77.4903,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "5.196.79.95",
@@ -1013,7 +1018,7 @@
       "lon": 3.20113,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "5.78.48.0",
@@ -1026,7 +1031,7 @@
       "lon": -122.9874,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "5.78.64.99",
@@ -1039,7 +1044,7 @@
       "lon": -122.9874,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.178.209.252",
@@ -1052,7 +1057,7 @@
       "lon": 7.75211,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.210.219.138",
@@ -1065,7 +1070,7 @@
       "lon": 2.12554,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.222.152.238",
@@ -1078,7 +1083,7 @@
       "lon": -73.5723,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.254.47.118",
@@ -1091,7 +1096,7 @@
       "lon": 3.20113,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.75.52.32",
@@ -1104,7 +1109,7 @@
       "lon": 21.0283,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.77.53.158",
@@ -1117,7 +1122,7 @@
       "lon": 21.0093,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.79.161.39",
@@ -1130,7 +1135,7 @@
       "lon": 103.849,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "51.89.99.172",
@@ -1143,7 +1148,7 @@
       "lon": -0.1278,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "54.177.12.37",
@@ -1156,7 +1161,7 @@
       "lon": -121.895,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "54.39.156.234",
@@ -1169,7 +1174,7 @@
       "lon": -71.2226,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "57.129.76.144",
@@ -1182,7 +1187,20 @@
       "lon": 8.6693,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
+    },
+    {
+      "ip": "58.6.27.143",
+      "port": 8767,
+      "country": "Australia",
+      "country_code": "au",
+      "isp": "iiNet Limited",
+      "version": "/Ravencoin:4.8.0/",
+      "lat": -34.9894,
+      "lon": 138.5861,
+      "age_label": "신규 발견",
+      "reachability_pct": 100.0,
+      "checks": 1
     },
     {
       "ip": "62.205.101.49",
@@ -1193,9 +1211,9 @@
       "version": "/Ravencoin:4.8.0/",
       "lat": 51.2192,
       "lon": 4.3917,
-      "age_label": "19시간 전 처음 발견",
+      "age_label": "20시간 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 2
+      "checks": 3
     },
     {
       "ip": "64.23.136.181",
@@ -1208,7 +1226,7 @@
       "lon": -121.962,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "64.31.61.150",
@@ -1221,7 +1239,7 @@
       "lon": -118.244,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "65.108.15.35",
@@ -1234,7 +1252,7 @@
       "lon": 24.9347,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "65.108.72.71",
@@ -1247,7 +1265,7 @@
       "lon": 24.9347,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "76.149.112.250",
@@ -1259,8 +1277,21 @@
       "lat": 38.6288,
       "lon": -121.3291,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
+    },
+    {
+      "ip": "76.24.228.41",
+      "port": 8767,
+      "country": "United States",
+      "country_code": "us",
+      "isp": "Comcast Cable Communications, LLC",
+      "version": "/Ravencoin:4.6.1/",
+      "lat": 42.9761,
+      "lon": -71.4169,
+      "age_label": "2일 전 처음 발견",
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "79.137.67.110",
@@ -1272,8 +1303,8 @@
       "lat": 50.6924,
       "lon": 3.20113,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "8.214.93.58",
@@ -1285,8 +1316,8 @@
       "lat": 1.35208,
       "lon": 103.82,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 10
+      "reachability_pct": 90.9,
+      "checks": 11
     },
     {
       "ip": "8.218.40.182",
@@ -1299,7 +1330,7 @@
       "lon": 114.169,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "82.67.111.63",
@@ -1312,7 +1343,7 @@
       "lon": -1.69312,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 8
+      "checks": 9
     },
     {
       "ip": "84.46.246.2",
@@ -1325,7 +1356,7 @@
       "lon": 8.1851,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "85.11.167.242",
@@ -1338,7 +1369,7 @@
       "lon": 4.8883,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "85.239.243.232",
@@ -1351,7 +1382,7 @@
       "lon": -90.1985,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "87.106.242.154",
@@ -1364,7 +1395,7 @@
       "lon": 2.35138,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "88.99.70.159",
@@ -1377,7 +1408,7 @@
       "lon": 12.3649,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "91.99.230.86",
@@ -1390,7 +1421,7 @@
       "lon": 11.0783,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "92.154.36.27",
@@ -1403,7 +1434,7 @@
       "lon": 2.3494,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "95.111.241.136",
@@ -1416,7 +1447,7 @@
       "lon": 8.1851,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "95.31.2.231",
@@ -1428,8 +1459,8 @@
       "lat": 55.7487,
       "lon": 37.6187,
       "age_label": "2일 전 처음 발견",
-      "reachability_pct": 70.0,
-      "checks": 10
+      "reachability_pct": 72.7,
+      "checks": 11
     },
     {
       "ip": "96.67.83.140",
@@ -1442,7 +1473,7 @@
       "lon": -86.8622,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     },
     {
       "ip": "98.94.236.125",
@@ -1455,7 +1486,7 @@
       "lon": -77.4874,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 10
+      "checks": 11
     }
   ]
 }
