@@ -123,6 +123,20 @@
     border-radius:8px;cursor:pointer;transition:border-color .15s,color .15s;
   }
   .csv-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .health-sub{font-size:11px;color:var(--text-dim);text-transform:none;letter-spacing:0;font-weight:400;margin-left:4px;}
+  .health-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px;}
+  .health-card{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .health-card .h-label{font-size:11.5px;color:var(--text-mute);margin-bottom:6px;}
+  .health-card .h-num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;}
+  .health-card .h-pct{font-size:11.5px;color:var(--text-dim);margin-top:3px;}
+  .health-card.synced .h-num{color:#7CC576;}
+  .health-card.outdated .h-num{color:var(--coral);}
+  .health-card.unknown .h-num{color:var(--text-mute);}
+  .health-ref{font-size:12px;color:var(--text-dim);text-align:center;}
+  .health-ref b{color:var(--text-mute);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+  @media (max-width:640px){
+    .health-grid{grid-template-columns:1fr;}
+  }
   .trend-summary{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap;}
   .trend-current{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--text);font-weight:500;}
   .trend-diff{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
@@ -188,6 +202,11 @@
     <div class="hero-meta" id="heroMeta">
       <div>마지막 측정: <span id="lastUpdate">불러오는 중…</span></div>
     </div>
+  </div>
+
+  <div class="panel">
+    <h2><span class="dot" style="background:#7CC576"></span>네트워크 건강도 <span class="health-sub">(자체 측정 기준 — 외부 API 미사용)</span></h2>
+    <div id="healthPanel"><div class="skeleton" style="width:100%"></div></div>
   </div>
 
   <div class="panel">
@@ -383,6 +402,38 @@ function fmtShortDate(iso){
   }catch(e){ return iso; }
 }
 
+function renderHealth(health, totalNodes){
+  const el = document.getElementById('healthPanel');
+  if(!health || health.reference_height == null){
+    el.innerHTML = '<div class="state">아직 높이 정보가 충분하지 않아 계산할 수 없습니다.</div>';
+    return;
+  }
+  const { synced, outdated, unknown, reference_height } = health;
+  const total = synced + outdated + unknown;
+  const pct = (n) => total ? ((n / total) * 100).toFixed(1) : '0.0';
+
+  el.innerHTML = `
+    <div class="health-grid">
+      <div class="health-card synced">
+        <div class="h-label">동기화 완료 (Synced)</div>
+        <div class="h-num">${synced.toLocaleString()}</div>
+        <div class="h-pct">전체의 ${pct(synced)}%</div>
+      </div>
+      <div class="health-card outdated">
+        <div class="h-label">지연 · 구버전 (Outdated)</div>
+        <div class="h-num">${outdated.toLocaleString()}</div>
+        <div class="h-pct">전체의 ${pct(outdated)}%</div>
+      </div>
+      <div class="health-card unknown">
+        <div class="h-label">높이 확인 불가</div>
+        <div class="h-num">${unknown.toLocaleString()}</div>
+        <div class="h-pct">전체의 ${pct(unknown)}%</div>
+      </div>
+    </div>
+    <div class="health-ref">기준 높이(중앙값): <b>${reference_height.toLocaleString()}</b> · 이 값 ±5블록 이내면 "동기화 완료"로 분류</div>
+  `;
+}
+
 function renderTrendChart(history){
   const el = document.getElementById('trendChart');
   if(!history || history.length < 2){
@@ -555,7 +606,7 @@ function spawnSignal(){
 let allNodes = [];
 
 function nodesToCsv(nodes){
-  const headers = ['ip','port','country','country_code','isp','version','lat','lon','age_label','reachability_pct','checks'];
+  const headers = ['ip','port','country','country_code','isp','version','height','sync_status','lat','lon','age_label','reachability_pct','checks'];
   const escape = (v) => {
     if(v === null || v === undefined) return '';
     const s = String(v);
@@ -609,6 +660,14 @@ function renderSearchResult(query){
     const pct = n.reachability_pct;
     const relClass = pct == null ? '' : pct >= 90 ? 'high' : pct >= 60 ? 'mid' : 'low';
     const relText = pct == null ? '' : `신뢰도 ${pct}% (최근 ${n.checks}회 중 ${Math.round(pct * n.checks / 100)}회)`;
+
+    let syncHtml = '';
+    if(n.sync_status === 'synced'){
+      syncHtml = `<span class="sep">·</span><span class="reliability high">동기화 완료${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
+    } else if(n.sync_status === 'outdated'){
+      syncHtml = `<span class="sep">·</span><span class="reliability low">지연/구버전${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
+    }
+
     return `
     <div class="node-card hit">
       <div class="node-card-top">
@@ -623,6 +682,7 @@ function renderSearchResult(query){
         <span class="sep">·</span>
         <span>${n.age_label || ''}</span>
         ${relText ? `<span class="sep">·</span><span class="reliability ${relClass}">${relText}</span>` : ''}
+        ${syncHtml}
       </div>
     </div>`;
   }).join('') + `<div class="search-hint">${matches.length}개 일치</div>`;
@@ -641,6 +701,7 @@ async function load(){
     document.getElementById('totalNum').textContent = (data.total_nodes ?? 0).toLocaleString();
     document.getElementById('lastUpdate').textContent = data.generated_at ? fmtTime(data.generated_at) : '정보 없음';
     checkStaleness(data.generated_at);
+    renderHealth(data.network_health, data.total_nodes);
 
     renderCountries(data.countries);
     renderSimple('ispList', data.isps, 'var(--blue)');
@@ -652,7 +713,7 @@ async function load(){
   }catch(e){
     document.getElementById('totalNum').textContent = '오류';
     document.getElementById('lastUpdate').textContent = '불러오기 실패: ' + e.message;
-    ['countryList','ispList','versionList'].forEach(id=>{
+    ['countryList','ispList','versionList','healthPanel'].forEach(id=>{
       document.getElementById(id).innerHTML = '<div class="state err">데이터를 아직 불러올 수 없습니다. (첫 크롤링이 아직 안 돌았을 수 있어요)</div>';
     });
     document.getElementById('searchResult').innerHTML = '<div class="search-hint">데이터를 불러오지 못해 검색을 쓸 수 없습니다.</div>';
