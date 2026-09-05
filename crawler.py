@@ -11,6 +11,7 @@ ravencoin_node_crawler.py를 서버 자동 실행용으로 다듬은 버전입�
 """
 
 import os
+import re
 import socket
 import struct
 import hashlib
@@ -410,31 +411,98 @@ def update_history(total_nodes: int, generated_at: str):
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
-SYNC_TOLERANCE_BLOCKS = 5   # 중앙값 대비 이 블록 수 이내면 "동기화 완료"로 간주
+SYNC_TOLERANCE_BLOCKS = 50    # 기준 높이 대비 이 블록 수 이내면 "동기화 완료" (크롤링 소요시간 15~20분 동안 쌓이는 자연스러운 오차를 흡수)
+STALLED_THRESHOLD_BLOCKS = 500   # 기준 높이보다 이만큼 이상 뒤처지면 "정지된 노드"(사실상 죽은 노드)로 간주. 그 사이는 "지연 중"
+
+
+def _robust_median(heights):
+    """정지된(극단적으로 뒤처진) 노드가 섞여 있어도 기준 높이가 흔들리지 않도록,
+    1차 중앙값 근처(±1000블록)로 한 번 걸러낸 뒤 그 안에서 중앙값을 다시 계산."""
+    def median_of(values):
+        s = sorted(values)
+        n = len(s)
+        return s[n // 2] if n % 2 == 1 else (s[n // 2 - 1] + s[n // 2]) // 2
+
+    first_pass = median_of(heights)
+    filtered = [h for h in heights if abs(h - first_pass) <= 1000]
+    if len(filtered) >= max(3, len(heights) * 0.2):
+        return median_of(filtered)
+    return first_pass   # 필터링 후 표본이 너무 적으면 1차 값을 그대로 사용
+
+
+MIN_SAMPLE_FOR_REFERENCE = 3   # 기준 버전으로 채택하려면 최소 이 정도 노드 수는 있어야 함 (노이즈/버그성 버전 문자열 방지)
+
+
+def _parse_subver_version(subver):
+    """'/Ravencoin:4.8.0/' 같은 문자열에서 (4,8,0) 형태의 버전 튜플을 뽑아냄. 실패하면 None."""
+    if not subver:
+        return None
+    m = re.search(r"(\d+)\.(\d+)\.(\d+)", subver)
+    if not m:
+        return None
+    return tuple(int(x) for x in m.groups())
 
 
 def compute_network_health(reachable):
-    """자체 크롤링 결과만으로 (외부 API 의존 없이) 중앙값 기준 동기화 상태를 계산."""
-    heights = [v["height"] for v in reachable.values() if isinstance(v.get("height"), int) and v["height"] > 0]
-    if not heights:
-        return {"reference_height": None, "synced": 0, "outdated": 0, "unknown": len(reachable)}
+    """자체 크롤링 결과만으로 (외부 API 의존 없이) 동기화 상태를 3단계로 계산.
 
-    sorted_h = sorted(heights)
-    n = len(sorted_h)
-    median = sorted_h[n // 2] if n % 2 == 1 else (sorted_h[n // 2 - 1] + sorted_h[n // 2]) // 2
+    기준 높이는 "가장 인기 많은 버전"이 아니라 "표본이 충분히 있는 것 중 버전 번호가 가장 높은(=최신)
+    클라이언트"의 높이로 계산한다. 롤백 이후 방치된 구버전(예: 4.6.x)이 세부 버전 하나에 몰려서
+    개수로는 다수가 되더라도, "숫자가 더 큰 최신 버전"이 있다면 그쪽을 기준으로 삼아 착시를 방지한다.
+    최신 버전 문자열을 아예 파싱할 수 없는 경우에만, 표본이 가장 많은 버전으로 대체한다.
 
-    synced = outdated = 0
+    - 동기화 완료(synced): 기준 높이 ±50블록 이내 — 정상
+    - 지연 중(lagging): 그보다는 뒤처졌지만 아직 500블록 미만 — 막 따라잡는 중일 가능성
+    - 정지(stalled): 기준 높이보다 500블록 이상 뒤처짐 — 응답만 하고 사실상 죽은 노드
+    """
+    version_heights = {}
+    for v in reachable.values():
+        h = v.get("height")
+        if isinstance(h, int) and h > 0:
+            version_heights.setdefault(v.get("subver") or "알 수 없음", []).append(h)
+
+    if not version_heights:
+        return {"reference_height": None, "reference_version": None, "synced": 0, "lagging": 0, "stalled": 0, "unknown": len(reachable), "stalled_versions": []}
+
+    # 1순위: 표본이 충분한 버전들 중 버전 번호가 가장 높은 것
+    parsable = [
+        (ver, heights, _parse_subver_version(ver))
+        for ver, heights in version_heights.items()
+        if len(heights) >= MIN_SAMPLE_FOR_REFERENCE and _parse_subver_version(ver) is not None
+    ]
+    if parsable:
+        reference_version, dominant_heights, _ = max(parsable, key=lambda item: item[2])
+    else:
+        # 2순위(대체): 버전 파싱이 다 실패하면 표본이 가장 많은 버전으로
+        reference_version, dominant_heights = max(version_heights.items(), key=lambda kv: len(kv[1]))
+
+    median = _robust_median(dominant_heights)
+
+    synced = lagging = stalled = 0
+    stalled_version_counter = Counter()
     for v in reachable.values():
         h = v.get("height")
         if not isinstance(h, int) or h <= 0:
             continue
+        behind = median - h   # 양수면 기준 높이보다 뒤처진 것
         if abs(h - median) <= SYNC_TOLERANCE_BLOCKS:
             synced += 1
+        elif behind >= STALLED_THRESHOLD_BLOCKS:
+            stalled += 1
+            stalled_version_counter[v.get("subver") or "알 수 없음"] += 1
         else:
-            outdated += 1
-    unknown = len(reachable) - synced - outdated
+            lagging += 1
+    unknown = len(reachable) - synced - lagging - stalled
 
-    return {"reference_height": median, "synced": synced, "outdated": outdated, "unknown": unknown}
+    return {
+        "reference_height": median,
+        "reference_version": reference_version,
+        "synced": synced,
+        "lagging": lagging,
+        "stalled": stalled,
+        "unknown": unknown,
+        "stalled_versions": top_list(stalled_version_counter, None) if stalled else [],
+    }
 
 
 def main():
@@ -444,7 +512,7 @@ def main():
 
     geo = geolocate(reachable.keys()) if reachable else {}
     health = compute_network_health(reachable)
-    print(f"네트워크 상태: 기준 높이={health['reference_height']} 동기화={health['synced']} 지연={health['outdated']} 알수없음={health['unknown']}")
+    print(f"네트워크 상태: 기준 높이={health['reference_height']} 동기화={health['synced']} 지연={health['lagging']} 정지={health['stalled']} 알수없음={health['unknown']}")
 
     country_counter = Counter()
     isp_counter = Counter()
@@ -470,7 +538,13 @@ def main():
         height = node_info.get("height")
         sync_status = "unknown"
         if isinstance(height, int) and height > 0 and ref_height is not None:
-            sync_status = "synced" if abs(height - ref_height) <= SYNC_TOLERANCE_BLOCKS else "outdated"
+            behind = ref_height - height
+            if abs(height - ref_height) <= SYNC_TOLERANCE_BLOCKS:
+                sync_status = "synced"
+            elif behind >= STALLED_THRESHOLD_BLOCKS:
+                sync_status = "stalled"
+            else:
+                sync_status = "lagging"
         node_list.append({
             "ip": ip,
             "port": PORT,
