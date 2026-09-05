@@ -12,6 +12,7 @@ ravencoin_node_crawler.py를 서버 자동 실행용으로 다듬은 버전입�
 
 import os
 import re
+import ipaddress
 import socket
 import struct
 import hashlib
@@ -19,6 +20,7 @@ import time
 import random
 import json
 import urllib.request
+import urllib.error
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -141,6 +143,14 @@ def read_message(sock: socket.socket):
     return command, payload
 
 
+def is_routable(ip: str) -> bool:
+    """사설망(10.0.0.0/8 등)/루프백/링크로컬 등 비공인 주소는 크롤링 대상에서 제외."""
+    try:
+        return ipaddress.ip_address(ip).is_global
+    except ValueError:
+        return False
+
+
 def parse_addr_payload(payload: bytes):
     count, pos = read_varint(payload, 0)
     results = []
@@ -155,7 +165,8 @@ def parse_addr_payload(payload: bytes):
             ip = socket.inet_ntoa(ip_bytes[12:16])
         else:
             ip = socket.inet_ntop(socket.AF_INET6, ip_bytes)
-        results.append((ip, port))
+        if is_routable(ip):
+            results.append((ip, port))
     return results
 
 
@@ -276,6 +287,8 @@ def crawl():
 def geolocate(ips):
     results = {}
     ip_list = list(ips)
+    MAX_RETRIES = 3
+
     for i in range(0, len(ip_list), 100):
         chunk = ip_list[i:i + 100]
         body = json.dumps(
@@ -285,23 +298,36 @@ def geolocate(ips):
             "http://ip-api.com/batch", data=body,
             headers={"Content-Type": "application/json"}
         )
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-            for entry in data:
-                q = entry.get("query")
-                if entry.get("status") == "success":
-                    results[q] = {
-                        "country": entry.get("country", "알 수 없음"),
-                        "countryCode": entry.get("countryCode", ""),
-                        "isp": entry.get("isp", "알 수 없음"),
-                        "lat": entry.get("lat"),
-                        "lon": entry.get("lon"),
-                    }
-                else:
-                    results[q] = {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음", "lat": None, "lon": None}
-        except Exception as e:
-            print(f"  ! GeoIP 조회 일부 실패: {e}")
+
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                for entry in data:
+                    q = entry.get("query")
+                    if entry.get("status") == "success":
+                        results[q] = {
+                            "country": entry.get("country", "알 수 없음"),
+                            "countryCode": entry.get("countryCode", ""),
+                            "isp": entry.get("isp", "알 수 없음"),
+                            "lat": entry.get("lat"),
+                            "lon": entry.get("lon"),
+                        }
+                    else:
+                        results[q] = {"country": "알 수 없음", "countryCode": "", "isp": "알 수 없음", "lat": None, "lon": None}
+                break   # 성공했으니 재시도 루프 탈출
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < MAX_RETRIES:
+                    wait = 60 * attempt   # 60초, 120초로 점점 늘려가며 대기
+                    print(f"  ! GeoIP 요청 제한(429) - {wait}초 대기 후 재시도 ({attempt}/{MAX_RETRIES})")
+                    time.sleep(wait)
+                    continue
+                print(f"  ! GeoIP 조회 일부 실패 (HTTP {e.code}): {e}")
+                break
+            except Exception as e:
+                print(f"  ! GeoIP 조회 일부 실패: {e}")
+                break
+
         time.sleep(1.5)
     return results
 
