@@ -132,19 +132,19 @@
   }
   .csv-btn:hover{border-color:var(--gold);color:var(--gold);}
   .health-sub{font-size:11px;color:var(--text-dim);text-transform:none;letter-spacing:0;font-weight:400;margin-left:4px;}
-  .health-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px;}
+  .health-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin-bottom:14px;}
   .health-card{background:var(--panel-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
   .health-card .h-label{font-size:11.5px;color:var(--text-mute);margin-bottom:6px;}
   .health-card .h-num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;}
   .health-card .h-pct{font-size:11.5px;color:var(--text-dim);margin-top:3px;}
   .health-card.synced .h-num{color:#7CC576;}
-  .health-card.outdated .h-num{color:var(--coral);}
+  .health-card.lagging .h-num{color:var(--gold);}
+  .health-card.stalled .h-num{color:var(--coral);}
   .health-card.unknown .h-num{color:var(--text-mute);}
+  .stalled-versions{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);}
+  .stalled-versions-title{font-size:12px;color:var(--coral);margin-bottom:10px;}
   .health-ref{font-size:12px;color:var(--text-dim);text-align:center;}
   .health-ref b{color:var(--text-mute);font-family:'IBM Plex Mono',monospace;font-weight:500;}
-  @media (max-width:640px){
-    .health-grid{grid-template-columns:1fr;}
-  }
   .trend-summary{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap;}
   .trend-current{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--text);font-weight:500;}
   .trend-diff{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
@@ -334,9 +334,11 @@ const I18N = {
     unit: '개',
     ofTotal: '전체의',
     synced: '동기화 완료',
-    outdated: '지연 · 구버전',
+    lagging: '지연 중',
+    stalled: '정지된 노드',
     unknownHeight: '높이 확인 불가',
-    refHeight: (h) => `기준 높이(중앙값): <b>${h.toLocaleString()}</b> · 이 값 ±5블록 이내면 "동기화 완료"로 분류`,
+    refHeight: (h, ver) => `기준 높이: <b>${h.toLocaleString()}</b> (기준 버전: <b>${ver || '알 수 없음'}</b>) · ±50블록 이내는 "동기화 완료", 500블록 이상 뒤처지면 "정지"로 분류`,
+    stalledVersionsTitle: '정지된 노드의 클라이언트 버전 분포',
     trendCurrent: (n) => `${n.toLocaleString()}개`,
     trendDiff: (sign, diff) => `${sign} ${diff} (직전 측정 대비)`,
     trendRange: (n, min, max) => `최근 ${n}회 측정 · 최소 ${min} · 최대 ${max}`,
@@ -380,9 +382,11 @@ const I18N = {
     unit: '',
     ofTotal: 'of total:',
     synced: 'Synced',
-    outdated: 'Outdated',
+    lagging: 'Lagging',
+    stalled: 'Stalled',
     unknownHeight: 'Height unknown',
-    refHeight: (h) => `Reference height (median): <b>${h.toLocaleString()}</b> · within ±5 blocks counts as "Synced"`,
+    refHeight: (h, ver) => `Reference height: <b>${h.toLocaleString()}</b> (reference version: <b>${ver || 'unknown'}</b>) · within ±50 blocks = "Synced", 500+ blocks behind = "Stalled"`,
+    stalledVersionsTitle: 'Client versions among stalled nodes',
     trendCurrent: (n) => `${n.toLocaleString()}`,
     trendDiff: (sign, diff) => `${sign} ${diff} (vs previous)`,
     trendRange: (n, min, max) => `Last ${n} measurements · min ${min} · max ${max}`,
@@ -567,21 +571,43 @@ function renderHealth(health, totalNodes){
     el.innerHTML = `<div class="state">${t('healthEmpty')}</div>`;
     return;
   }
-  const { synced, outdated, unknown, reference_height } = health;
-  const total = synced + outdated + unknown;
+  const { synced, lagging, stalled, unknown, reference_height, reference_version, stalled_versions } = health;
+  const total = synced + lagging + stalled + unknown;
   const pct = (n) => total ? ((n / total) * 100).toFixed(1) : '0.0';
+
+  const maxStalledVer = (stalled_versions && stalled_versions.length)
+    ? Math.max(...stalled_versions.map(v => v.count)) : 1;
+
+  const stalledVersionsHtml = (stalled_versions && stalled_versions.length) ? `
+    <div class="stalled-versions">
+      <div class="stalled-versions-title">⚠ ${t('stalledVersionsTitle')}</div>
+      ${stalled_versions.map((v,i) => `
+        <div class="simple-row">
+          <div class="rank">${i+1}</div>
+          <div class="name" title="${v.name}">${v.name}</div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--coral);width:${(v.count/maxStalledVer*100).toFixed(1)}%"></div></div>
+          <div class="count">${v.count.toLocaleString()}</div>
+        </div>
+      `).join('')}
+    </div>
+  ` : '';
 
   el.innerHTML = `
     <div class="health-grid">
       <div class="health-card synced">
-        <div class="h-label">${t('synced')} (Synced)</div>
+        <div class="h-label">${t('synced')}</div>
         <div class="h-num">${synced.toLocaleString()}</div>
         <div class="h-pct">${t('ofTotal')} ${pct(synced)}%</div>
       </div>
-      <div class="health-card outdated">
-        <div class="h-label">${t('outdated')} (Outdated)</div>
-        <div class="h-num">${outdated.toLocaleString()}</div>
-        <div class="h-pct">${t('ofTotal')} ${pct(outdated)}%</div>
+      <div class="health-card lagging">
+        <div class="h-label">${t('lagging')}</div>
+        <div class="h-num">${lagging.toLocaleString()}</div>
+        <div class="h-pct">${t('ofTotal')} ${pct(lagging)}%</div>
+      </div>
+      <div class="health-card stalled">
+        <div class="h-label">${t('stalled')}</div>
+        <div class="h-num">${stalled.toLocaleString()}</div>
+        <div class="h-pct">${t('ofTotal')} ${pct(stalled)}%</div>
       </div>
       <div class="health-card unknown">
         <div class="h-label">${t('unknownHeight')}</div>
@@ -589,7 +615,8 @@ function renderHealth(health, totalNodes){
         <div class="h-pct">${t('ofTotal')} ${pct(unknown)}%</div>
       </div>
     </div>
-    <div class="health-ref">${t('refHeight', reference_height)}</div>
+    <div class="health-ref">${t('refHeight', reference_height, reference_version)}</div>
+    ${stalledVersionsHtml}
   `;
 }
 
@@ -824,8 +851,10 @@ function renderSearchResult(query){
     let syncHtml = '';
     if(n.sync_status === 'synced'){
       syncHtml = `<span class="sep">·</span><span class="reliability high">동기화 완료${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
-    } else if(n.sync_status === 'outdated'){
-      syncHtml = `<span class="sep">·</span><span class="reliability low">지연/구버전${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
+    } else if(n.sync_status === 'lagging'){
+      syncHtml = `<span class="sep">·</span><span class="reliability mid">지연 중${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
+    } else if(n.sync_status === 'stalled'){
+      syncHtml = `<span class="sep">·</span><span class="reliability low">⚠ 정지된 노드${n.height ? ' (높이 ' + n.height.toLocaleString() + ')' : ''}</span>`;
     }
 
     return `
