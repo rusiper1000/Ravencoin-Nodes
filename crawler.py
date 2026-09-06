@@ -73,15 +73,22 @@ def encode_varint(n: int) -> bytes:
 
 
 def read_varint(data: bytes, pos: int):
+    if pos >= len(data):
+        raise ValueError(f"read_varint: 읽을 데이터 부족 (pos={pos}, len={len(data)})")
     first = data[pos]
     pos += 1
     if first < 0xfd:
         return first, pos
     elif first == 0xfd:
-        return struct.unpack("<H", data[pos:pos + 2])[0], pos + 2
+        need = 2
     elif first == 0xfe:
-        return struct.unpack("<I", data[pos:pos + 4])[0], pos + 4
-    return struct.unpack("<Q", data[pos:pos + 8])[0], pos + 8
+        need = 4
+    else:
+        need = 8
+    if pos + need > len(data):
+        raise ValueError(f"read_varint: 잘린 패킷 (pos={pos}, need={need}, len={len(data)})")
+    fmt = {2: "<H", 4: "<I", 8: "<Q"}[need]
+    return struct.unpack(fmt, data[pos:pos + need])[0], pos + need
 
 
 def encode_varstr(s: bytes) -> bytes:
@@ -220,8 +227,8 @@ def crawl_peer(ip: str, port: int):
     time.sleep(random.uniform(0, STAGGER_MAX))
     try:
         sock, subver, height = handshake(ip, port, CONNECT_TIMEOUT)
-    except Exception:
-        return False, [], None, None
+    except Exception as e:
+        return False, [], None, None, type(e).__name__
     try:
         addrs = request_addrs(sock, ADDR_WAIT)
     except Exception:
@@ -231,7 +238,7 @@ def crawl_peer(ip: str, port: int):
             sock.close()
         except Exception:
             pass
-    return True, addrs, subver, height
+    return True, addrs, subver, height, None
 
 
 def resolve_seeds():
@@ -251,6 +258,9 @@ def crawl():
     frontier = resolve_seeds()
     visited = set()
     reachable = {}   # ip -> {"subver":..., "height":...}
+    total_attempted = 0
+    total_failed = 0
+    fail_reasons_all = Counter()
 
     for round_num in range(1, MAX_ROUNDS + 1):
         frontier = {a for a in frontier if a not in visited}
@@ -261,23 +271,39 @@ def crawl():
         print(f"[라운드 {round_num}] {len(batch)}개 주소에 접속 시도 중...")
 
         new_addrs = set()
+        round_fail_reasons = Counter()
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
             futures = {ex.submit(crawl_peer, ip, port): (ip, port) for ip, port in batch}
             for fut in as_completed(futures):
                 ip, port = futures[fut]
                 visited.add((ip, port))
+                total_attempted += 1
                 try:
-                    ok, addrs, subver, height = fut.result()
-                except Exception:
-                    ok, addrs, subver, height = False, [], None, None
+                    ok, addrs, subver, height, err = fut.result()
+                except Exception as e:
+                    ok, addrs, subver, height, err = False, [], None, None, type(e).__name__
                 if ok:
                     reachable[ip] = {"subver": subver or "알 수 없음", "height": height}
                     for a in addrs:
                         if a not in visited:
                             new_addrs.add(a)
+                else:
+                    total_failed += 1
+                    reason = err or "Unknown"
+                    round_fail_reasons[reason] += 1
+                    fail_reasons_all[reason] += 1
 
         print(f"  -> 누적 도달 가능 노드: {len(reachable)}개 / 새로 발견된 주소: {len(new_addrs)}개")
+        if round_fail_reasons:
+            reason_str = ", ".join(f"{k}:{v}" for k, v in round_fail_reasons.most_common())
+            print(f"  -> 이번 라운드 실패 사유: {reason_str}")
         frontier = new_addrs
+
+    # 이번 크롤링 전체가 유난히 낮게 나온 경우, 원인 추적을 위해 실패 사유 전체 요약을 남김
+    fail_rate = (total_failed / total_attempted * 100) if total_attempted else 0
+    print(f"[요약] 총 시도 {total_attempted}회 중 실패 {total_failed}회 ({fail_rate:.1f}%)")
+    if fail_reasons_all:
+        print(f"[요약] 전체 실패 사유 분포: {dict(fail_reasons_all.most_common())}")
 
     return reachable
 
