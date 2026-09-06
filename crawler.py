@@ -456,7 +456,8 @@ def _robust_median(heights):
     return first_pass   # 필터링 후 표본이 너무 적으면 1차 값을 그대로 사용
 
 
-MIN_SAMPLE_FOR_REFERENCE = 3   # 기준 버전으로 채택하려면 최소 이 정도 노드 수는 있어야 함 (노이즈/버그성 버전 문자열 방지)
+MIN_SAMPLE_FOR_REFERENCE = 3     # 기준 버전으로 채택하려면 최소 이 정도 노드 수는 있어야 함 (노이즈/버그성 버전 문자열 방지)
+MIN_SHARE_FOR_REFERENCE = 0.05   # + 높이 정보 있는 전체 노드의 이 비율(5%) 이상도 함께 요구 (소수의 가짜 노드가 기준을 조작하는 것 방지)
 
 
 def _parse_subver_version(subver):
@@ -472,9 +473,11 @@ def _parse_subver_version(subver):
 def compute_network_health(reachable):
     """자체 크롤링 결과만으로 (외부 API 의존 없이) 동기화 상태를 3단계로 계산.
 
-    기준 높이는 "가장 인기 많은 버전"이 아니라 "표본이 충분히 있는 것 중 버전 번호가 가장 높은(=최신)
-    클라이언트"의 높이로 계산한다. 롤백 이후 방치된 구버전(예: 4.6.x)이 세부 버전 하나에 몰려서
-    개수로는 다수가 되더라도, "숫자가 더 큰 최신 버전"이 있다면 그쪽을 기준으로 삼아 착시를 방지한다.
+    기준 높이는 "가장 인기 많은 버전"이 아니라, 표본이 충분한(최소 개수 및 전체 대비 최소
+    비율을 모두 만족하는) 버전들 중 버전 번호가 가장 높은(=최신) 클라이언트의 높이로 계산한다.
+    롤백 이후 방치된 구버전(예: 4.6.x)이 세부 버전 하나에 몰려서 개수로는 다수가 되더라도,
+    "숫자가 더 큰 최신 버전"이 있다면 그쪽을 기준으로 삼아 착시를 방지한다. 비율 조건은
+    소수의 가짜/이상 노드가 조작된 버전 문자열로 기준을 흔드는 것도 함께 막아준다.
     최신 버전 문자열을 아예 파싱할 수 없는 경우에만, 표본이 가장 많은 버전으로 대체한다.
 
     - 동기화 완료(synced): 기준 높이 ±50블록 이내 — 정상
@@ -490,11 +493,14 @@ def compute_network_health(reachable):
     if not version_heights:
         return {"reference_height": None, "reference_version": None, "synced": 0, "lagging": 0, "stalled": 0, "unknown": len(reachable), "stalled_versions": []}
 
-    # 1순위: 표본이 충분한 버전들 중 버전 번호가 가장 높은 것
+    total_with_height = sum(len(h) for h in version_heights.values())
+    min_needed = max(MIN_SAMPLE_FOR_REFERENCE, total_with_height * MIN_SHARE_FOR_REFERENCE)
+
+    # 1순위: 표본이 충분한(개수·비율 둘 다 만족) 버전들 중 버전 번호가 가장 높은 것
     parsable = [
         (ver, heights, _parse_subver_version(ver))
         for ver, heights in version_heights.items()
-        if len(heights) >= MIN_SAMPLE_FOR_REFERENCE and _parse_subver_version(ver) is not None
+        if len(heights) >= min_needed and _parse_subver_version(ver) is not None
     ]
     if parsable:
         reference_version, dominant_heights, _ = max(parsable, key=lambda item: item[2])
