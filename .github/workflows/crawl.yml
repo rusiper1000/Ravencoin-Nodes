@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 크롤러 실행
+        env:
+          PYTHONIOENCODING: "utf-8"   # Windows 콘솔 기본 인코딩 때문에 로그의 한글이 깨지는 것 방지
         run: python crawler.py
 
       - name: 결과 커밋 및 푸시
