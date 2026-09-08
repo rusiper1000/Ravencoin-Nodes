@@ -228,7 +228,7 @@ def crawl_peer(ip: str, port: int):
     try:
         sock, subver, height = handshake(ip, port, CONNECT_TIMEOUT)
     except Exception as e:
-        return False, [], None, None, type(e).__name__
+        return False, [], None, None, f"{type(e).__name__}: {e}"
     try:
         addrs = request_addrs(sock, ADDR_WAIT)
     except Exception:
@@ -261,6 +261,7 @@ def crawl():
     total_attempted = 0
     total_failed = 0
     fail_reasons_all = Counter()
+    fail_samples = {}   # 카테고리 -> 실제 에러 메시지 샘플 최대 3개
 
     for round_num in range(1, MAX_ROUNDS + 1):
         frontier = {a for a in frontier if a not in visited}
@@ -281,7 +282,7 @@ def crawl():
                 try:
                     ok, addrs, subver, height, err = fut.result()
                 except Exception as e:
-                    ok, addrs, subver, height, err = False, [], None, None, type(e).__name__
+                    ok, addrs, subver, height, err = False, [], None, None, f"{type(e).__name__}: {e}"
                 if ok:
                     reachable[ip] = {"subver": subver or "알 수 없음", "height": height}
                     for a in addrs:
@@ -289,9 +290,13 @@ def crawl():
                             new_addrs.add(a)
                 else:
                     total_failed += 1
-                    reason = err or "Unknown"
-                    round_fail_reasons[reason] += 1
-                    fail_reasons_all[reason] += 1
+                    full_reason = err or "Unknown: Unknown"
+                    category = full_reason.split(":", 1)[0].strip()
+                    round_fail_reasons[category] += 1
+                    fail_reasons_all[category] += 1
+                    samples = fail_samples.setdefault(category, [])
+                    if len(samples) < 3:
+                        samples.append(f"{ip}:{port} -> {full_reason}")
 
         print(f"  -> 누적 도달 가능 노드: {len(reachable)}개 / 새로 발견된 주소: {len(new_addrs)}개")
         if round_fail_reasons:
@@ -304,6 +309,10 @@ def crawl():
     print(f"[요약] 총 시도 {total_attempted}회 중 실패 {total_failed}회 ({fail_rate:.1f}%)")
     if fail_reasons_all:
         print(f"[요약] 전체 실패 사유 분포: {dict(fail_reasons_all.most_common())}")
+        print("[요약] 사유별 실제 에러 메시지 샘플:")
+        for category, _ in fail_reasons_all.most_common():
+            for s in fail_samples.get(category, []):
+                print(f"    [{category}] {s}")
 
     return reachable
 
