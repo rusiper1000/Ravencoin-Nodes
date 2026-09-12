@@ -254,6 +254,20 @@ def resolve_seeds():
     return seeds
 
 
+def check_ipv6_available() -> bool:
+    """지금 이 순간 IPv6로 나가는 경로가 살아있는지 빠르게 확인 (3초 이내).
+    막혀있으면 이번 크롤링에서만 IPv6 주소를 건너뛰어 시간 낭비/대량 오류를 방지."""
+    known_ipv6_hosts = [("2606:4700:4700::1111", 53), ("2001:4860:4860::8888", 53)]  # Cloudflare, Google DNS
+    for host, port in known_ipv6_hosts:
+        try:
+            sock = socket.create_connection((host, port), timeout=3)
+            sock.close()
+            return True
+        except Exception:
+            continue
+    return False
+
+
 def crawl():
     frontier = resolve_seeds()
     visited = set()
@@ -262,6 +276,9 @@ def crawl():
     total_failed = 0
     fail_reasons_all = Counter()
     fail_samples = {}   # 카테고리 -> 실제 에러 메시지 샘플 최대 3개
+
+    ipv6_ok = check_ipv6_available()
+    print(f"IPv6 연결 상태: {'정상' if ipv6_ok else '불가 (이번 크롤링에서는 IPv6 주소를 건너뜁니다)'}")
 
     for round_num in range(1, MAX_ROUNDS + 1):
         frontier = {a for a in frontier if a not in visited}
@@ -286,8 +303,12 @@ def crawl():
                 if ok:
                     reachable[ip] = {"subver": subver or "알 수 없음", "height": height}
                     for a in addrs:
-                        if a not in visited:
-                            new_addrs.add(a)
+                        a_ip = a[0]
+                        if a in visited:
+                            continue
+                        if not ipv6_ok and ":" in a_ip:
+                            continue   # IPv6가 막혀있으면 애초에 시도해봐야 실패하니 건너뜀
+                        new_addrs.add(a)
                 else:
                     total_failed += 1
                     full_reason = err or "Unknown: Unknown"
@@ -306,6 +327,8 @@ def crawl():
 
     # 이번 크롤링 전체가 유난히 낮게 나온 경우, 원인 추적을 위해 실패 사유 전체 요약을 남김
     fail_rate = (total_failed / total_attempted * 100) if total_attempted else 0
+    ipv6_count = sum(1 for ip in reachable if ":" in ip)
+    print(f"[요약] 도달 가능 노드 중 IPv4={len(reachable) - ipv6_count}개, IPv6={ipv6_count}개")
     print(f"[요약] 총 시도 {total_attempted}회 중 실패 {total_failed}회 ({fail_rate:.1f}%)")
     if fail_reasons_all:
         print(f"[요약] 전체 실패 사유 분포: {dict(fail_reasons_all.most_common())}")
