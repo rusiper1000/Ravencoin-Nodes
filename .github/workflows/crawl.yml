@@ -12,7 +12,7 @@ permissions:
 jobs:
   crawl:
     runs-on: self-hosted   # 마르코님의 상시 가동 PC에서 실행 (가정용 IP라 노드들이 더 잘 받아줌)
-    timeout-minutes: 20
+    timeout-minutes: 45   # 결과가 비정상적으로 낮으면 자동 재시도(최대 +20분+3분 대기)까지 감안한 여유시간
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
