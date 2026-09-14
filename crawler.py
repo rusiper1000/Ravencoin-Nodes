@@ -595,10 +595,44 @@ def compute_network_health(reachable):
     }
 
 
+RETRY_THRESHOLD_RATIO = 0.5   # 최근 평균의 이 비율보다 낮으면 "비정상적으로 낮다"고 판단해 재시도
+RETRY_DELAY_SECONDS = 180     # 재시도 전 대기 시간 (일시적 회선 문제가 풀릴 시간을 줌)
+HISTORY_AVG_WINDOW = 10       # 최근 몇 회 측정의 평균을 기준선으로 삼을지
+
+
+def get_recent_average(limit=HISTORY_AVG_WINDOW):
+    """history.json의 최근 측정값 평균을 기준선으로 사용 (외부 API 의존 없이 자체 데이터로만 판단)."""
+    if not os.path.exists(HISTORY_JSON):
+        return None
+    try:
+        with open(HISTORY_JSON, "r", encoding="utf-8") as f:
+            history = json.load(f)
+    except Exception:
+        return None
+    recent = [h.get("total") for h in history[-limit:] if isinstance(h.get("total"), int) and h.get("total") > 0]
+    if len(recent) < 3:   # 표본이 너무 적으면 판단하지 않음 (운영 초기 등)
+        return None
+    return sum(recent) / len(recent)
+
+
 def main():
     print("Ravencoin 네트워크 크롤링 시작...")
     reachable = crawl()  # ip -> {"subver":..., "height":...}
     print(f"총 도달 가능 노드: {len(reachable)}개")
+
+    baseline = get_recent_average()
+    if baseline and len(reachable) < baseline * RETRY_THRESHOLD_RATIO:
+        print(f"[경고] 이번 결과({len(reachable)}개)가 최근 평균({baseline:.0f}개)의 "
+              f"{RETRY_THRESHOLD_RATIO*100:.0f}% 미만입니다. 일시적인 네트워크 문제일 수 있어 "
+              f"{RETRY_DELAY_SECONDS}초 대기 후 한 번 더 시도합니다...")
+        time.sleep(RETRY_DELAY_SECONDS)
+        reachable_retry = crawl()
+        print(f"재시도 결과: {len(reachable_retry)}개 (최초 결과: {len(reachable)}개)")
+        if len(reachable_retry) > len(reachable):
+            print("재시도 결과가 더 나아서 이걸로 채택합니다.")
+            reachable = reachable_retry
+        else:
+            print("재시도해도 나아지지 않아 최초 결과를 그대로 사용합니다.")
 
     geo = geolocate(reachable.keys()) if reachable else {}
     health = compute_network_health(reachable)
