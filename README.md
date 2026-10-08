@@ -4,7 +4,7 @@ ravennodes.com을 거치지 않고, 레이븐코인(Ravencoin) P2P 네트워크�
 측정한 국가별·ISP별·클라이언트 버전별 노드 분포와 네트워크 건강도를 보여주는
 실시간 대시보드입니다.
 
-- 라이브 사이트 (GitHub Pages): `https://[사용자이름].github.io/[저장소이름]/`
+- 라이브 사이트 (GitHub Pages): `https://rusiper1000.github.io/Ravencoin-Nodes/`
 - 라이브 사이트 (Vercel): `https://ravencoin-nodes.vercel.app/`
 
 ---
