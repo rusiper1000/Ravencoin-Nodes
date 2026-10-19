@@ -1,25 +1,30 @@
 {
-  "generated_at": "2026-10-19T09:37:26.700229+00:00",
-  "total_nodes": 78,
+  "generated_at": "2026-10-19T18:07:05.917813+00:00",
+  "total_nodes": 77,
   "network_health": {
-    "reference_height": 4587848,
+    "reference_height": 4588364,
     "reference_version": "/Ravencoin:4.8.0/",
-    "synced": 77,
+    "synced": 75,
     "lagging": 0,
-    "stalled": 1,
+    "stalled": 2,
     "unknown": 0,
     "stalled_versions": [
       {
+        "name": "/Ravencoin:4.6.1/",
+        "count": 1,
+        "pct": 50.0
+      },
+      {
         "name": "/Ravencoin:4.6.1(ravencoin.network)/",
         "count": 1,
-        "pct": 100.0
+        "pct": 50.0
       }
     ]
   },
   "countries": [
     {
       "name": "알 수 없음",
-      "count": 78,
+      "count": 77,
       "pct": 100.0,
       "code": ""
     }
@@ -27,50 +32,55 @@
   "isps": [
     {
       "name": "알 수 없음",
-      "count": 78,
+      "count": 77,
       "pct": 100.0
     }
   ],
   "versions": [
     {
       "name": "/Ravencoin:4.8.0/",
-      "count": 58,
-      "pct": 74.36
+      "count": 55,
+      "pct": 71.43
+    },
+    {
+      "name": "/Ravencoin:4.6.1/",
+      "count": 7,
+      "pct": 9.09
     },
     {
       "name": "/Ravencoin:4.3.2.1/",
       "count": 6,
-      "pct": 7.69
-    },
-    {
-      "name": "/Ravencoin:4.6.1/",
-      "count": 6,
-      "pct": 7.69
+      "pct": 7.79
     },
     {
       "name": "/Ravencoin:4.7.0/",
       "count": 4,
-      "pct": 5.13
-    },
-    {
-      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
-      "count": 1,
-      "pct": 1.28
+      "pct": 5.19
     },
     {
       "name": "/Ravencoin:4.8.0(rvnx)/",
       "count": 1,
-      "pct": 1.28
+      "pct": 1.3
     },
     {
       "name": "/Ravencoin:4.6.1.1/",
       "count": 1,
-      "pct": 1.28
+      "pct": 1.3
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "count": 1,
+      "pct": 1.3
     },
     {
       "name": "/Ravencoin:4.6.1(ravencoin.network)/",
       "count": 1,
-      "pct": 1.28
+      "pct": 1.3
+    },
+    {
+      "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
+      "count": 1,
+      "pct": 1.3
     }
   ],
   "nodes": [
@@ -81,13 +91,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "34일 전 처음 발견",
+      "age_label": "35일 전 처음 발견",
       "reachability_pct": 98.7,
-      "checks": 150
+      "checks": 151
     },
     {
       "ip": "104.248.197.234",
@@ -96,13 +106,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "107.172.135.48",
@@ -111,13 +121,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4587852,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "109.115.103.99",
@@ -125,14 +135,14 @@
       "country": "알 수 없음",
       "country_code": "",
       "isp": "알 수 없음",
-      "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "height": 4588367,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "6일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 30
+      "checks": 31
     },
     {
       "ip": "110.78.164.25",
@@ -141,13 +151,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
-      "height": 4587848,
+      "height": 4588365,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "121.183.226.156",
@@ -156,13 +166,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 93.5,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 93.6,
+      "checks": 249
     },
     {
       "ip": "122.36.126.132",
@@ -171,13 +181,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.8,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "125.253.41.203",
@@ -186,13 +196,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588367,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "33일 전 처음 발견",
-      "reachability_pct": 65.1,
-      "checks": 146
+      "age_label": "34일 전 처음 발견",
+      "reachability_pct": 65.3,
+      "checks": 147
     },
     {
       "ip": "129.213.76.88",
@@ -201,13 +211,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "139.59.130.42",
@@ -216,13 +226,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "141.95.34.186",
@@ -231,13 +241,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587853,
+      "height": 4588368,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.4,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "142.93.153.10",
@@ -246,13 +256,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "143.198.227.50",
@@ -261,13 +271,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "145.239.11.165",
@@ -276,13 +286,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "146.59.253.219",
@@ -291,13 +301,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 93.1,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 93.2,
+      "checks": 249
     },
     {
       "ip": "147.135.97.16",
@@ -306,13 +316,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 93.5,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 93.6,
+      "checks": 249
     },
     {
       "ip": "149.28.102.74",
@@ -321,13 +331,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587846,
+      "height": 4588360,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.8,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "149.50.101.189",
@@ -336,13 +346,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587853,
+      "height": 4588367,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "152.42.142.221",
@@ -351,13 +361,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588360,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "152.53.127.98",
@@ -366,13 +376,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 99.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "159.195.65.196",
@@ -381,13 +391,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "161.97.93.60",
@@ -396,13 +406,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587846,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "162.19.139.183",
@@ -411,13 +421,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588367,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "162.55.88.217",
@@ -426,13 +436,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 99.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "162.55.99.217",
@@ -441,13 +451,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587846,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "162.55.99.235",
@@ -456,13 +466,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587847,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "165.232.147.4",
@@ -471,13 +481,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 99.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "167.179.158.61",
@@ -486,28 +496,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587847,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 90.3,
-      "checks": 248
-    },
-    {
-      "ip": "178.57.64.170",
-      "port": 8767,
-      "country": "알 수 없음",
-      "country_code": "",
-      "isp": "알 수 없음",
-      "version": "/Ravencoin:4.8.0/",
-      "height": 4587846,
-      "sync_status": "synced",
-      "lat": null,
-      "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 35.1,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.4,
+      "checks": 249
     },
     {
       "ip": "185.16.39.236",
@@ -516,13 +511,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "185.4.113.197",
@@ -531,13 +526,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587847,
+      "height": 4588360,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "1일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 9
+      "checks": 10
     },
     {
       "ip": "188.166.151.35",
@@ -546,13 +541,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "188.243.98.30",
@@ -561,13 +556,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587850,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 90.3,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.4,
+      "checks": 249
     },
     {
       "ip": "194.163.166.46",
@@ -576,13 +571,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "53일 전 처음 발견",
-      "reachability_pct": 69.7,
-      "checks": 244
+      "reachability_pct": 69.8,
+      "checks": 245
     },
     {
       "ip": "195.201.143.156",
@@ -591,13 +586,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "200.50.168.94",
@@ -606,13 +601,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1.1/",
-      "height": 4587848,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 88.7,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 88.8,
+      "checks": 249
     },
     {
       "ip": "208.107.94.133",
@@ -621,13 +616,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "45일 전 처음 발견",
-      "reachability_pct": 72.1,
-      "checks": 208
+      "reachability_pct": 72.2,
+      "checks": 209
     },
     {
       "ip": "208.72.58.214",
@@ -636,13 +631,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587845,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "213.21.195.116",
@@ -651,28 +646,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
-    },
-    {
-      "ip": "37.209.124.120",
-      "port": 8767,
-      "country": "알 수 없음",
-      "country_code": "",
-      "isp": "알 수 없음",
-      "version": "/Ravencoin:4.8.0/",
-      "height": 4587847,
-      "sync_status": "synced",
-      "lat": null,
-      "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 19.8,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "38.143.56.146",
@@ -681,13 +661,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "46.249.191.157",
@@ -696,13 +676,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587846,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 90.3,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.4,
+      "checks": 249
     },
     {
       "ip": "47.241.254.65",
@@ -711,13 +691,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588360,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "5.161.192.113",
@@ -726,13 +706,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "5.196.79.95",
@@ -741,13 +721,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.178.209.252",
@@ -756,13 +736,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.178.97.131",
@@ -771,13 +751,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588368,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "45일 전 처음 발견",
-      "reachability_pct": 90.0,
-      "checks": 211
+      "age_label": "46일 전 처음 발견",
+      "reachability_pct": 90.1,
+      "checks": 212
     },
     {
       "ip": "51.210.219.138",
@@ -786,13 +766,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.4,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.222.152.238",
@@ -801,13 +781,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587848,
+      "height": 4588360,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.254.47.118",
@@ -816,13 +796,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.4,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.75.52.32",
@@ -831,13 +811,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588367,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.8,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.77.53.158",
@@ -846,13 +826,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587850,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "51.79.161.39",
@@ -861,13 +841,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 89.9,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.0,
+      "checks": 249
     },
     {
       "ip": "51.89.99.172",
@@ -876,13 +856,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587853,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "54.177.12.37",
@@ -891,13 +871,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "54.39.156.234",
@@ -906,13 +886,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "57.129.76.144",
@@ -921,13 +901,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587846,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "64.176.219.98",
@@ -936,13 +916,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "11시간 전 처음 발견",
+      "age_label": "19시간 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 3
+      "checks": 4
     },
     {
       "ip": "64.23.136.181",
@@ -951,13 +931,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4587845,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "65.108.15.35",
@@ -970,9 +950,9 @@
       "sync_status": "stalled",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "65.108.72.71",
@@ -981,13 +961,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588362,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 87.1,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "67.144.135.182",
@@ -996,13 +976,28 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "29일 전 처음 발견",
-      "reachability_pct": 93.6,
-      "checks": 125
+      "reachability_pct": 93.7,
+      "checks": 126
+    },
+    {
+      "ip": "71.38.174.18",
+      "port": 8767,
+      "country": "알 수 없음",
+      "country_code": "",
+      "isp": "알 수 없음",
+      "version": "/Ravencoin:4.8.0/",
+      "height": 4588367,
+      "sync_status": "synced",
+      "lat": null,
+      "lon": null,
+      "age_label": "45일 전 처음 발견",
+      "reachability_pct": 39.0,
+      "checks": 210
     },
     {
       "ip": "76.24.228.41",
@@ -1011,13 +1006,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587853,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 41.1,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 41.4,
+      "checks": 249
     },
     {
       "ip": "78.80.178.9",
@@ -1026,28 +1021,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "46일 전 처음 발견",
-      "reachability_pct": 90.7,
-      "checks": 216
-    },
-    {
-      "ip": "79.137.67.110",
-      "port": 8767,
-      "country": "알 수 없음",
-      "country_code": "",
-      "isp": "알 수 없음",
-      "version": "/Ravencoin:4.8.0/",
-      "height": 4587853,
-      "sync_status": "synced",
-      "lat": null,
-      "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 69.0,
-      "checks": 248
+      "age_label": "47일 전 처음 발견",
+      "reachability_pct": 90.8,
+      "checks": 217
     },
     {
       "ip": "8.214.93.58",
@@ -1056,13 +1036,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587847,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.8,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "82.67.111.63",
@@ -1071,13 +1051,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588362,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "53일 전 처음 발견",
       "reachability_pct": 91.5,
-      "checks": 246
+      "checks": 247
     },
     {
       "ip": "84.46.246.2",
@@ -1086,13 +1066,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587849,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "85.239.243.232",
@@ -1101,13 +1081,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588363,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.2,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "87.106.242.154",
@@ -1116,13 +1096,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587851,
+      "height": 4588362,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 96.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "88.99.70.159",
@@ -1131,13 +1111,28 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0(rvnx)/",
-      "height": 4587848,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 94.8,
-      "checks": 248
+      "checks": 249
+    },
+    {
+      "ip": "91.117.228.115",
+      "port": 8767,
+      "country": "알 수 없음",
+      "country_code": "",
+      "isp": "알 수 없음",
+      "version": "/Ravencoin:4.8.0/",
+      "height": 4588367,
+      "sync_status": "synced",
+      "lat": null,
+      "lon": null,
+      "age_label": "23일 전 처음 발견",
+      "reachability_pct": 32.7,
+      "checks": 98
     },
     {
       "ip": "91.99.230.86",
@@ -1146,13 +1141,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587852,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 93.1,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 93.2,
+      "checks": 249
     },
     {
       "ip": "92.154.36.27",
@@ -1161,13 +1156,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587848,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "95.31.2.231",
@@ -1176,13 +1171,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 90.7,
-      "checks": 248
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.8,
+      "checks": 249
     },
     {
       "ip": "96.67.83.140",
@@ -1191,28 +1186,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587851,
+      "height": 4588364,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
-      "reachability_pct": 90.7,
-      "checks": 248
-    },
-    {
-      "ip": "97.118.164.170",
-      "port": 8767,
-      "country": "알 수 없음",
-      "country_code": "",
-      "isp": "알 수 없음",
-      "version": "/Ravencoin:4.8.0/",
-      "height": 4587850,
-      "sync_status": "synced",
-      "lat": null,
-      "lon": null,
-      "age_label": "8일 전 처음 발견",
-      "reachability_pct": 97.4,
-      "checks": 39
+      "age_label": "54일 전 처음 발견",
+      "reachability_pct": 90.8,
+      "checks": 249
     },
     {
       "ip": "98.94.236.125",
@@ -1221,13 +1201,13 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4587844,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
-      "age_label": "53일 전 처음 발견",
+      "age_label": "54일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 248
+      "checks": 249
     },
     {
       "ip": "99.186.84.240",
@@ -1236,13 +1216,28 @@
       "country_code": "",
       "isp": "알 수 없음",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4587845,
+      "height": 4588359,
       "sync_status": "synced",
       "lat": null,
       "lon": null,
       "age_label": "11일 전 처음 발견",
-      "reachability_pct": 79.2,
-      "checks": 48
+      "reachability_pct": 79.6,
+      "checks": 49
+    },
+    {
+      "ip": "99.56.151.125",
+      "port": 8767,
+      "country": "알 수 없음",
+      "country_code": "",
+      "isp": "알 수 없음",
+      "version": "/Ravencoin:4.6.1/",
+      "height": 435521,
+      "sync_status": "stalled",
+      "lat": null,
+      "lon": null,
+      "age_label": "51일 전 처음 발견",
+      "reachability_pct": 21.4,
+      "checks": 238
     }
   ]
 }
