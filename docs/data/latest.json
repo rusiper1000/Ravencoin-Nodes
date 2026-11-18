@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-18T12:40:42.845799+00:00",
+  "generated_at": "2026-11-18T22:57:42.891982+00:00",
   "total_nodes": 88,
   "network_health": {
-    "reference_height": 4630905,
+    "reference_height": 4631545,
     "reference_version": "/Ravencoin:4.8.0/",
     "synced": 85,
     "lagging": 0,
@@ -72,34 +72,22 @@
       "code": "sg"
     },
     {
-      "name": "Finland",
-      "count": 2,
-      "pct": 2.27,
-      "code": "fi"
-    },
-    {
       "name": "United Kingdom",
       "count": 2,
       "pct": 2.27,
       "code": "gb"
     },
     {
-      "name": "Argentina",
-      "count": 1,
-      "pct": 1.14,
-      "code": "ar"
+      "name": "Finland",
+      "count": 2,
+      "pct": 2.27,
+      "code": "fi"
     },
     {
-      "name": "Thailand",
+      "name": "Belgium",
       "count": 1,
       "pct": 1.14,
-      "code": "th"
-    },
-    {
-      "name": "Austria",
-      "count": 1,
-      "pct": 1.14,
-      "code": "at"
+      "code": "be"
     },
     {
       "name": "Italy",
@@ -108,22 +96,16 @@
       "code": "it"
     },
     {
-      "name": "Australia",
+      "name": "Argentina",
       "count": 1,
       "pct": 1.14,
-      "code": "au"
+      "code": "ar"
     },
     {
-      "name": "Hong Kong",
+      "name": "Austria",
       "count": 1,
       "pct": 1.14,
-      "code": "hk"
-    },
-    {
-      "name": "Lithuania",
-      "count": 1,
-      "pct": 1.14,
-      "code": "lt"
+      "code": "at"
     },
     {
       "name": "Romania",
@@ -132,10 +114,28 @@
       "code": "ro"
     },
     {
-      "name": "Belgium",
+      "name": "Hong Kong",
       "count": 1,
       "pct": 1.14,
-      "code": "be"
+      "code": "hk"
+    },
+    {
+      "name": "Thailand",
+      "count": 1,
+      "pct": 1.14,
+      "code": "th"
+    },
+    {
+      "name": "Australia",
+      "count": 1,
+      "pct": 1.14,
+      "code": "au"
+    },
+    {
+      "name": "Lithuania",
+      "count": 1,
+      "pct": 1.14,
+      "code": "lt"
     }
   ],
   "isps": [
@@ -175,7 +175,7 @@
       "pct": 2.27
     },
     {
-      "name": "CenturyLink",
+      "name": "Comcast Cable Communications, LLC",
       "count": 2,
       "pct": 2.27
     },
@@ -185,7 +185,7 @@
       "pct": 2.27
     },
     {
-      "name": "Comcast Cable Communications, LLC",
+      "name": "CenturyLink",
       "count": 2,
       "pct": 2.27
     },
@@ -195,12 +195,12 @@
       "pct": 1.14
     },
     {
-      "name": "Juan Alfredo Knoll",
+      "name": "Midcontinent Communications",
       "count": 1,
       "pct": 1.14
     },
     {
-      "name": "Cogent Communications",
+      "name": "SkyNet LLC",
       "count": 1,
       "pct": 1.14
     },
@@ -210,7 +210,7 @@
       "pct": 1.14
     },
     {
-      "name": "CORBINA-BROADBAND",
+      "name": "Charter Communications",
       "count": 1,
       "pct": 1.14
     }
@@ -237,7 +237,22 @@
       "pct": 4.55
     },
     {
+      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
+      "count": 1,
+      "pct": 1.14
+    },
+    {
+      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
+      "count": 1,
+      "pct": 1.14
+    },
+    {
       "name": "/Ravencoin:4.6.1.1/",
+      "count": 1,
+      "pct": 1.14
+    },
+    {
+      "name": "/Ravencoin:4.8.0(circa)/",
       "count": 1,
       "pct": 1.14
     },
@@ -250,21 +265,6 @@
       "name": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
       "count": 1,
       "pct": 1.14
-    },
-    {
-      "name": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
-      "count": 1,
-      "pct": 1.14
-    },
-    {
-      "name": "/Ravencoin:4.6.1(ravencoin.network)/",
-      "count": 1,
-      "pct": 1.14
-    },
-    {
-      "name": "/Ravencoin:4.8.0(circa)/",
-      "count": 1,
-      "pct": 1.14
     }
   ],
   "nodes": [
@@ -275,13 +275,13 @@
       "country_code": "nl",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 52.352,
       "lon": 4.9392,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "107.172.135.48",
@@ -290,13 +290,13 @@
       "country_code": "us",
       "isp": "HostPapa",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4630907,
+      "height": 4631548,
       "sync_status": "synced",
       "lat": 42.8864,
       "lon": -78.8784,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "109.205.181.171",
@@ -305,13 +305,13 @@
       "country_code": "fr",
       "isp": "Contabo GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
-      "age_label": "7일 전 처음 발견",
+      "age_label": "8일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 27
+      "checks": 28
     },
     {
       "ip": "110.78.164.25",
@@ -320,13 +320,13 @@
       "country_code": "th",
       "isp": "CAT-BB",
       "version": "/Ravencoin:4.8.0(RKLSodpq5mduby7dj6CwxQ81F8bBmWucAT)/",
-      "height": 4630902,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 13.7262,
       "lon": 100.528,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.3,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "121.183.226.156",
@@ -335,13 +335,13 @@
       "country_code": "kr",
       "isp": "Korea Telecom",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 36.3566,
       "lon": 127.3849,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.3,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "122.36.126.132",
@@ -350,13 +350,13 @@
       "country_code": "kr",
       "isp": "LG POWERCOMM",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 37.3907,
       "lon": 126.9167,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "129.213.76.88",
@@ -365,13 +365,13 @@
       "country_code": "us",
       "isp": "Oracle Corporation",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4630907,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 39.018,
       "lon": -77.539,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "139.59.130.42",
@@ -380,13 +380,13 @@
       "country_code": "de",
       "isp": "DIGITALOCEAN",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 50.1169,
       "lon": 8.6837,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "14.53.192.149",
@@ -395,13 +395,13 @@
       "country_code": "kr",
       "isp": "Korea Telecom",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630908,
+      "height": 4631548,
       "sync_status": "synced",
       "lat": 37.4878,
       "lon": 127.4875,
       "age_label": "69일 전 처음 발견",
-      "reachability_pct": 49.1,
-      "checks": 287
+      "reachability_pct": 49.3,
+      "checks": 288
     },
     {
       "ip": "141.95.34.186",
@@ -410,13 +410,13 @@
       "country_code": "de",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630916,
+      "height": 4631550,
       "sync_status": "synced",
       "lat": 50.3986,
       "lon": 8.07958,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "142.93.153.10",
@@ -425,13 +425,13 @@
       "country_code": "ca",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 43.709,
       "lon": -79.4057,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "143.198.227.50",
@@ -440,13 +440,13 @@
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 37.3931,
       "lon": -121.962,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "145.239.11.165",
@@ -455,13 +455,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 50.6924,
       "lon": 3.20113,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "146.59.253.219",
@@ -470,13 +470,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 50.9871,
       "lon": 2.12554,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "147.135.97.16",
@@ -485,13 +485,13 @@
       "country_code": "us",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630910,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 38.8809,
       "lon": -77.3008,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.3,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "149.28.102.74",
@@ -500,13 +500,13 @@
       "country_code": "us",
       "isp": "The Constant Company",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4630901,
+      "height": 4631547,
       "sync_status": "synced",
       "lat": 25.8119,
       "lon": -80.2318,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "149.50.101.189",
@@ -515,13 +515,13 @@
       "country_code": "pl",
       "isp": "Cogent Communications",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630912,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 52.2299,
       "lon": 21.0093,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.2,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "152.42.142.221",
@@ -530,13 +530,13 @@
       "country_code": "nl",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 52.352,
       "lon": 4.9392,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.9,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "152.53.127.98",
@@ -545,13 +545,13 @@
       "country_code": "de",
       "isp": "netcup GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 49.4527,
       "lon": 11.0783,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 99.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "159.195.65.196",
@@ -560,13 +560,13 @@
       "country_code": "de",
       "isp": "netcup GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 49.4527,
       "lon": 11.0783,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "161.97.93.60",
@@ -575,13 +575,13 @@
       "country_code": "fr",
       "isp": "Contabo GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631550,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "162.19.139.183",
@@ -590,13 +590,13 @@
       "country_code": "de",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631550,
       "sync_status": "synced",
       "lat": 50.3847,
       "lon": 8.0475,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "162.222.203.151",
@@ -605,13 +605,13 @@
       "country_code": "us",
       "isp": "IONOS SE",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630916,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 36.1716,
       "lon": -115.139,
       "age_label": "1일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 6
+      "checks": 7
     },
     {
       "ip": "162.55.88.217",
@@ -620,13 +620,13 @@
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 50.4777,
       "lon": 12.3649,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 99.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "162.55.99.217",
@@ -635,13 +635,13 @@
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 50.4777,
       "lon": 12.3649,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.2,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "162.55.99.235",
@@ -650,13 +650,13 @@
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630909,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 50.4777,
       "lon": 12.3649,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "165.232.147.4",
@@ -665,13 +665,13 @@
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630899,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 37.3931,
       "lon": -121.962,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 99.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "167.179.158.61",
@@ -680,13 +680,13 @@
       "country_code": "au",
       "isp": "Aussie Broadband",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": -33.8434,
       "lon": 151.1321,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 88.1,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 88.2,
+      "checks": 363
     },
     {
       "ip": "173.235.143.158",
@@ -695,13 +695,13 @@
       "country_code": "us",
       "isp": "C Spire Fiber",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630903,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 32.4147,
       "lon": -90.1208,
       "age_label": "1일 전 처음 발견",
-      "reachability_pct": 80.0,
-      "checks": 5
+      "reachability_pct": 83.3,
+      "checks": 6
     },
     {
       "ip": "178.57.64.170",
@@ -710,13 +710,13 @@
       "country_code": "ru",
       "isp": "VDS-Telecom LLC.",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 55.6769,
       "lon": 37.7621,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 49.4,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 49.6,
+      "checks": 363
     },
     {
       "ip": "183.99.225.7",
@@ -725,13 +725,13 @@
       "country_code": "kr",
       "isp": "Korea Telecom",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 37.2072,
       "lon": 126.8168,
-      "age_label": "23일 전 처음 발견",
-      "reachability_pct": 80.2,
-      "checks": 86
+      "age_label": "24일 전 처음 발견",
+      "reachability_pct": 80.5,
+      "checks": 87
     },
     {
       "ip": "185.253.219.51",
@@ -746,7 +746,7 @@
       "lon": 5.6966,
       "age_label": "2일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 7
+      "checks": 8
     },
     {
       "ip": "185.4.113.197",
@@ -755,13 +755,13 @@
       "country_code": "nl",
       "isp": "Ymor E-services",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 51.9968,
       "lon": 4.2057,
-      "age_label": "31일 전 처음 발견",
-      "reachability_pct": 95.9,
-      "checks": 123
+      "age_label": "32일 전 처음 발견",
+      "reachability_pct": 96.0,
+      "checks": 124
     },
     {
       "ip": "188.166.151.35",
@@ -770,13 +770,13 @@
       "country_code": "gb",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631550,
       "sync_status": "synced",
       "lat": 51.5177,
       "lon": -0.6215,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "188.243.98.30",
@@ -785,13 +785,13 @@
       "country_code": "ru",
       "isp": "SkyNet LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 59.8983,
       "lon": 30.2618,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 91.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "188.26.30.18",
@@ -800,13 +800,13 @@
       "country_code": "ro",
       "isp": "RCS & RDS",
       "version": "/Ravencoin:4.8.0(circa)/",
-      "height": 4630910,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 45.1494,
       "lon": 26.8244,
-      "age_label": "10시간 전 처음 발견",
+      "age_label": "20시간 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 2
+      "checks": 3
     },
     {
       "ip": "194.163.166.46",
@@ -815,13 +815,13 @@
       "country_code": "fr",
       "isp": "Contabo GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
       "age_label": "83일 전 처음 발견",
       "reachability_pct": 79.1,
-      "checks": 358
+      "checks": 359
     },
     {
       "ip": "195.201.143.156",
@@ -830,13 +830,13 @@
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 49.4527,
       "lon": 11.0783,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "2.44.245.173",
@@ -845,13 +845,13 @@
       "country_code": "it",
       "isp": "VODAFONE",
       "version": "/Ravencoin:4.8.0(RG5MujXzxARjWChWdU2awbAQa9ZCH52yrh)/",
-      "height": 4630906,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 43.847,
       "lon": 10.5018,
       "age_label": "3일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 11
+      "checks": 12
     },
     {
       "ip": "200.50.168.94",
@@ -860,13 +860,13 @@
       "country_code": "ar",
       "isp": "Juan Alfredo Knoll",
       "version": "/Ravencoin:4.6.1.1/",
-      "height": 4630899,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": -34.6072,
       "lon": -59.0035,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 91.4,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 91.5,
+      "checks": 363
     },
     {
       "ip": "206.251.182.90",
@@ -875,13 +875,13 @@
       "country_code": "us",
       "isp": "Vexus Fiber",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 30.3586,
       "lon": -90.0561,
       "age_label": "20일 전 처음 발견",
       "reachability_pct": 97.3,
-      "checks": 74
+      "checks": 75
     },
     {
       "ip": "208.107.94.133",
@@ -890,13 +890,13 @@
       "country_code": "us",
       "isp": "Midcontinent Communications",
       "version": "/Ravencoin:4.3.2.1/",
-      "height": 4630907,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 46.8657,
       "lon": -96.7521,
       "age_label": "75일 전 처음 발견",
       "reachability_pct": 82.0,
-      "checks": 322
+      "checks": 323
     },
     {
       "ip": "208.72.58.214",
@@ -905,13 +905,13 @@
       "country_code": "us",
       "isp": "Swishmail",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4630906,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 40.7365,
       "lon": -74.0055,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "213.21.195.116",
@@ -920,13 +920,13 @@
       "country_code": "at",
       "isp": "Versija SIA",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4630902,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 48.2081,
       "lon": 16.3713,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "218.156.244.146",
@@ -935,13 +935,13 @@
       "country_code": "kr",
       "isp": "Korea Telecom",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 34.7566,
       "lon": 127.6626,
-      "age_label": "7일 전 처음 발견",
-      "reachability_pct": 96.2,
-      "checks": 26
+      "age_label": "8일 전 처음 발견",
+      "reachability_pct": 96.3,
+      "checks": 27
     },
     {
       "ip": "38.143.56.146",
@@ -954,9 +954,9 @@
       "sync_status": "unknown",
       "lat": 45.5075,
       "lon": -73.5887,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 92.5,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 92.6,
+      "checks": 363
     },
     {
       "ip": "47.241.254.65",
@@ -965,13 +965,13 @@
       "country_code": "sg",
       "isp": "Alibaba Cloud LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 1.35208,
       "lon": 103.82,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "47.244.213.182",
@@ -980,13 +980,13 @@
       "country_code": "hk",
       "isp": "Alibaba Cloud LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 22.3193,
       "lon": 114.169,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 24.4,
-      "checks": 360
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 24.7,
+      "checks": 361
     },
     {
       "ip": "47.7.68.11",
@@ -995,13 +995,13 @@
       "country_code": "us",
       "isp": "Charter Communications",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630905,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 30.4856,
       "lon": -90.0977,
       "age_label": "20일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 74
+      "checks": 75
     },
     {
       "ip": "5.161.192.113",
@@ -1010,13 +1010,13 @@
       "country_code": "us",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 39.0469,
       "lon": -77.4903,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "5.189.186.225",
@@ -1025,13 +1025,13 @@
       "country_code": "fr",
       "isp": "Contabo GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631543,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
-      "age_label": "69일 전 처음 발견",
-      "reachability_pct": 78.1,
-      "checks": 288
+      "age_label": "70일 전 처음 발견",
+      "reachability_pct": 78.2,
+      "checks": 289
     },
     {
       "ip": "5.196.79.95",
@@ -1040,13 +1040,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 50.6924,
       "lon": 3.20113,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.178.209.252",
@@ -1055,13 +1055,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 48.5734,
       "lon": 7.75211,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.178.97.131",
@@ -1070,13 +1070,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 50.9871,
       "lon": 2.12554,
-      "age_label": "75일 전 처음 발견",
+      "age_label": "76일 전 처음 발견",
       "reachability_pct": 92.9,
-      "checks": 325
+      "checks": 326
     },
     {
       "ip": "51.210.114.238",
@@ -1085,13 +1085,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 50.9871,
       "lon": 2.12554,
       "age_label": "6일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 21
+      "checks": 22
     },
     {
       "ip": "51.210.219.138",
@@ -1100,13 +1100,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630902,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 50.9871,
       "lon": 2.12554,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.9,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.254.47.118",
@@ -1115,13 +1115,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 50.6924,
       "lon": 3.20113,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.75.52.32",
@@ -1130,13 +1130,13 @@
       "country_code": "pl",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630904,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 52.2633,
       "lon": 21.0283,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.77.53.158",
@@ -1145,13 +1145,13 @@
       "country_code": "pl",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630903,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 52.2299,
       "lon": 21.0093,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.79.161.39",
@@ -1160,13 +1160,13 @@
       "country_code": "sg",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630905,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 1.27994,
       "lon": 103.849,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 93.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "51.89.99.172",
@@ -1175,13 +1175,13 @@
       "country_code": "gb",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630909,
+      "height": 4631552,
       "sync_status": "synced",
       "lat": 51.5081,
       "lon": -0.1278,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "54.177.12.37",
@@ -1190,13 +1190,13 @@
       "country_code": "us",
       "isp": "Amazon.com, Inc.",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 37.33939,
       "lon": -121.89496,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "54.39.156.234",
@@ -1205,13 +1205,13 @@
       "country_code": "ca",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630902,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 46.8127,
       "lon": -71.2226,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "57.129.76.144",
@@ -1220,13 +1220,13 @@
       "country_code": "de",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631550,
       "sync_status": "synced",
       "lat": 50.1162,
       "lon": 8.6693,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.2,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "59.5.210.203",
@@ -1235,13 +1235,13 @@
       "country_code": "kr",
       "isp": "Korea Telecom",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 37.6576,
       "lon": 127.072,
       "age_label": "15일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 54
+      "checks": 55
     },
     {
       "ip": "62.205.101.49",
@@ -1250,13 +1250,13 @@
       "country_code": "be",
       "isp": "Telenet N.V.",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630916,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 51.0995,
       "lon": 5.1602,
       "age_label": "82일 전 처음 발견",
-      "reachability_pct": 49.2,
-      "checks": 354
+      "reachability_pct": 49.3,
+      "checks": 355
     },
     {
       "ip": "64.23.136.181",
@@ -1265,13 +1265,13 @@
       "country_code": "us",
       "isp": "DigitalOcean, LLC",
       "version": "/Ravencoin:4.6.1/",
-      "height": 4630902,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 37.3931,
       "lon": -121.962,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "65.108.15.35",
@@ -1284,9 +1284,9 @@
       "sync_status": "stalled",
       "lat": 60.1719,
       "lon": 24.9347,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 95.6,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "65.108.72.71",
@@ -1295,13 +1295,13 @@
       "country_code": "fi",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630901,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 60.1719,
       "lon": 24.9347,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 91.2,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "71.38.174.18",
@@ -1310,13 +1310,13 @@
       "country_code": "us",
       "isp": "CenturyLink",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 36.2973,
       "lon": -115.2418,
-      "age_label": "75일 전 처음 발견",
-      "reachability_pct": 49.2,
-      "checks": 323
+      "age_label": "76일 전 처음 발견",
+      "reachability_pct": 49.4,
+      "checks": 324
     },
     {
       "ip": "72.200.100.80",
@@ -1325,13 +1325,13 @@
       "country_code": "us",
       "isp": "Cox Communications Inc.",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630912,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 33.1922,
       "lon": -111.5318,
       "age_label": "13일 전 처음 발견",
-      "reachability_pct": 74.5,
-      "checks": 47
+      "reachability_pct": 75.0,
+      "checks": 48
     },
     {
       "ip": "75.119.144.55",
@@ -1340,13 +1340,13 @@
       "country_code": "fr",
       "isp": "BroadbandONE",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630905,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
-      "age_label": "15일 전 처음 발견",
+      "age_label": "16일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 55
+      "checks": 56
     },
     {
       "ip": "76.24.228.41",
@@ -1355,13 +1355,13 @@
       "country_code": "us",
       "isp": "Comcast Cable Communications, LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630903,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 42.9761,
       "lon": -71.4169,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 59.1,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 59.2,
+      "checks": 363
     },
     {
       "ip": "77.79.51.207",
@@ -1370,13 +1370,13 @@
       "country_code": "lt",
       "isp": "Telekomunikaciju vartai, UAB",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631547,
       "sync_status": "synced",
       "lat": 55.8205,
       "lon": 23.5358,
       "age_label": "6일 전 처음 발견",
-      "reachability_pct": 95.5,
-      "checks": 22
+      "reachability_pct": 95.7,
+      "checks": 23
     },
     {
       "ip": "79.137.67.110",
@@ -1385,13 +1385,13 @@
       "country_code": "fr",
       "isp": "OVH SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630903,
+      "height": 4631551,
       "sync_status": "synced",
       "lat": 50.6924,
       "lon": 3.20113,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 74.9,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "8.214.93.58",
@@ -1400,13 +1400,13 @@
       "country_code": "sg",
       "isp": "Alibaba (US) Technology Co., Ltd.",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631549,
       "sync_status": "synced",
       "lat": 1.35208,
       "lon": 103.82,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.1,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "82.67.111.63",
@@ -1415,13 +1415,13 @@
       "country_code": "fr",
       "isp": "Proxad / Free SAS",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630907,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 47.5256,
       "lon": -2.6459,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 93.1,
-      "checks": 360
+      "checks": 361
     },
     {
       "ip": "84.46.246.2",
@@ -1430,13 +1430,13 @@
       "country_code": "fr",
       "isp": "Contabo GmbH",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630903,
+      "height": 4631548,
       "sync_status": "synced",
       "lat": 48.9742,
       "lon": 8.1851,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "85.239.243.232",
@@ -1445,13 +1445,13 @@
       "country_code": "us",
       "isp": "Casablanca INT fraction",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 38.6364,
       "lon": -90.1985,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.7,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "88.99.70.159",
@@ -1460,13 +1460,13 @@
       "country_code": "de",
       "isp": "Hetzner Online GmbH",
       "version": "/Ravencoin:4.8.0(rvnx)/",
-      "height": 4630901,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 50.4777,
       "lon": 12.3649,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 96.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "9.195.12.225",
@@ -1475,13 +1475,13 @@
       "country_code": "us",
       "isp": "Brightspeed",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631548,
       "sync_status": "synced",
       "lat": 43.2491,
       "lon": -89.3432,
       "age_label": "17일 전 처음 발견",
-      "reachability_pct": 95.0,
-      "checks": 60
+      "reachability_pct": 95.1,
+      "checks": 61
     },
     {
       "ip": "91.214.241.243",
@@ -1490,13 +1490,13 @@
       "country_code": "ru",
       "isp": "Altagen JSC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630915,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 55.7269,
       "lon": 37.479,
-      "age_label": "9일 전 처음 발견",
-      "reachability_pct": 66.7,
-      "checks": 33
+      "age_label": "10일 전 처음 발견",
+      "reachability_pct": 67.6,
+      "checks": 34
     },
     {
       "ip": "92.154.36.27",
@@ -1505,13 +1505,13 @@
       "country_code": "fr",
       "isp": "Orange",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630908,
+      "height": 4631545,
       "sync_status": "synced",
       "lat": 48.8848,
       "lon": 2.26851,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 97.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "95.31.2.231",
@@ -1520,13 +1520,13 @@
       "country_code": "ru",
       "isp": "CORBINA-BROADBAND",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630900,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 55.7487,
       "lon": 37.6187,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 93.4,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "96.67.83.140",
@@ -1535,13 +1535,13 @@
       "country_code": "us",
       "isp": "Comcast Cable Communications, LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630906,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 35.8467,
       "lon": -86.4885,
-      "age_label": "83일 전 처음 발견",
-      "reachability_pct": 93.6,
-      "checks": 362
+      "age_label": "84일 전 처음 발견",
+      "reachability_pct": 93.7,
+      "checks": 363
     },
     {
       "ip": "97.118.164.170",
@@ -1550,13 +1550,13 @@
       "country_code": "us",
       "isp": "CenturyLink",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630899,
+      "height": 4631546,
       "sync_status": "synced",
       "lat": 39.7628,
       "lon": -105.0263,
       "age_label": "39일 전 처음 발견",
-      "reachability_pct": 98.0,
-      "checks": 153
+      "reachability_pct": 98.1,
+      "checks": 154
     },
     {
       "ip": "98.94.236.125",
@@ -1565,13 +1565,13 @@
       "country_code": "us",
       "isp": "Amazon.com, Inc.",
       "version": "/Ravencoin:4.7.0/",
-      "height": 4630899,
+      "height": 4631542,
       "sync_status": "synced",
       "lat": 39.04372,
       "lon": -77.48749,
-      "age_label": "83일 전 처음 발견",
+      "age_label": "84일 전 처음 발견",
       "reachability_pct": 100.0,
-      "checks": 362
+      "checks": 363
     },
     {
       "ip": "99.186.84.240",
@@ -1580,13 +1580,13 @@
       "country_code": "us",
       "isp": "AT&T Enterprises, LLC",
       "version": "/Ravencoin:4.8.0/",
-      "height": 4630904,
+      "height": 4631544,
       "sync_status": "synced",
       "lat": 42.3975,
       "lon": -83.3733,
       "age_label": "41일 전 처음 발견",
       "reachability_pct": 92.0,
-      "checks": 162
+      "checks": 163
     }
   ]
 }
